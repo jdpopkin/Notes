@@ -2,3 +2,23 @@ TODO
 
 Need comments on Notes. Need Votes (on songs, notes, and comments of all kinds).
 Need sessions controller etc.
+
+Note: if we're going to have a BFS for collaborations, we need to have
+complicated relations between songs and artists (a link table).
+
+Q: is there a way to avoid duplicating extremely similar models? For example:
+vote model on songs, comments, notes. SEE RAILS GUIDES - POLYMORPHIC ASSOCIATIONS.
+
+Fill out db:seeds.
+
+Create index page.
+
+Ask how partial Backbone works: you only have one application.js, so how can you
+have meaningfully different javascript behavior on different pages of your site?
+Maybe it's trivial but thus far our Backbone stuff have mostly involved a single
+HTML page with Backbone doing everything.
+
+Backbone with multiple routers? Do we simply initialize a different router on
+each page?
+
+Find a way to rate songs (either by votes or ideally by recent votes).

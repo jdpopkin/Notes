@@ -9,8 +9,8 @@ class CreateSongComments < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_column :song_comments, :song_id
-    add_column :song_comments, :author_id
-    add_column :song_comments, :parent_comment_id
+    add_index :song_comments, :song_id
+    add_index :song_comments, :author_id
+    add_index :song_comments, :parent_comment_id
   end
 end
