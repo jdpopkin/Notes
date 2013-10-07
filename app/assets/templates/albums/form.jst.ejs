@@ -8,8 +8,10 @@
     Artist
     <select name="album[artist_id]">
       <!-- TODO: dynamically populate this using collection of artists -->
-      <option value="1">Artist Name</option>
-      <option value="2">Artist 2</option>
+      <% for (var i = 0; i < Notes.Artists.length; i++) { %>
+        <% var artist = Notes.Artists[i]; %>
+        <option value="<%= artist.id %>"><%= artist.name %></option>
+      <% } %>
     </select>
   </label>
 
