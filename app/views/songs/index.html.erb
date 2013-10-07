@@ -1,7 +1,9 @@
 <h1>Songs</h1>
 
 <div id="content">
-  <a href="#songs/new">Add new song</a>
+  <% if current_user %>
+    <a href="#songs/new">Add new song</a>
+  <% end %>
 </div>
 
 <ul>
@@ -26,6 +28,16 @@
   // load songs router in backbone?
   // yes. need separate song-show and song-index router... idk
   Notes.initialize("<%= root_url %>");
+  Notes.authToken = "<%= form_authenticity_token %>"
+
+  <% if current_user %>
+    <% id = current_user.id %>
+  <% else %>
+    <% id = 0 %>
+  <% end %>
+
+  Notes.currentUser = <%= id %>;
+
   console.log($('#bootstrapped_albums_json').html());
   Notes.Albums = JSON.parse($('#bootstrapped_albums_json').html());
   Notes.Artists = JSON.parse($('#bootstrapped_artists_json').html());

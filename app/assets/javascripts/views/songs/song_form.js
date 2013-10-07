@@ -21,10 +21,15 @@ Notes.Views.SongForm = Backbone.View.extend({
       method: "POST",
       artists: Notes.Artists,
       albums: Notes.Albums,
+      authToken: Notes.authToken,
+      currentUser: Notes.currentUser,
       song: { lyrics: "" }
     });
 
-    that.$el.html(renderedContent);
+    if (Notes.currentUser) {
+      that.$el.html(renderedContent);
+    }
+
     return that;
   }
 })

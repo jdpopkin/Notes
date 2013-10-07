@@ -19,10 +19,15 @@ Notes.Views.AlbumForm = Backbone.View.extend({
       url: Notes.rootUrl + "/albums/",
       method: "POST",
       artists: Notes.Artists,
+      authToken: Notes.authToken,
+      currentUser: Notes.currentUser,
       album: { title: "" }
     });
 
-    that.$el.html(renderedContent);
+    if (Notes.currentUser) {
+      that.$el.html(renderedContent);
+    }
+
     return that;
   }
 })

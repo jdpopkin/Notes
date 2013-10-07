@@ -18,10 +18,15 @@ Notes.Views.ArtistForm = Backbone.View.extend({
     renderedContent = JST["artists/form"]( {
       url: Notes.rootUrl + "/artists/",
       method: "POST",
+      authToken: Notes.authToken,
+      currentUser: Notes.currentUser,
       artist: { name: "" }
     });
 
-    that.$el.html(renderedContent);
+    if (Notes.currentUser) {
+      that.$el.html(renderedContent);
+    }
+
     return that;
   }
 })

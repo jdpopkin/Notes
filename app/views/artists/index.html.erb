@@ -2,7 +2,9 @@
 
 <div id="content">
   <%# TODO: prevent default (keep an entry for being added in history) %>
-  <a href="#artists/new">Add new artist</a>
+  <% if current_user %>
+    <a href="#artists/new">Add new artist</a>
+  <% end%>
 </div>
 
 <ul>
@@ -17,6 +19,17 @@
 <%# TODO: determine if there is any need for this at all %>
 <script type="application/javascript">
   Notes.initialize("<%= root_url %>");
+
+  <% if current_user %>
+    <% id = current_user.id %>
+  <% else %>
+    <% id = 0 %>
+  <% end %>
+
+  Notes.currentUser = <%= id %>;
+
+
+  Notes.authToken = "<%= form_authenticity_token %>"
   new Notes.Routers.ArtistsRouter($('#content'));
   Backbone.history.start();
 </script>
