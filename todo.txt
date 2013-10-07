@@ -31,8 +31,10 @@ stuff should NOT be done via Backbone.
 
 http://jquery.10927.n7.nabble.com/jQuery-specific-selected-highlighted-text-td87729.html
 
+Insert a span with an "exegize_button" id immediately after the selection. Give
+it absolute positioning.
+
 Short term stuff: Add some capacity to edit and update song, artist, and album
 pages.
 
-Fix forms (they fail at authentication).
-Don't let users pull up those forms unless they are logged in.
+
