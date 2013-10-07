@@ -1,0 +1,21 @@
+<h1>Albums</h1>
+
+<div id="content">
+  <a href="#albums/new">Add new album</a>
+</div>
+
+<ul>
+<% @album.each do |album| %>
+  <li>
+    <%= link_to album.name, album_url(album) %>
+  </li>
+<% end %>
+</ul>
+
+
+<%# TODO: determine if there is any need for this at all %>
+<script type="application/javascript">
+  Notes.initialize("<%= root_url %>");
+  new Notes.Routers.AlbumsRouter($('#content'));
+  Backbone.history.start();
+</script>

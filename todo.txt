@@ -11,8 +11,6 @@ vote model on songs, comments, notes. SEE RAILS GUIDES - POLYMORPHIC ASSOCIATION
 
 Fill out db:seeds.
 
-Create index page.
-
 Ask how partial Backbone works: you only have one application.js, so how can you
 have meaningfully different javascript behavior on different pages of your site?
 Maybe it's trivial but thus far our Backbone stuff have mostly involved a single
@@ -30,3 +28,6 @@ We should be able to deep link to particular albums, artists, and songs, so that
 stuff should NOT be done via Backbone.
 
 http://jquery.10927.n7.nabble.com/jQuery-specific-selected-highlighted-text-td87729.html
+
+Short term stuff: write index and show pages for artists and albums. Add some capacity
+to edit and update song, artist, and album pages.

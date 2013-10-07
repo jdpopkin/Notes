@@ -21,17 +21,19 @@ Notes.Views.SongShow = Backbone.View.extend({
   },
 
   handleSelect: function(event) {
-    console.log("Selection!");
     var sel = window.getSelection();
+    if (sel.anchorNode !== sel.focusNode) {
+      return;
+    }
+
+    console.log("Selection!");
+
     var range = sel.getRangeAt(0);
     var contents = range.cloneContents();
 
-    // console.log("Sel: " + sel);
-    //     console.log("Range: " + range);
-    //     console.log("Contents: " + contents);
-    console.log(sel);
-    console.log(range);
-    console.log(contents);
-    console.log(sel.toString());
+    // console.log(sel);
+    // console.log(range);
+    // console.log(contents);
+    // console.log(sel.toString());
   }
 })

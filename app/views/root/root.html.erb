@@ -5,7 +5,15 @@
 <%= link_to "Artists", artists_url %>
 <%= link_to "Albums", albums_url %>
 <%= link_to "Songs", songs_url %>
-<a id="login-link" href="#/sign_in">Sign In</a>
+
+<% if current_user %>
+  <a id="login-link" class="hidden" href="#/sign_in">Sign In</a>
+  <a id="logout-link" href="#/sign_out">Log Out</a>
+<% else %>
+  <a id="login-link" href="#/sign_in">Sign In</a>
+  <a id="logout-link" class="hidden" href="#/sign_out">Log Out</a>
+<% end %>
+
 <form id="login" class="hidden" action="<%= session_url %>" method="POST">
   <label>Username <input type="text" name="user[username]"></label>
   <label>Password <input type="password" name="user[password]"></label>
@@ -57,5 +65,18 @@
     $('#login').on("submit", function(event) {
       $("login").addClass("hidden");
     });
+
+    $('#logout-link').click(function(event) {
+      $.ajax({
+        url: "<%= session_url %>",
+        type: "post",
+        dataType: "json",
+        data: {"_method":"delete"}, // WARNING: SLEAZE. <%# REFACTOR %>
+        success: function(data) {
+          $('#login-link').removeClass("hidden");
+          $('#logout-link').addClass("hidden");
+        }
+      });
+    })
   })
 </script>

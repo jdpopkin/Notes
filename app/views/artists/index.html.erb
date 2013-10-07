@@ -1,0 +1,21 @@
+<h1>Artists</h1>
+
+<div id="content">
+  <a href="#artists/new">Add new artist</a>
+</div>
+
+<ul>
+<% @artist.each do |artist| %>
+  <li>
+    <%= link_to artist.name, artist_url(artist) %>
+  </li>
+<% end %>
+</ul>
+
+
+<%# TODO: determine if there is any need for this at all %>
+<script type="application/javascript">
+  Notes.initialize("<%= root_url %>");
+  new Notes.Routers.ArtistsRouter($('#content'));
+  Backbone.history.start();
+</script>

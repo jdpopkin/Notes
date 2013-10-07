@@ -8,6 +8,10 @@
 </head>
 <body>
 
+  <%= "Signed in as " << current_user.username if current_user %>
+
+  <h1><a href="<%= root_url %>">notes</a></h1>
+
 <%= yield %>
 
 </body>
