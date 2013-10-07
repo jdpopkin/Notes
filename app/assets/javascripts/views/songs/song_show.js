@@ -23,11 +23,10 @@ Notes.Views.SongShow = Backbone.View.extend({
 
   handleSelect: function(event) {
     var that = this;
+    // HTML breaks if we don't do this.
     if ($(".add-note").length > 0) {
-      console.log($(".add-note"));
       $(".add-note").remove();
       var htmlCopy = $(".lyrics").html();
-      console.log(htmlCopy);
       $(".lyrics").html(htmlCopy);
       return;
     }
@@ -42,12 +41,7 @@ Notes.Views.SongShow = Backbone.View.extend({
     console.log("Selection!");
 
     var range = sel.getRangeAt(0);
-    var contents = range.cloneContents();
-
-    console.log(sel);
-    console.log(range);
-    console.log(contents);
-    console.log(sel.toString());
+    //var contents = range.cloneContents();
 
     var lowEnd = sel.extentOffset < sel.baseOffset ? sel.extentOffset : sel.baseOffset;
     var highEnd = sel.extentOffset < sel.baseOffset ? sel.baseOffset : sel.extentOffset;
@@ -63,7 +57,8 @@ Notes.Views.SongShow = Backbone.View.extend({
     var stringStart = htmlCopy.slice(0, highEnd);
     var stringEnd = htmlCopy.slice(highEnd);
 
-    var buttonHtml = "<span class='add-note'>Add note!</span>";
+    // Current image is a placeholder.
+    var buttonHtml = "<span class='add-note'><img src='http://www.w3schools.com/images/compatible_safari.gif'></span>";
 
     return stringStart.concat(buttonHtml).concat(stringEnd);
   }

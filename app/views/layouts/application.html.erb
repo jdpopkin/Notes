@@ -8,11 +8,74 @@
 </head>
 <body>
 
-  <%= "Signed in as " << current_user.username if current_user %>
+  <%= ("<span id='current-user'>Signed in as " << current_user.username << "</span>").html_safe if current_user %>
+  <% if current_user %>
+    <a id="login-link" class="hidden" href="#/sign_in">Sign In</a>
+    <a id="logout-link" href="#/sign_out">Log Out</a>
+  <% else %>
+    <a id="login-link" href="#/sign_in">Sign In</a>
+    <a id="logout-link" class="hidden" href="#/sign_out">Log Out</a>
+  <% end %>
+
+  <form id="login" class="hidden" action="<%= session_url %>" method="POST">
+    <label>Username <input type="text" name="user[username]"></label>
+    <label>Password <input type="password" name="user[password]"></label>
+    <input type="submit" value="Sign In">
+    <a id="signup-link" href="#<%#= new_user_url %>">Sign Up</a>
+  </form>
+
+  <form id="signup" class="hidden" action="<%= users_url %>" method="POST">
+    <label>Email <input type="text" name="user[email]"></label>
+    <label>Username <input type="text" name="user[username]"></label>
+    <label>Password <input type="password" name="user[password]"></label>
+    <input type="submit" value="Sign Up">
+    <!-- # TODO password confirmation -->
+  </form>
 
   <h1><a href="<%= root_url %>">notes</a></h1>
 
 <%= yield %>
+
+<script>
+$(document).ready(function() {
+  $('#login-link').click(function(event) {
+    $('#login').toggleClass("hidden");
+    $('#signup').addClass("hidden");
+  });
+
+  $('#signup-link').click(function(event) {
+    $('#login').addClass("hidden");
+    $("#signup").removeClass("hidden");
+  });
+
+  $('#signup').on("submit", function(event) {
+    $("signup").addClass("hidden");
+  });
+
+  $('#login').on("submit", function(event) {
+    $("login").addClass("hidden");
+  });
+
+  $('#logout-link').click(function(event) {
+    event.preventDefault();
+    $.ajax({
+      url: "<%= session_url %>",
+      type: "post",
+      dataType: "json",
+      data: {"_method":"delete"}, // WARNING: SLEAZE. <%# REFACTOR %>
+      success: function(data) {
+        $('#login-link').removeClass("hidden");
+        $('#logout-link').addClass("hidden");
+        $('#current-user').remove();
+      }
+    });
+
+    $('#login-link').removeClass("hidden");
+    $('#logout-link').addClass("hidden");
+    $('#current-user').remove();
+  });
+});
+</script>
 
 </body>
 </html>
