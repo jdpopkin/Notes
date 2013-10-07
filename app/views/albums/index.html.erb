@@ -1,13 +1,14 @@
 <h1>Albums</h1>
 
 <div id="content">
+  <%# TODO: prevent default (keep an entry for being added in history) %>
   <a href="#albums/new">Add new album</a>
 </div>
 
 <ul>
-<% @album.each do |album| %>
+<% @albums.each do |album| %>
   <li>
-    <%= link_to album.name, album_url(album) %>
+    <%= link_to album.title, album_url(album) %>
   </li>
 <% end %>
 </ul>

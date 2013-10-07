@@ -1,11 +1,12 @@
 <h1>Artists</h1>
 
 <div id="content">
+  <%# TODO: prevent default (keep an entry for being added in history) %>
   <a href="#artists/new">Add new artist</a>
 </div>
 
 <ul>
-<% @artist.each do |artist| %>
+<% @artists.each do |artist| %>
   <li>
     <%= link_to artist.name, artist_url(artist) %>
   </li>

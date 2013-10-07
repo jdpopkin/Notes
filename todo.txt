@@ -24,6 +24,8 @@ Find a way to rate songs (either by votes or ideally by recent votes).
 Should the root use Backbone? Currently it only needs to show and hide the login
 form.
 
+Would it be possible to have a dropdown list of artists load dynamically as you type?
+
 We should be able to deep link to particular albums, artists, and songs, so that
 stuff should NOT be done via Backbone.
 
@@ -31,3 +33,5 @@ http://jquery.10927.n7.nabble.com/jQuery-specific-selected-highlighted-text-td87
 
 Short term stuff: write index and show pages for artists and albums. Add some capacity
 to edit and update song, artist, and album pages.
+
+Show pages for artist and album needed.

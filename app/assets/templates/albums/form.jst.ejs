@@ -1,0 +1,17 @@
+<form class="album-form" action="<%= url %>" method="<%= method %>">
+  <label>
+    Album title
+    <input type="text" name="album[title]" value="<%= album.title %>">
+  </label>
+
+  <label>
+    Artist
+    <select name="album[artist_id]">
+      <!-- TODO: dynamically populate this using collection of artists -->
+      <option value="1">Artist Name</option>
+      <option value="2">Artist 2</option>
+    </select>
+  </label>
+
+  <input type="submit" value="Add album!">
+</form>

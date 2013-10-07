@@ -1,0 +1,27 @@
+<div id="content">
+  <h2><%= @artist.name %></h2>
+
+  <ul id='song-list'>
+    <% @artist.songs.each do |song| %>
+      <li>
+        <%= link_to song.title, song_url(song) %>
+      </li>
+    <% end %>
+  </ul>
+
+</div>
+
+<script id="bootstrapped_artist_json" type="application/json">
+  <%# bootstrap current artist here. TODO: should we mark this HTML-safe? %>
+  <%= @artist.to_json.html_safe %>
+</script>
+
+<script>
+  <%# TODO: do we need any of this? %>
+  // console.log($("#bootstrapped_artist_json").html());
+//   var artist = JSON.parse($("#bootstrapped_artist_json").html());
+//
+//   Notes.initialize("<%= root_url %>");
+//   new Notes.Routers.ShowArtistRouter($('#content'), artist);
+//   Backbone.history.start();
+</script>
