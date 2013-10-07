@@ -3,13 +3,13 @@ class CreateSongs < ActiveRecord::Migration
     create_table :songs do |t|
       t.string :title, null: false
       t.text :lyrics, null: false
-      t.integer :album
-      t.integer :artist
+      t.integer :album_id
+      t.integer :artist_id
 
       t.timestamps
     end
 
-    add_index :songs, :album
-    add_index :songs, :artist
+    add_index :songs, :album_id
+    add_index :songs, :artist_id
   end
 end

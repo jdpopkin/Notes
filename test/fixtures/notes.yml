@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  song_id: 1
+  author_id: 1
+  body: MyText
+  start_index: 1
+  end_index: 1
+
+two:
+  song_id: 1
+  author_id: 1
+  body: MyText
+  start_index: 1
+  end_index: 1

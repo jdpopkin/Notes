@@ -1,0 +1,4 @@
+TODO
+
+Need comments on Notes. Need Votes (on songs, notes, and comments of all kinds).
+Need sessions controller etc.
