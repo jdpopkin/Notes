@@ -1,6 +1,12 @@
 Notes::Application.routes.draw do
   root to: "root#root"
 
+  resource :session, only: [:create, :new, :destroy]
+  resources :users, only: [:create]
+  resources :artists
+  resources :songs
+  resources :albums
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

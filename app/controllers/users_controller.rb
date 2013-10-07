@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
     if @user.save
       self.current_user = @user
-      redirect_to user_url(@user) # change this
+      redirect_to root_url # TODO change this link
     else
       render :json => @user.errors.full_messages
     end
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       render :show
     else
-      redirect_to user_url(current_user) # change this
+      redirect_to user_url(current_user) # TODO change this link
     end
   end
 end

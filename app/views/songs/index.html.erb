@@ -1,0 +1,23 @@
+<h1>Songs</h1>
+
+<%#= link_to "Add new song", new_song_url %>
+<div id="content">
+  <a href="#songs/new">Add new song</a>
+</div>
+
+<ul>
+<% @songs.each do |song| %>
+  <li>
+    <%= link_to song.title, song_url(song) %>
+  </li>
+<% end %>
+</ul>
+
+<script type="application/javascript">
+  // load songs router in backbone?
+  // yes. need separate song-show and song-index router... idk
+
+  Notes.initialize("<%= root_url %>");
+  new Notes.Routers.SongsRouter($('#content'));
+  Backbone.history.start();
+</script>

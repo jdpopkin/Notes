@@ -1,0 +1,21 @@
+<div id="content">
+  <h2><%= @song.title %></h2>
+
+  <p class="lyrics">
+    <%= @song.lyrics %>
+  </p>
+</div>
+
+<script id="bootstrapped_song_json" type="application/json">
+  <%# bootstrap current song here. TODO: should we mark this HTML-safe? %>
+  <%= @song.to_json.html_safe %>
+</script>
+
+<script>
+  console.log($("#bootstrapped_song_json").html());
+  var song = JSON.parse($("#bootstrapped_song_json").html());
+
+  Notes.initialize("<%= root_url %>");
+  new Notes.Routers.ShowSongRouter($('#content'), song);
+  Backbone.history.start();
+</script>

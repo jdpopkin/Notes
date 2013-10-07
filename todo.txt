@@ -22,3 +22,11 @@ Backbone with multiple routers? Do we simply initialize a different router on
 each page?
 
 Find a way to rate songs (either by votes or ideally by recent votes).
+
+Should the root use Backbone? Currently it only needs to show and hide the login
+form.
+
+We should be able to deep link to particular albums, artists, and songs, so that
+stuff should NOT be done via Backbone.
+
+http://jquery.10927.n7.nabble.com/jQuery-specific-selected-highlighted-text-td87729.html

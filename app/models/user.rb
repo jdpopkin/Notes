@@ -1,29 +1,42 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :password_hash, :username, :session_token
+  attr_accessible :username, :password, :email
+  attr_reader :password
 
-  before_filter :require_current_user!, :only => [:show]
-  before_filter :require_no_current_user!, :only => [:create, :new]
+  validates :password_digest, :presence => { :message => "Password can't be blank" }
+  validates :password, :length => { :minimum => 6, :allow_nil => true }
+  validates :session_token, :presence => true
+  validates :username, :presence => true
 
-  def create
-    @user = User.new(params[:user])
+  after_initialize :ensure_session_token
 
-    if @user.save
-      self.current_user = @user
-      redirect_to user_url(@user)
-    else
-      render :json => @user.errors.full_messages
-    end
+  def self.find_by_credentials(username, password)
+    user = User.find_by_username(username)
+
+    return nil if user.nil?
+
+    user.is_password?(password) ? user : nil
   end
 
-  def new
-    @user = User.new
+  def self.generate_session_token
+    SecureRandom::urlsafe_base64(16)
   end
 
-  def show
-    if params.include?(:id)
-      @user = User.find(params[:id])
-    else
-      redirect_to user_url(current_user)
-    end
+  def is_password?(password)
+    BCrypt::Password.new(self.password_digest).is_password?(password)
+  end
+
+  def password=(password)
+    @password = password
+    self.password_digest = BCrypt::Password.create(password)
+  end
+
+  def reset_session_token!
+    self.session_token = self.class.generate_session_token
+    self.save!
+  end
+
+  private
+  def ensure_session_token
+    self.session_token ||= self.class.generate_session_token
   end
 end

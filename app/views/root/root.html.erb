@@ -2,16 +2,24 @@
 
 <label> Search <input type="text" name="search[query]"> </label>
 
-<%#= link_to "Artists", artists_url %>
-<%#= link_to "Albums", albums_url %>
-<%#= link_to "Songs", songs_url %>
-<a href="#/sign_in">Sign In</a>
-<div id="login" class="hidden">
+<%= link_to "Artists", artists_url %>
+<%= link_to "Albums", albums_url %>
+<%= link_to "Songs", songs_url %>
+<a id="login-link" href="#/sign_in">Sign In</a>
+<form id="login" class="hidden" action="<%= session_url %>" method="POST">
   <label>Username <input type="text" name="user[username]"></label>
   <label>Password <input type="password" name="user[password]"></label>
-  <button>Sign In</button>
-  <a href="<%#= new_user_url %>">Sign Up</a>
-</div>
+  <input type="submit" value="Sign In">
+  <a id="signup-link" href="#<%#= new_user_url %>">Sign Up</a>
+</form>
+
+<form id="signup" class="hidden" action="<%= users_url %>" method="POST">
+  <label>Email <input type="text" name="user[email]"></label>
+  <label>Username <input type="text" name="user[username]"></label>
+  <label>Password <input type="password" name="user[password]"></label>
+  <input type="submit" value="Sign Up">
+  <!-- # TODO password confirmation -->
+</form>
 
 <div class="featured-content">
 <h2>Featured Songs</h2>
@@ -28,3 +36,26 @@
 <h2>Recent Content</h2>
 <!-- Code for recent content -->
 </div>
+
+<script type="application/javascript">
+  <% # TODO replace this with Backbone... %>
+  $(document).ready(function() {
+    $('#login-link').click(function(event) {
+      $('#login').toggleClass("hidden");
+      $('#signup').addClass("hidden");
+    });
+
+    $('#signup-link').click(function(event) {
+      $('#login').addClass("hidden");
+      $("#signup").removeClass("hidden");
+    });
+
+    $('#signup').on("submit", function(event) {
+      $("signup").addClass("hidden");
+    });
+
+    $('#login').on("submit", function(event) {
+      $("login").addClass("hidden");
+    });
+  })
+</script>
