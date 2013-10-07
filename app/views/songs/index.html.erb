@@ -12,11 +12,25 @@
 <% end %>
 </ul>
 
+<script type="application/json" id="bootstrapped_albums_json">
+  <%# TODO: figure out how to get only those albums made by artist already selected %>
+  <%= Album.all.to_json.html_safe %>
+</script>
+
+<script type="application/json" id="bootstrapped_artists_json">
+  <%= Artist.all.to_json.html_safe %>
+</script>
+
 <script type="application/javascript">
+  <%# TODO: prepend link to newly created song on form submit %>
   // load songs router in backbone?
   // yes. need separate song-show and song-index router... idk
-
   Notes.initialize("<%= root_url %>");
+  console.log($('#bootstrapped_albums_json').html());
+  Notes.Albums = JSON.parse($('#bootstrapped_albums_json').html());
+  Notes.Artists = JSON.parse($('#bootstrapped_artists_json').html());
+
+
   new Notes.Routers.SongsRouter($('#content'));
   Backbone.history.start();
 </script>

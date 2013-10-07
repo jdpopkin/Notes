@@ -18,10 +18,10 @@
 
 <script>
   <%# TODO: do we need any of this? %>
-  console.log($("#bootstrapped_album_json").html());
-  var album = JSON.parse($("#bootstrapped_album_json").html());
-
-  Notes.initialize("<%= root_url %>");
-  new Notes.Routers.ShowAlbumRouter($('#content'), album);
-  Backbone.history.start();
+  // console.log($("#bootstrapped_album_json").html());
+  // var album = JSON.parse($("#bootstrapped_album_json").html());
+  //
+  // Notes.initialize("<%= root_url %>");
+  // new Notes.Routers.ShowAlbumRouter($('#content'), album); // TODO: what is this
+  // Backbone.history.start();
 </script>

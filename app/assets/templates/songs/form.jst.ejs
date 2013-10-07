@@ -8,8 +8,13 @@
     Artist
     <select name="song[artist_id]">
       <!-- TODO: dynamically populate this using collection of artists -->
-      <option value="1">Artist Name</option>
-      <option value="2">Artist 2</option>
+        <!-- <option value="1">Artist Name</option>
+          <option value="2">Artist 2</option> -->
+
+          <% for (var i = 0; i < Notes.Artists.length; i++) { %>
+            <% var artist = Notes.Artists[i]; %>
+            <option value="<%= artist.id %>"><%= artist.name %></option>
+          <% } %>
     </select>
   </label>
 
@@ -18,15 +23,18 @@
     <select name="song[album_id]">
       <option value="0">No album</option>
       <!-- TODO: dynamically generate options past here -->
-      <option value="1">Album Name</option>
+      <!-- <option value="1">Album Name</option> -->
+
+      <% for (var i = 0; i < Notes.Albums.length; i++) { %>
+        <% var album = Notes.Albums[i]; %>
+        <option value="<%= album.id %>"><%= album.title %></option>
+      <% } %>
     </select>
   </label>
 
   <label>
     Lyrics
-    <textarea name="song[lyrics]">
-      <%= song.lyrics %>
-    </textarea>
+    <textarea name="song[lyrics]"><%= song.lyrics %></textarea>
   </label>
 
   <input type="submit" value="Add song!">

@@ -3,6 +3,8 @@ window.Notes = {
   Collections: {},
   Views: {},
   Routers: {},
+  Artists: [],
+  Albums: [],
   initialize: function(rootUrl) {
     Notes.rootUrl = rootUrl;
   }

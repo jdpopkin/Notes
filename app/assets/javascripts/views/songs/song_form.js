@@ -1,6 +1,7 @@
 Notes.Views.SongForm = Backbone.View.extend({
-  initialize: function() {
-
+  initialize: function(albums, artists) {
+    this.albums = albums;
+    this.artists = artists;
   },
 
   events: {
