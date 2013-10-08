@@ -28,7 +28,9 @@ Notes.Views.SongShow = Backbone.View.extend({
   },
 
   addNotes: function(renderedContent) {
-    var pStart = renderedContent.indexOf('<p id="lyrics">');
+    var pStart = renderedContent.indexOf('<p id="lyrics">') + '<p id="lyrics">'.length;
+    this.pStart = pStart;
+    console.log(this.notes)
     for (var i = 0; i < this.notes.length; i++) {
       var note = this.notes[i];
       var substringEnd = pStart + note.end_index;
@@ -64,6 +66,7 @@ Notes.Views.SongShow = Backbone.View.extend({
       data: formData,
       success: function() {
         console.log("success");
+        //that.render();
       }
     });
 
@@ -130,7 +133,7 @@ Notes.Views.SongShow = Backbone.View.extend({
 
     // Add button and highlighted span from start of selection to end of
     // selection
-    var startIndex = lowEnd + this.selStartIndex(sel);
+    var startIndex = this.selStartIndex(sel) + lowEnd;
     var endIndex = startIndex + (highEnd - lowEnd);
 
     htmlCopy = that.addHighlight(htmlCopy, startIndex, endIndex);
@@ -138,14 +141,16 @@ Notes.Views.SongShow = Backbone.View.extend({
     $("#lyrics").html(htmlCopy);
   },
 
+  // Index within HTML of p element. Used for finding selection to highlight.
   selStartIndex: function(sel) {
     var node = sel.anchorNode.previousSibling;
     var sum = 0;
+    var bigString = "";
 
     while (node) {
       var container = document.createElement("div");
       container.appendChild(node.cloneNode());
-
+      bigString += container.innerHTML;
       sum += container.innerHTML.length;
 
       node = node.previousSibling;
@@ -154,9 +159,12 @@ Notes.Views.SongShow = Backbone.View.extend({
       }
     }
 
+    console.log(bigString);
+
     return sum;
   },
 
+  // Finds text (NOT HTML) within p (prior to lowEnd) and returns length of this text.
   findStartIndex: function(lowEnd) {
     var $p = $("#lyrics");
     var $div = $("<div></div>");
@@ -166,7 +174,7 @@ Notes.Views.SongShow = Backbone.View.extend({
     $div.append(slicedP);
 
     console.log($div.text());
-    console.log($div.text().length);
+    //console.log($div.text().length);
     return $div.text().length;
   },
 
@@ -179,8 +187,8 @@ Notes.Views.SongShow = Backbone.View.extend({
       songId: this.song.id,
       currentUser: Notes.currentUser,
       authToken: Notes.authToken,
-      lowEnd: lowEnd,
-      highEnd: highEnd
+      lowEnd: startIndex, // lowEnd,
+      highEnd: startIndex + (highEnd - lowEnd) // highEnd
     });
 
     var buttonHtml = "<div class='add-note'>".concat(formString).concat("</div>");
