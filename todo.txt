@@ -59,3 +59,6 @@ innerText.length of this div.
 
 Or: JQuery to find start of <p>, then call $p.html(), then slice from 0 to start
 of selection (index of highlight).
+
+Awesome hack to strip html tags from selection (or get html from selection):
+http://jsfiddle.net/dKaJ3/2/
