@@ -12,10 +12,21 @@
 </script>
 
 <script>
-  console.log($("#bootstrapped_song_json").html());
-  var song = JSON.parse($("#bootstrapped_song_json").html());
+  $(document).ready(function() {
+    // console.log($("#bootstrapped_song_json").html());
+    var song = JSON.parse($("#bootstrapped_song_json").html());
 
-  Notes.initialize("<%= root_url %>");
-  new Notes.Routers.ShowSongRouter($('#content'), song);
-  Backbone.history.start();
+    Notes.initialize("<%= root_url %>");
+
+    <% if current_user %>
+      <% id = current_user.id %>
+    <% else %>
+      <% id = 0 %>
+    <% end %>
+    Notes.currentUser = <%= id %>;
+    Notes.authToken = "<%= form_authenticity_token %>"
+
+    new Notes.Routers.ShowSongRouter($('#content'), song);
+    Backbone.history.start();
+  })
 </script>

@@ -5,6 +5,7 @@
 .add-note {
   position: absolute;
   left: 450px;
+  border: 1px solid white;
 }
 
 .note {
@@ -16,5 +17,5 @@
 }
 
 .highlighted {
-  color: lightblue;
+  background-color: lightblue;
 }

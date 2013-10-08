@@ -1,6 +1,6 @@
 <form class="artist-form" action="<%= url %>" method="<%= method %>">
   <input type="hidden" name="authenticity_token" value="<%= authToken %>">
-  <input type="hidden" name="artist[user_id]" value="<% currentUser %>">
+  <input type="hidden" name="artist[user_id]" value="<%= currentUser %>">
 
   <label>
     Artist name

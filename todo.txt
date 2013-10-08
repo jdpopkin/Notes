@@ -41,3 +41,8 @@ Add notes. Dynamically get the y coordinate of the bottom of the selection area.
 X coordinate will not be dynamic - set a manual width for the div containing the
 lyrics, and set the X coordinate of the note object to be 30px to the right of
 that or whatever.
+
+To get the offset correct, you need to calculate the total length of all notes on
+the current song which start earlier in the song. This would need to be updated upon
+note deletion. Or perhaps instead: the offset from the end of the previous note?
+Solution may involve use of nextSibling and previousSibling in the anchorNode.
