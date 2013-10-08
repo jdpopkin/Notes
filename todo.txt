@@ -37,4 +37,7 @@ it absolute positioning.
 Short term stuff: Add some capacity to edit and update song, artist, and album
 pages.
 
-
+Add notes. Dynamically get the y coordinate of the bottom of the selection area.
+X coordinate will not be dynamic - set a manual width for the div containing the
+lyrics, and set the X coordinate of the note object to be 30px to the right of
+that or whatever.

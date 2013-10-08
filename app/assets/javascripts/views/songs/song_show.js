@@ -8,7 +8,7 @@ Notes.Views.SongShow = Backbone.View.extend({
   events: {
     // TODO: determine if it is safe to use JQuery's .on("select") and not this
     "mouseup .lyrics": "handleSelect",
-
+    "mousedown .lyrics": "startSelect"
   },
 
   render: function() {
@@ -21,15 +21,30 @@ Notes.Views.SongShow = Backbone.View.extend({
     return that;
   },
 
+  startSelect: function(event) {
+    var that = this;
+
+    that.initialX = event.pageX;
+    that.initialY = event.pageY;
+  },
+
   handleSelect: function(event) {
     var that = this;
     // HTML breaks if we don't do this.
     if ($(".add-note").length > 0) {
       $(".add-note").remove();
+
+      // removeClass("highlighted");
+      $(".highlighted").replaceWith($(".highlighted").html());
+      // $(".lyrics").html(html.replace("<span class='highlighted>", ""));
+      // $(".lyrics").html(html.replace("</span>", ""));
+
       var htmlCopy = $(".lyrics").html();
       $(".lyrics").html(htmlCopy);
       return;
     }
+
+    console.log(event);
 
     var sel = window.getSelection();
 
@@ -49,8 +64,24 @@ Notes.Views.SongShow = Backbone.View.extend({
     console.log(highEnd);
 
     var htmlCopy = $(".lyrics").html();
-    htmlCopy = that.addButton(htmlCopy, highEnd);
+
+    // Add button to the right of selection
+    // htmlCopy = that.addButton(htmlCopy, highEnd);
+
+    // Add button and highlighted span from start of selection to end of
+    // selection
+    htmlCopy = that.addHighlight(htmlCopy, lowEnd, highEnd);
+
     $(".lyrics").html(htmlCopy);
+  },
+
+  addHighlight: function(htmlCopy, lowEnd, highEnd) {
+    var buttonHtml = "<span class='add-note'><img src='http://www.w3schools.com/images/compatible_safari.gif'></span>";
+    var stringStart = htmlCopy.slice(0, lowEnd).concat("<span class='highlighted'>");
+    var stringMiddle = htmlCopy.slice(lowEnd, highEnd).concat("</span>").concat(buttonHtml);
+    var stringEnd = htmlCopy.slice(highEnd);
+
+    return stringStart.concat(stringMiddle).concat(stringEnd);
   },
 
   addButton: function(htmlCopy, highEnd) {
