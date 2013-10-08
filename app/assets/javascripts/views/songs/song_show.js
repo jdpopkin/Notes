@@ -29,7 +29,6 @@ Notes.Views.SongShow = Backbone.View.extend({
 
   addNotes: function(renderedContent) {
     var pStart = renderedContent.indexOf('<p id="lyrics">');
-    console.log(pStart);
     for (var i = 0; i < this.notes.length; i++) {
       var note = this.notes[i];
       var substringEnd = pStart + note.end_index;
@@ -146,7 +145,6 @@ Notes.Views.SongShow = Backbone.View.extend({
     while (node) {
       var container = document.createElement("div");
       container.appendChild(node.cloneNode());
-      console.log(container.innerHTML);
 
       sum += container.innerHTML.length;
 
@@ -159,9 +157,24 @@ Notes.Views.SongShow = Backbone.View.extend({
     return sum;
   },
 
+  findStartIndex: function(lowEnd) {
+    var $p = $("#lyrics");
+    var $div = $("<div></div>");
+    var p = $p.html();
+
+    var slicedP = p.slice(0, lowEnd);
+    $div.append(slicedP);
+
+    console.log($div.text());
+    console.log($div.text().length);
+    return $div.text().length;
+  },
+
   addHighlight: function(htmlCopy, lowEnd, highEnd) {
     // Image to test if the add-note div is broken.
     // <img src='http://www.w3schools.com/images/compatible_safari.gif'>
+    var startIndex = this.findStartIndex(lowEnd);
+
     var formString = JST["notes/form"]({
       songId: this.song.id,
       currentUser: Notes.currentUser,

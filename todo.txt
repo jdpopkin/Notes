@@ -51,3 +51,11 @@ YES use previousSibling over and over until you get to null. add data.length for
 
 On load: sort notes by start_index. Add them one at a time starting at the back.
 Make them invisible and display them on click.
+
+To calculate the offset needed by a new link, create a div stretching from the start
+of the <p> to the spot right before the start of the selection (use cloneNode()).
+The offset will be the difference between the innerHTML.length and the
+innerText.length of this div.
+
+Or: JQuery to find start of <p>, then call $p.html(), then slice from 0 to start
+of selection (index of highlight).
