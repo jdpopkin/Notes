@@ -6,6 +6,11 @@
       <%= song.lyrics %>
     </p>
   </div>
+
+  <% _.each(notes, function(note) { %>
+    <% console.log("here") %>
+    <div class="note hidden" data-id="<%= note.id %>"><p><%= note.body %></p></div>
+  <% }) %>
 </div>
 
-<%  /*TODO: set up comment and note handling.*/ %>
+<!--  /*TODO: set up comment and note handling.*/ -->
