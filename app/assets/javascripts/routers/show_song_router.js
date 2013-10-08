@@ -1,7 +1,8 @@
 Notes.Routers.ShowSongRouter = Backbone.Router.extend({
-  initialize: function($rootEl, song) {
+  initialize: function($rootEl, song, notes) {
     this.$rootEl = $rootEl;
     this.song = song;
+    this.notes = notes;
   },
 
   routes: {
@@ -13,7 +14,7 @@ Notes.Routers.ShowSongRouter = Backbone.Router.extend({
   show: function() {
     // TODO: see what we get out of making song a model and passing it
     var that = this;
-    var showSong = new Notes.Views.SongShow(that.song);
+    var showSong = new Notes.Views.SongShow(that.song, that.notes);
     that.$rootEl.html(showSong.render().$el);
     // if ($(".lyrics")) {
 //       console.log("In the if.");

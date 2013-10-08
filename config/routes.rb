@@ -6,6 +6,7 @@ Notes::Application.routes.draw do
   resources :artists
   resources :songs
   resources :albums
+  resources :notes
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,7 +1,7 @@
 <div id="content">
   <h2><%= @song.title %></h2>
 
-  <p class="lyrics">
+  <p id="lyrics">
     <%= @song.lyrics %>
   </p>
 </div>
@@ -11,10 +11,17 @@
   <%= @song.to_json.html_safe %>
 </script>
 
+<script id="bootstrapped_notes_json" type="application/json"><%= @song.notes.order("start_index DESC").to_json.html_safe %></script>
+
 <script>
   $(document).ready(function() {
     // console.log($("#bootstrapped_song_json").html());
     var song = JSON.parse($("#bootstrapped_song_json").html());
+    var rawNotes = $("#bootstrapped_notes_json").html();
+    console.log(rawNotes);
+    if (rawNotes) {
+      var notesData = JSON.parse(rawNotes);
+    }
 
     Notes.initialize("<%= root_url %>");
 
@@ -26,7 +33,10 @@
     Notes.currentUser = <%= id %>;
     Notes.authToken = "<%= form_authenticity_token %>"
 
-    new Notes.Routers.ShowSongRouter($('#content'), song);
+    Notes.currentNotes = new Notes.Collections.Notes(notesData); // (notesData);
+
+
+    new Notes.Routers.ShowSongRouter($('#content'), song, notesData);
     Backbone.history.start();
   })
 </script>

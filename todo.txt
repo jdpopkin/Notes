@@ -46,3 +46,8 @@ To get the offset correct, you need to calculate the total length of all notes o
 the current song which start earlier in the song. This would need to be updated upon
 note deletion. Or perhaps instead: the offset from the end of the previous note?
 Solution may involve use of nextSibling and previousSibling in the anchorNode.
+
+YES use previousSibling over and over until you get to null. add data.length for each.
+
+On load: sort notes by start_index. Add them one at a time starting at the back.
+Make them invisible and display them on click.

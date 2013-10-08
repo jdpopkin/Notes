@@ -1,26 +1,74 @@
 Notes.Views.SongShow = Backbone.View.extend({
 
-  initialize: function(song) {
+  initialize: function(song, notes) {
     var that = this;
     that.song = song; // TODO: determine if this should use a model instead
+    that.notes = notes;
     that.keepBox = false;
   },
 
   events: {
     // TODO: determine if it is safe to use JQuery's .on("select") and not this
     "mouseup .add-note": "keepSelect",
-    "mouseup .lyrics": "handleSelect",
-    "mousedown .lyrics": "startSelect"
+    "mouseup #lyrics": "handleSelect",
+    "mousedown #lyrics": "startSelect",
+    "submit .add-note-form": "createNote"
   },
 
   render: function() {
     var that = this;
+    console.log(that.notes);
 
     var renderedContent = JST["songs/show"]( { song: that.song } );
+    renderedContent = that.addNotes(renderedContent);
 
     that.$el.html(renderedContent);
 
     return that;
+  },
+
+  addNotes: function(renderedContent) {
+    var pStart = renderedContent.indexOf('<p id="lyrics">');
+    console.log(pStart);
+    for (var i = 0; i < this.notes.length; i++) {
+      var note = this.notes[i];
+      var substringEnd = pStart + note.end_index;
+      var substringStart = pStart + note.start_index;
+
+      var contentEnd = renderedContent.slice(substringEnd);
+      var contentMiddle = renderedContent.slice(substringStart, substringEnd);
+      var contentStart = renderedContent.slice(0, substringStart);
+
+      contentMiddle = "<a href='#' data-id=" + note.id + ">" + contentMiddle + "</a>";
+      console.log(contentMiddle);
+      renderedContent = contentStart + contentMiddle + contentEnd;
+    }
+    return renderedContent;
+  },
+
+  createNote: function(event) {
+    var that = this;
+    event.preventDefault();
+
+    var formData = $(event.currentTarget).serializeJSON();
+
+    /*
+    var note = new Notes.Models.Note(formData.note);
+    Notes.currentNotes.add(note);
+    console.log(Notes.currentNotes.url);
+    Notes.currentNotes.sync();
+    */
+
+    $.ajax({
+      url: "/notes",
+      type: "POST",
+      data: formData,
+      success: function() {
+        console.log("success");
+      }
+    });
+
+    //that.render();
   },
 
   keepSelect: function(event) {
@@ -38,7 +86,7 @@ Notes.Views.SongShow = Backbone.View.extend({
   handleSelect: function(event) {
     var that = this;
     var sel = window.getSelection();
-    console.log(event)
+    console.log(sel);
 
     if (that.keepBox) {
       that.keepBox = false;
@@ -52,38 +100,63 @@ Notes.Views.SongShow = Backbone.View.extend({
       // removeClass("highlighted");
       $(".highlighted").replaceWith($(".highlighted").html());
 
-      var htmlCopy = $(".lyrics").html();
-      $(".lyrics").html(htmlCopy);
+      var htmlCopy = $("#lyrics").html();
+      $("#lyrics").html(htmlCopy);
       return;
     }
-
-    console.log(event);
 
     // handle case of highlighting outside bounds of lyrics
     if (sel.anchorNode !== sel.focusNode) {
       return;
     }
 
-    console.log(sel);
+    // do nothing if no range of text is highlighted.
+    // without this, every click creates a form.
+    if (sel.type !== "Range") {
+      return;
+    }
 
     var range = sel.getRangeAt(0);
     //var contents = range.cloneContents();
 
-    var lowEnd = sel.extentOffset < sel.baseOffset ? sel.extentOffset : sel.baseOffset;
-    var highEnd = sel.extentOffset < sel.baseOffset ? sel.baseOffset : sel.extentOffset;
+    var lowEnd = sel.focusOffset < sel.anchorOffset ? sel.focusOffset : sel.anchorOffset;
+    var highEnd = sel.focusOffset < sel.anchorOffset ? sel.anchorOffset : sel.focusOffset;
     console.log(lowEnd);
     console.log(highEnd);
 
-    var htmlCopy = $(".lyrics").html();
+    var htmlCopy = $("#lyrics").html();
 
     // Add button to the right of selection
     // htmlCopy = that.addButton(htmlCopy, highEnd);
 
     // Add button and highlighted span from start of selection to end of
     // selection
-    htmlCopy = that.addHighlight(htmlCopy, lowEnd, highEnd);
+    var startIndex = lowEnd + this.selStartIndex(sel);
+    var endIndex = startIndex + (highEnd - lowEnd);
 
-    $(".lyrics").html(htmlCopy);
+    htmlCopy = that.addHighlight(htmlCopy, startIndex, endIndex);
+
+    $("#lyrics").html(htmlCopy);
+  },
+
+  selStartIndex: function(sel) {
+    var node = sel.anchorNode.previousSibling;
+    var sum = 0;
+
+    while (node) {
+      var container = document.createElement("div");
+      container.appendChild(node.cloneNode());
+      console.log(container.innerHTML);
+
+      sum += container.innerHTML.length;
+
+      node = node.previousSibling;
+      if (node === undefined) {
+        break;
+      }
+    }
+
+    return sum;
   },
 
   addHighlight: function(htmlCopy, lowEnd, highEnd) {
