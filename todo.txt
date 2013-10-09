@@ -93,3 +93,5 @@ Split the votes found via activerecord into separate parts. for each of these pa
 associate them with the json... no. One big jsonified array. Loop through it for each
 element and filter by both votable_type and votable_id. This adds time quadratic
 to the number of votable elements on the page (in the worst case).
+
+.methods to include outcome of method call in json object. Use .as_json(methods: :vote_total).

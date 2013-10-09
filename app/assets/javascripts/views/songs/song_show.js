@@ -58,7 +58,6 @@ Notes.Views.SongShow = Backbone.View.extend({
   addNotes: function(renderedContent) {
     var pStart = renderedContent.indexOf('<p id="lyrics">') + '<p id="lyrics">'.length;
     this.pStart = pStart;
-    console.log(this.notes)
     for (var i = 0; i < this.notes.length; i++) {
       var note = this.notes[i];
       var substringEnd = pStart + note.end_index;
