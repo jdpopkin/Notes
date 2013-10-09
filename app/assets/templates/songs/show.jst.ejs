@@ -28,10 +28,13 @@
     </form>
   <% } %>
 
-  <% _.each(song.comments, function(comment) { %>
-    <%= JST["comments/show"]({
-      comment: comment
-    })%>
-  <% }) %>
+  <div class="song-comments">
+    Comments on this song:
+    <% _.each(song.comments, function(comment) { %>
+      <%= JST["comments/show"]({
+        comment: comment
+      })%>
+    <% }) %>
+  </div>
 </div>
 

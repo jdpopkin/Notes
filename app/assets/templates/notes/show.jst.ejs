@@ -12,4 +12,13 @@
       </label>
     </form>
   <% } %>
+
+  <div class="note-comments">
+    Comments on this note:
+    <% _.each(note.comments, function(comment) { %>
+      <%= JST["comments/show"]({
+        comment: comment
+      })%>
+    <% }) %>
+  </div>
 </div>
