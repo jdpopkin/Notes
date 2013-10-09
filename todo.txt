@@ -67,4 +67,4 @@ Farm note display out into a template. Within the template, call another
 template which adds comments. These will be added recursively; see the Reddit
 clone for details. Issues: do we need authenticity token in the add-comment form?
 Do we need to set up polymorphic associations on comments to make comments on both
-songs and notes?
+songs and notes? Polymorphic name: commentable. Eww

@@ -4,4 +4,5 @@ class Song < ActiveRecord::Base
   belongs_to :artist
   belongs_to :user
   has_many :notes
+  has_many :comments, as: :commentable
 end
