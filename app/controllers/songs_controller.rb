@@ -7,8 +7,7 @@ class SongsController < ApplicationController
   end
 
   def show
-    @song = Song.find(params[:id])
-
+    @song = Song.find(params[:id], include: [:comments, notes: :comments])
     render :show
   end
 
