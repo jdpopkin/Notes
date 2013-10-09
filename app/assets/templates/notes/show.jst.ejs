@@ -1,0 +1,13 @@
+<div class="note hidden" data-id="<%= note.id %>">
+  <p><%= note.body %></p>
+  <% if (currentUser) { %>
+    <form class="note-comment-form" action="#comment" method="POST">
+      <input type="hidden" name="comment[author_id]" value="<%= currentUser %>">
+      <label>
+        Comment on this!
+        <textarea name="comment[body]"></textarea>
+        <input type="submit" value="Submit comment">
+      </label>
+    </form>
+  <% } %>
+</div>
