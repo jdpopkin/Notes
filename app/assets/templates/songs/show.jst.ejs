@@ -1,6 +1,6 @@
 <div id="content">
   <h2><%= song.title %></h2>
-  Score: <%= song.total_votes %>
+
   <%= JST["votes/div"]({
     totalVotes: song.total_votes,
     currentUser: currentUser,

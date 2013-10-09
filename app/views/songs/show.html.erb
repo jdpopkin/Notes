@@ -8,7 +8,7 @@
 
 <script id="bootstrapped_song_json" type="application/json">
   <%# bootstrap current song here. TODO: should we mark this HTML-safe? %>
-  <%= @song.to_json(include: {:comments => {:include => :user}}).html_safe %>
+  <%= @song.to_json(include: {:comments => {:include => :user, :methods => :total_votes}}).html_safe %>
 
   <% if current_user
     id = current_user.id
@@ -34,7 +34,7 @@
   %>
 </script>
 
-<script id="bootstrapped_notes_json" type="application/json"><%= @song.notes.order("start_index DESC").to_json(include: {comments: {include: :user}}).html_safe %></script>
+<script id="bootstrapped_notes_json" type="application/json"><%= @song.notes.order("start_index DESC").to_json(include: {comments: {include: :user, methods: :total_votes}}).html_safe %></script>
 
 <script id="bootstrapped_votes_json" type="application/json">
   <% votes ||= [] %>
@@ -43,6 +43,7 @@
 
 <script>
   $(document).ready(function() {
+    // console.log($("#bootstrapped_song_json").html());
     // console.log($("#bootstrapped_song_json").html());
     var song = JSON.parse($("#bootstrapped_song_json").html());
     var rawNotes = $("#bootstrapped_notes_json").html();

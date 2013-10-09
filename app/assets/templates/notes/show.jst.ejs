@@ -2,6 +2,7 @@
   <p><%= note.body %></p>
   <% if (currentUser) { %>
     <%= JST["votes/div"]({
+      totalVotes:  note.total_votes,
       currentUser: currentUser,
       votableType: "Note",
       votableId: note.id

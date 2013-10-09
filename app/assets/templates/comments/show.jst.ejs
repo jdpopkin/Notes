@@ -1,6 +1,7 @@
 <div class="comment">
   <div class="comment-author"><%= comment.user.username %> posted:</div>
   <%= JST["votes/div"]({
+    totalVotes: comment.total_votes,
     currentUser: currentUser,
     votableType: "Comment",
     votableId: comment.id
