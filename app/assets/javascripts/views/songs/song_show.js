@@ -15,6 +15,7 @@ Notes.Views.SongShow = Backbone.View.extend({
     "submit .add-note-form": "createNote",
     "submit .note-comment-form": "createComment",
     "submit .song-comment-form": "createComment",
+    "submit .vote-form": "createVote",
     "click #lyrics>a": "displayNote",
     "click #lyrics": "hideNotes"
   },
@@ -68,10 +69,25 @@ Notes.Views.SongShow = Backbone.View.extend({
       var contentStart = renderedContent.slice(0, substringStart);
 
       contentMiddle = "<a href='#' data-id=" + note.id + ">" + contentMiddle + "</a>";
-      console.log(contentMiddle);
       renderedContent = contentStart + contentMiddle + contentEnd;
     }
     return renderedContent;
+  },
+
+  createVote: function(event) {
+    var that = this;
+    event.preventDefault();
+
+    var formData = $(event.currentTarget).serializeJSON();
+
+    $.ajax({
+      url: "/votes",
+      type: "POST",
+      data: formData,
+      success: function() {
+
+      }
+    });
   },
 
   createNote: function(event) {

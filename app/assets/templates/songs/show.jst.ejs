@@ -36,7 +36,6 @@
 
   <div class="song-comments">
     Comments on this song:
-    <% console.log(currentUser); %>
     <% _.each(song.comments, function(comment) { %>
       <%= JST["comments/show"]({
         comment: comment,
