@@ -79,3 +79,17 @@ the current song/note/comment?
 
 Vote buttons: should we have a separate vote form for each of these votes? They will
 hold hidden fields and only display the button.
+
+Issue: detecting that a user has already voted. The biggest problem is that we can't
+easily avoid multiple queries for this with bootstrapping. We don't want to load
+all votes on the page (potentially a lot of data, and almost all of it is irrelevant). Or do we?
+We need to derive each element's score anyway. Alternatively, give every votable element
+on the page (comments, notes, etc) a parent_song_id property. That way we can query
+all children of a given song upon loading a page, and we can add an additional filter
+related to the user so as to load the full set of votes by our user which are relevant
+to this particular page.
+
+Split the votes found via activerecord into separate parts. for each of these parts,
+associate them with the json... no. One big jsonified array. Loop through it for each
+element and filter by both votable_type and votable_id. This adds time quadratic
+to the number of votable elements on the page (in the worst case).

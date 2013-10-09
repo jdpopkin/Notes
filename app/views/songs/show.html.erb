@@ -9,18 +9,50 @@
 <script id="bootstrapped_song_json" type="application/json">
   <%# bootstrap current song here. TODO: should we mark this HTML-safe? %>
   <%= @song.to_json(include: {:comments => {:include => :user}}).html_safe %>
+
+  <% if current_user
+    id = current_user.id
+  else
+    id = 0
+  end
+  %>
+
+  <% votes = Vote.find_by_sql([<<-SQL, id, @song.id, @song.id, @song.id, @song.id])
+    SELECT votes.* FROM votes LEFT JOIN songs
+    ON votes.votable_id = songs.id AND votes.votable_type = 'Song' LEFT JOIN notes
+    ON votes.votable_id = notes.id AND votes.votable_type = 'Note' LEFT JOIN comments
+    ON votes.votable_id = comments.id AND votes.votable_type = 'Comment'
+    WHERE votes.user_id = ? AND (songs.id = ? OR notes.song_id = ? OR
+    (comments.commentable_id = ? AND comments.commentable_type = 'Song') OR
+    (comments.commentable_type = 'Note' AND comments.id IN (
+        SELECT comments.id FROM comments JOIN notes ON
+        comments.commentable_type = 'Note' AND comments.commentable_id = notes.id
+        WHERE notes.song_id = ?
+
+    )))
+    SQL
+  %>
 </script>
 
 <script id="bootstrapped_notes_json" type="application/json"><%= @song.notes.order("start_index DESC").to_json(include: {comments: {include: :user}}).html_safe %></script>
+
+<script id="bootstrapped_votes_json" type="application/json">
+  <% votes ||= [] %>
+  <%= votes.to_json.html_safe %>
+</script>
 
 <script>
   $(document).ready(function() {
     // console.log($("#bootstrapped_song_json").html());
     var song = JSON.parse($("#bootstrapped_song_json").html());
     var rawNotes = $("#bootstrapped_notes_json").html();
+    var rawVotes = $("#bootstrapped_votes_json").html();
 
     if (rawNotes) {
       var notesData = JSON.parse(rawNotes);
+    }
+    if (rawVotes) {
+      var votesData = JSON.parse(rawVotes);
     }
 
     Notes.initialize("<%= root_url %>");
@@ -35,8 +67,7 @@
 
     Notes.currentNotes = new Notes.Collections.Notes(notesData); // (notesData);
 
-
-    new Notes.Routers.ShowSongRouter($('#content'), song, notesData);
+    new Notes.Routers.ShowSongRouter($('#content'), song, notesData, votesData);
     Backbone.history.start();
   })
 </script>

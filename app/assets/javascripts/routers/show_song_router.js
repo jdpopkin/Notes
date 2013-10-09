@@ -1,8 +1,9 @@
 Notes.Routers.ShowSongRouter = Backbone.Router.extend({
-  initialize: function($rootEl, song, notes) {
+  initialize: function($rootEl, song, notes, votes) {
     this.$rootEl = $rootEl;
     this.song = song;
     this.notes = notes;
+    this.votes = votes;
   },
 
   routes: {
