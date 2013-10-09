@@ -14,7 +14,7 @@ long_lorem = Song.create(album_id: placeholder_album.id, artist_id: placeholder_
               title: "Long Lorem", user_id: placeholder_user.id)
 
 # add notes, comments to long_lorem
-start_index = long_lorem.lyrics.index("sunt")
+start_index = long_lorem.lyrics.index("sunt") + 7 # compensates for 7 whitespaces at start of <p> tag in HTML
 end_index = start_index + "sunt".length
 
 sunt_note = Note.create(author_id: placeholder_user.id, body: 'Sunt means "are."',
