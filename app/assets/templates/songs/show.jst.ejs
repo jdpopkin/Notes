@@ -8,8 +8,12 @@
   </div>
 
   <% _.each(notes, function(note) { %>
-    <% console.log("here") %>
-    <div class="note hidden" data-id="<%= note.id %>"><p><%= note.body %></p></div>
+
+    <%= JST["notes/show"]({
+      note: note,
+      currentUser: currentUser
+    })%>
+    <!-- <div class="note hidden" data-id="<%= note.id %>"><p><%= note.body %></p></div> -->
   <% }) %>
 </div>
 

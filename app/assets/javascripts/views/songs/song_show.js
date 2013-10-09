@@ -13,6 +13,7 @@ Notes.Views.SongShow = Backbone.View.extend({
     "mouseup #lyrics": "handleSelect",
     "mousedown #lyrics": "startSelect",
     "submit .add-note-form": "createNote",
+    "submit .note-comment-form": "createNoteComment",
     "click #lyrics>a": "displayNote",
     "click #lyrics": "hideNotes"
   },
@@ -44,7 +45,8 @@ Notes.Views.SongShow = Backbone.View.extend({
 
     var renderedContent = JST["songs/show"]({
        song: that.song,
-       notes: that.notes
+       notes: that.notes,
+       currentUser: Notes.currentUser
     });
     renderedContent = that.addNotes(renderedContent);
 
@@ -79,13 +81,6 @@ Notes.Views.SongShow = Backbone.View.extend({
 
     var formData = $(event.currentTarget).serializeJSON();
 
-    /*
-    var note = new Notes.Models.Note(formData.note);
-    Notes.currentNotes.add(note);
-    console.log(Notes.currentNotes.url);
-    Notes.currentNotes.sync();
-    */
-
     $.ajax({
       url: "/notes",
       type: "POST",
@@ -97,6 +92,21 @@ Notes.Views.SongShow = Backbone.View.extend({
     });
 
     //that.render();
+  },
+
+  createNoteComment: function(event) {
+    var that = this;
+    event.preventDefault();
+    var formData = $(event.currentTarget).serializeJSON();
+
+    $.ajax({
+      url: "/comments",
+      type: "POST",
+      data: formData,
+      success: function() {
+        // do nothing?
+      }
+    });
   },
 
   keepSelect: function(event) {
@@ -124,7 +134,6 @@ Notes.Views.SongShow = Backbone.View.extend({
     // HTML breaks if we don't do this.
     if ($(".add-note").length > 0) {
       $(".add-note").remove();
-
       // removeClass("highlighted");
       $(".highlighted").replaceWith($(".highlighted").html());
 
@@ -145,7 +154,6 @@ Notes.Views.SongShow = Backbone.View.extend({
     }
 
     var range = sel.getRangeAt(0);
-    //var contents = range.cloneContents();
 
     var lowEnd = sel.focusOffset < sel.anchorOffset ? sel.focusOffset : sel.anchorOffset;
     var highEnd = sel.focusOffset < sel.anchorOffset ? sel.anchorOffset : sel.focusOffset;
@@ -153,9 +161,6 @@ Notes.Views.SongShow = Backbone.View.extend({
     console.log(highEnd);
 
     var htmlCopy = $("#lyrics").html();
-
-    // Add button to the right of selection
-    // htmlCopy = that.addButton(htmlCopy, highEnd);
 
     // Add button and highlighted span from start of selection to end of
     // selection

@@ -62,3 +62,9 @@ of selection (index of highlight).
 
 Awesome hack to strip html tags from selection (or get html from selection):
 http://jsfiddle.net/dKaJ3/2/
+
+Farm note display out into a template. Within the template, call another
+template which adds comments. These will be added recursively; see the Reddit
+clone for details. Issues: do we need authenticity token in the add-comment form?
+Do we need to set up polymorphic associations on comments to make comments on both
+songs and notes?
