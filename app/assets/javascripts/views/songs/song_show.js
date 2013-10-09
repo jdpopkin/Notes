@@ -41,8 +41,6 @@ Notes.Views.SongShow = Backbone.View.extend({
 
   render: function() {
     var that = this;
-    console.log(that.notes);
-    console.log(that.song);
 
     var renderedContent = JST["songs/show"]({
        song: that.song,

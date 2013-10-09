@@ -1,0 +1,20 @@
+<% if (currentUser) { %>
+  <div class="vote">
+    <!-- Make these conditional on login and not having already voted. -->
+    <form class="vote-form">
+      <input type="hidden" name="vote[user_id]" value="<%= currentUser %>">
+      <input type="hidden" name="vote[votable_type]" value="<%= votableType %>">
+      <input type="hidden" name="vote[votable_id]" value="<%= votableId %>">
+      <input type="hidden" name="vote[value]" value="1">
+      <input type="submit" value="Upvote this">
+    </form>
+
+    <form class="vote-form">
+      <input type="hidden" name="vote[user_id]" value="<%= currentUser %>">
+      <input type="hidden" name="vote[votable_type]" value="<%= votableType %>">
+      <input type="hidden" name="vote[votable_id]" value="<%= votableId %>">
+      <input type="hidden" name="vote[value]" value="-1">
+      <input type="submit" value="Downvote this">
+    </form>
+  </div>
+<% } %>

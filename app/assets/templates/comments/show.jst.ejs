@@ -1,5 +1,10 @@
 <div class="comment">
   <div class="comment-author"><%= comment.user.username %> posted:</div>
+  <%= JST["votes/div"]({
+    currentUser: currentUser,
+    votableType: "Comment",
+    votableId: comment.id
+  }) %>
   <div class="comment-body">
     <%= comment.body %>
   </div>

@@ -76,3 +76,6 @@ Now: seed db?
 Then: add voting system. Voting will be a polymorphic class like comment. Display
 of votes and vote-buttons: don't show the vote button if the user has a vote for
 the current song/note/comment?
+
+Vote buttons: should we have a separate vote form for each of these votes? They will
+hold hidden fields and only display the button.
