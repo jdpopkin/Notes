@@ -95,3 +95,8 @@ element and filter by both votable_type and votable_id. This adds time quadratic
 to the number of votable elements on the page (in the worst case).
 
 .methods to include outcome of method call in json object. Use .as_json(methods: :vote_total).
+
+To add comments/notes in real time: add them to this.comments or this.notes. Comments
+can simply be appended to appropriate part of parent area. Notes will require a
+search through this.notes to find appropriate index (remember this.notes is
+ordered descending by start_index), then a rerender.

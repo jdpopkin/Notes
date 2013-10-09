@@ -96,14 +96,15 @@ Notes.Views.SongShow = Backbone.View.extend({
     var that = this;
     event.preventDefault();
 
-    var formData = $(event.currentTarget).serializeJSON();
+    var $target = $(event.currentTarget);
+    var formData = $target.serializeJSON();
 
     $.ajax({
       url: "/notes",
       type: "POST",
       data: formData,
       success: function() {
-        console.log("success");
+
         //that.render();
       }
     });
@@ -114,13 +115,23 @@ Notes.Views.SongShow = Backbone.View.extend({
   createComment: function(event) {
     var that = this;
     event.preventDefault();
-    var formData = $(event.currentTarget).serializeJSON();
+    var $target = $(event.currentTarget);
+    var formData = $target.serializeJSON();
 
     $.ajax({
       url: "/comments",
       type: "POST",
       data: formData,
-      success: function() {
+      success: function(data) {
+        var $songComments = $target.parents(".comment-section").children(".song-comments");
+        // feed form data into comment template
+        data.user = { username: Notes.currentUserName };
+        var newComment = JST["comments/show"]({
+          comment: data,
+          currentUser: Notes.currentUser
+        })
+        // append that to $songComments
+        $songComments.append(newComment);
         // do nothing?
       }
     });
