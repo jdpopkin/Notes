@@ -8,9 +8,7 @@
   border: 1px solid white;
 }
 
-.note {
-  position: absolute;
-}
+
 
 .lyrics-div {
   width: 400px;
@@ -25,7 +23,7 @@
 }
 
 .note {
-  position:fixed;
+  position:absolute; // fixed?
   left: 600px;
   color: white;
   border: 1px solid white;

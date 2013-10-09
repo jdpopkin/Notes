@@ -13,8 +13,20 @@
       note: note,
       currentUser: currentUser
     })%>
-    <!-- <div class="note hidden" data-id="<%= note.id %>"><p><%= note.body %></p></div> -->
   <% }) %>
+
+  <% if (currentUser) { %>
+    <form class="song-comment-form" action="#comment" method="POST">
+      <input type="hidden" name="comment[user_id]" value="<%= currentUser %>">
+      <input type="hidden" name="comment[commentable_id]" value="<%= song.id %>">
+      <input type="hidden" name="comment[commentable_type]" value="Song">
+      <label>
+        Comment on this song!
+        <textarea name="comment[body]"></textarea>
+        <input type="submit" value="Submit comment">
+      </label>
+    </form>
+  <% } %>
 </div>
 
 <!--  /*TODO: set up comment and note handling.*/ -->

@@ -13,7 +13,8 @@ Notes.Views.SongShow = Backbone.View.extend({
     "mouseup #lyrics": "handleSelect",
     "mousedown #lyrics": "startSelect",
     "submit .add-note-form": "createNote",
-    "submit .note-comment-form": "createNoteComment",
+    "submit .note-comment-form": "createComment",
+    "submit .song-comment-form": "createComment",
     "click #lyrics>a": "displayNote",
     "click #lyrics": "hideNotes"
   },
@@ -94,7 +95,7 @@ Notes.Views.SongShow = Backbone.View.extend({
     //that.render();
   },
 
-  createNoteComment: function(event) {
+  createComment: function(event) {
     var that = this;
     event.preventDefault();
     var formData = $(event.currentTarget).serializeJSON();
