@@ -73,5 +73,4 @@ The heroku problem was that someone had used heroku login previously, leading
 the computer's "heroku apps" output to be different from my actual list of apps.
 Now: seed db?
 
-Next: display usernames on comments.
 Then: add voting system.
