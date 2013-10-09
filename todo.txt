@@ -73,4 +73,6 @@ The heroku problem was that someone had used heroku login previously, leading
 the computer's "heroku apps" output to be different from my actual list of apps.
 Now: seed db?
 
-Then: add voting system.
+Then: add voting system. Voting will be a polymorphic class like comment. Display
+of votes and vote-buttons: don't show the vote button if the user has a vote for
+the current song/note/comment?

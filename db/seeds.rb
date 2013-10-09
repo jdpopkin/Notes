@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-placeholder_user = User.create(email: "asdf@asdf.com", password: "password", username: "username")
+placeholder_user = User.create(email: "asdf@asdf.com", password: "password", username: "fake_user")
 placeholder_artist = Artist.create(name: "Placeholder Artist", user_id: placeholder_user.id)
 placeholder_album = Album.create(title: "Placeholder: The Album", user_id: placeholder_user.id, artist_id: placeholder_artist.id)
 long_lorem = Song.create(album_id: placeholder_album.id, artist_id: placeholder_artist.id,
