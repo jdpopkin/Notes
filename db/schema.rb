@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131007211758) do
+ActiveRecord::Schema.define(:version => 20131009134605) do
 
   create_table "albums", :force => true do |t|
     t.string   "title"
@@ -42,19 +42,6 @@ ActiveRecord::Schema.define(:version => 20131007211758) do
 
   add_index "notes", ["author_id"], :name => "index_notes_on_author_id"
   add_index "notes", ["song_id"], :name => "index_notes_on_song_id"
-
-  create_table "song_comments", :force => true do |t|
-    t.integer  "song_id"
-    t.integer  "author_id"
-    t.text     "body"
-    t.integer  "parent_comment_id"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
-  end
-
-  add_index "song_comments", ["author_id"], :name => "index_song_comments_on_author_id"
-  add_index "song_comments", ["parent_comment_id"], :name => "index_song_comments_on_parent_comment_id"
-  add_index "song_comments", ["song_id"], :name => "index_song_comments_on_song_id"
 
   create_table "songs", :force => true do |t|
     t.string   "title",      :null => false
