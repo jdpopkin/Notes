@@ -76,15 +76,18 @@ Notes.Views.SongShow = Backbone.View.extend({
   createVote: function(event) {
     var that = this;
     event.preventDefault();
-
-    var formData = $(event.currentTarget).serializeJSON();
+    var $target = $(event.currentTarget);
+    var formData = $target.serializeJSON();
 
     $.ajax({
       url: "/votes",
       type: "POST",
       data: formData,
       success: function() {
-
+        var $voteSpan = $target.parents(".vote-container").children(".vote-span");
+        var newNum = parseInt($voteSpan.html()) + parseInt(formData.vote.value);
+        $voteSpan.html(newNum);
+        //that.render();
       }
     });
   },
