@@ -20,6 +20,7 @@ Notes.Views.SongShow = Backbone.View.extend({
   displayNote: function(event) {
     event.preventDefault();
     event.stopPropagation();
+    this.hideNotes(event);
     // create a div
     // populate it with contents of the note with the data-id assoc with the event
     // toggle it to not hidden. should we bootstrap them as hidden on page load?
