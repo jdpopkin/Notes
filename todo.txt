@@ -68,3 +68,10 @@ template which adds comments. These will be added recursively; see the Reddit
 clone for details. Issues: do we need authenticity token in the add-comment form?
 Do we need to set up polymorphic associations on comments to make comments on both
 songs and notes? Polymorphic name: commentable. Eww
+
+The heroku problem was that someone had used heroku login previously, leading
+the computer's "heroku apps" output to be different from my actual list of apps.
+Now: seed db?
+
+Next: display usernames on comments.
+Then: add voting system.

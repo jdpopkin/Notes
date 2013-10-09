@@ -8,10 +8,10 @@
 
 <script id="bootstrapped_song_json" type="application/json">
   <%# bootstrap current song here. TODO: should we mark this HTML-safe? %>
-  <%= @song.to_json(include: :comments).html_safe %>
+  <%= @song.to_json(include: {:comments => {:include => :user}}).html_safe %>
 </script>
 
-<script id="bootstrapped_notes_json" type="application/json"><%= @song.notes.order("start_index DESC").to_json(include: :comments).html_safe %></script>
+<script id="bootstrapped_notes_json" type="application/json"><%= @song.notes.order("start_index DESC").to_json(include: {comments: {include: :user}}).html_safe %></script>
 
 <script>
   $(document).ready(function() {

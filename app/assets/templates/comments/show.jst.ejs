@@ -1,1 +1,6 @@
-<div class="comment"><%= comment.body %></div>
+<div class="comment">
+  <div class="comment-author"><%= comment.user.username %> posted:</div>
+  <div class="comment-body">
+    <%= comment.body %>
+  </div>
+</div>
