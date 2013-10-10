@@ -42,6 +42,8 @@ Notes.Views.SongShow = Backbone.View.extend({
 
   render: function() {
     var that = this;
+    console.log("in render");
+    console.log(that.notes);
 
     var renderedContent = JST["songs/show"]({
        song: that.song,
@@ -56,10 +58,12 @@ Notes.Views.SongShow = Backbone.View.extend({
   },
 
   addNotes: function(renderedContent) {
+    var that = this;
     var pStart = renderedContent.indexOf('<p id="lyrics">') + '<p id="lyrics">'.length;
-    this.pStart = pStart;
-    for (var i = 0; i < this.notes.length; i++) {
-      var note = this.notes[i];
+    that.pStart = pStart;
+    console.log(that.notes);
+    for (var i = 0; i < that.notes.length; i++) {
+      var note = that.notes[i];
       var substringEnd = pStart + note.end_index;
       var substringStart = pStart + note.start_index;
 
@@ -103,9 +107,32 @@ Notes.Views.SongShow = Backbone.View.extend({
       url: "/notes",
       type: "POST",
       data: formData,
-      success: function() {
+      success: function(data) {
+        // add link first
+        // using link's position, render note div.
 
-        //that.render();
+
+        // or use that.render(); ?
+        console.log(data);
+        console.log(that.notes);
+        var newNote = data;
+        var added = false;
+        for (var i = 0; i < that.notes.length; i++) {
+          var note = that.notes[i];
+          if (newNote.start_index > note.start_index) {
+            that.notes.splice(i, 0, newNote);
+            added = true;
+            break;
+          }
+        }
+
+        if (!added) {
+          that.notes.push(newNote);
+        }
+
+        that.render();
+
+
       }
     });
 

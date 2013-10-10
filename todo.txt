@@ -100,3 +100,5 @@ To add comments/notes in real time: add them to this.comments or this.notes. Com
 can simply be appended to appropriate part of parent area. Notes will require a
 search through this.notes to find appropriate index (remember this.notes is
 ordered descending by start_index), then a rerender.
+
+Next: do this for notes. Then restrict a user's ability to vote more than once on something.
