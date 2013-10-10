@@ -21,6 +21,20 @@ class Song < ActiveRecord::Base
     total
   end
 
+  # Alias for the above function for consistency with other models. TODO: get
+  # rid of the other one; figure out what's dependent on it.
+  def score
+    total_votes
+  end
+
+  def recent_score
+    sum = 0
+    self.votes.each do |vote|
+      sum += vote.value if vote.created_at > 1.day.ago
+    end
+    sum
+  end
+
   def as_json(options = {})
     hash = super(options)
     hash["total_votes"] = self.total_votes
