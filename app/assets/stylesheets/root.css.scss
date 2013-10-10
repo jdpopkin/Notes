@@ -2,7 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-div, h1, h2, a, body {
+h1, h2, a, body {
+  // warning: div removed from this list
   background-color:black;
   color:white;
 }

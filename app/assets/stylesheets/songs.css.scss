@@ -24,11 +24,45 @@
 
 .note {
   position:absolute; // fixed?
-  left: 600px;
+  left: 500px;
   color: white;
+  background-color: #181818 !important;
   border: 1px solid white;
+  padding: 10px;
+}
+
+.note > p {
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #DADADA;
+}
+
+div.vote-container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+div.vote-container > div.in-vote-container {
+  float: left;
+}
+div.in-vote-container > form {
+  float: left;
+  padding-left: 20px;
+}
+
+div.vote-container:after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
 input:disabled {
   background-color: white;
+}
+
+.comment {
+  padding-bottom: 0px;
+  padding-top: 20px;
+  border-top: 1px solid #DADADA;
+  border-bottom: 1px solid #DADADA;
 }

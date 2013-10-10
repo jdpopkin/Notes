@@ -1,5 +1,8 @@
 <div class="comment">
   <div class="comment-author"><%= comment.user.username %> posted:</div>
+  <div class="comment-body">
+    <%= comment.body %>
+  </div>
   <%= JST["votes/div"]({
     totalVotes: comment.total_votes,
     currentUser: currentUser,
@@ -7,7 +10,4 @@
     votableId: comment.id,
     voteSet: Notes.votes
   }) %>
-  <div class="comment-body">
-    <%= comment.body %>
-  </div>
 </div>

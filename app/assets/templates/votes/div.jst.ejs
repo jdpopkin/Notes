@@ -12,9 +12,9 @@
 
 <% var extentVote = voteValue(currentUser, votableType, votableId, voteSet) %>
 
-<div class="vote-container">Score: <span class="vote-span"><%= totalVotes %></span>
+<div class="vote-container"><div class="in-vote-container">Score: <span class="vote-span"><%= totalVotes %></span></div>
   <% if (currentUser) { %>
-    <div class="vote">
+    <div class="vote in-vote-container">
 
 
       <!-- Make these conditional on login and not having already voted. -->
