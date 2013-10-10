@@ -31,7 +31,7 @@ Notes.Views.SongShow = Backbone.View.extend({
     var dataId = $target.attr("data-id");
     var pos = $target.offset();
     var $note = $("div" + "[data-id='" + dataId + "']");
-    console.log($note);
+    // console.log($note);
     $note.css("top", pos.top.toString() + "px");
     $note.removeClass("hidden");
   },
@@ -42,13 +42,12 @@ Notes.Views.SongShow = Backbone.View.extend({
 
   render: function() {
     var that = this;
-    console.log("in render");
-    console.log(that.notes);
 
     var renderedContent = JST["songs/show"]({
        song: that.song,
        notes: that.notes,
-       currentUser: Notes.currentUser
+       currentUser: Notes.currentUser,
+       votes: Notes.votes
     });
     renderedContent = that.addNotes(renderedContent);
 
@@ -113,8 +112,6 @@ Notes.Views.SongShow = Backbone.View.extend({
 
 
         // or use that.render(); ?
-        console.log(data);
-        console.log(that.notes);
         var newNote = data;
         var added = false;
         for (var i = 0; i < that.notes.length; i++) {
@@ -246,7 +243,7 @@ Notes.Views.SongShow = Backbone.View.extend({
       }
     }
 
-    console.log(bigString);
+    // console.log(bigString);
 
     return sum;
   },
@@ -260,7 +257,7 @@ Notes.Views.SongShow = Backbone.View.extend({
     var slicedP = p.slice(0, lowEnd);
     $div.append(slicedP);
 
-    console.log($div.text());
+    // console.log($div.text());
     //console.log($div.text().length);
     return $div.text().length;
   },

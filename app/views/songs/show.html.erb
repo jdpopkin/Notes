@@ -65,13 +65,14 @@
       <% id = 0 %>
       <% user_name = nil %>
     <% end %>
-    Notes.currentUser = <%= id %>
-    Notes.currentUserName = "<%= user_name %>"
-    Notes.authToken = "<%= form_authenticity_token %>"
+    Notes.currentUser = <%= id %>;
+    Notes.currentUserName = "<%= user_name %>";
+    Notes.authToken = "<%= form_authenticity_token %>";
+    Notes.votes = votesData;
 
     Notes.currentNotes = new Notes.Collections.Notes(notesData); // (notesData);
 
-    new Notes.Routers.ShowSongRouter($('#content'), song, notesData, votesData);
+    new Notes.Routers.ShowSongRouter($('#content'), song, notesData);
     Backbone.history.start();
   })
 </script>

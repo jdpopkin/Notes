@@ -1,6 +1,8 @@
 <div class="vote-container">Score: <span class="vote-span"><%= totalVotes %></span>
   <% if (currentUser) { %>
     <div class="vote">
+
+
       <!-- Make these conditional on login and not having already voted. -->
       <form class="vote-form">
         <input type="hidden" name="vote[user_id]" value="<%= currentUser %>">

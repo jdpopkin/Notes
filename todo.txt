@@ -102,3 +102,24 @@ search through this.notes to find appropriate index (remember this.notes is
 ordered descending by start_index), then a rerender.
 
 Next: do this for notes. Then restrict a user's ability to vote more than once on something.
+
+Second vote: add a hidden input in the form related to the question of whether
+or not the user has already voted on this one that will inform our ajax callback
+to alter the way it changes the score to be displayed. Calculate whether or not
+this is the case BEFORE THE TEMPLATE IS EVEN CALLED - BOOTSTRAP IT LOL - and
+feed extentVote of -1, 0, or 1 to the template based on extent vote.
+
+      <% var showUp = true; %>
+      <% var showDown = true; %>
+      <% for (var i = 0; i < voteSet.length; i++) { %>
+        <% var vote = voteSet[i]; %>
+        <% if (vote.votable_type != votableType || vote.votable_id != votableId) { %>
+          <% continue %>
+        <% } else { %>
+          <% if (vote.value === 1) { %>
+            <% showUp = false; %>
+          <% } else { %>
+            <% showDown = false; %>
+          <% } %>
+        <% } %>
+      <% } %>

@@ -1,14 +1,18 @@
-<form class="add-note-form" action="#" method="POST">
-  <input type="hidden" name="authenticity_token" value="<%= authToken %>">
-  <input type="hidden" name="note[author_id]" value="<%= currentUser %>">
-  <input type="hidden" name="note[song_id]" value="<%= songId %>">
-  <input type="hidden" name="note[start_index]" value="<%= lowEnd %>">
-  <input type="hidden" name="note[end_index]" value="<%= highEnd %>">
+<% if (currentUser) { %>
+  <form class="add-note-form" action="#" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= authToken %>">
+    <input type="hidden" name="note[author_id]" value="<%= currentUser %>">
+    <input type="hidden" name="note[song_id]" value="<%= songId %>">
+    <input type="hidden" name="note[start_index]" value="<%= lowEnd %>">
+    <input type="hidden" name="note[end_index]" value="<%= highEnd %>">
 
-  <label>
-    Add a note!
-    <textarea name="note[body]"></textarea>
-  </label>
+    <label>
+      Add a note!
+      <textarea name="note[body]"></textarea>
+    </label>
 
-  <input type="submit" value="Create note!">
-</form>
+    <input type="submit" value="Create note!">
+  </form>
+<% } else { %>
+  <p class="request-login">You must log in to add notes!</p>
+<% } %>
