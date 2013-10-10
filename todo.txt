@@ -115,3 +115,7 @@ change the vote count by two. Replace the current form with a rerender?
 All forms must clear on submit.
 
 Now what? Figure out recent scores? ADD ALL VALIDATIONS.
+
+Add users. Gameify by tallying users' upvotes.
+
+Expand the infobox at the top of the song page to include artist and album info.

@@ -6,6 +6,7 @@
   position: absolute;
   left: 450px;
   border: 1px solid white;
+  padding: 10px;
 }
 
 
@@ -16,10 +17,16 @@
 
 .highlighted {
   background-color: lightblue;
+  color: black;
 }
 
 #lyrics > a {
   color: lightblue;
+}
+
+#lyrics > a:hover {
+  background-color: lightblue;
+  color: black;
 }
 
 .note {
@@ -60,9 +67,18 @@ input:disabled {
   background-color: white;
 }
 
+.song-comments-infobox, .note-comments-infobox {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .comment {
   padding-bottom: 0px;
   padding-top: 20px;
   border-top: 1px solid #DADADA;
   border-bottom: 1px solid #DADADA;
+}
+
+.comment-body {
+  padding-top: 10px;
 }

@@ -38,7 +38,7 @@
     <% } %>
 
     <div class="song-comments">
-      Comments on this song:
+      <div class="song-comments-infobox"><%= song.comments.length %> comments on this song:</div>
       <% _.each(song.comments, function(comment) { %>
         <%= JST["comments/show"]({
           comment: comment,

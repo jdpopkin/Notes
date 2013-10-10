@@ -1,5 +1,4 @@
-<div class="note hidden" data-id="<%= note.id %>">
-  <p><%= note.body %></p>
+<div class="note hidden" data-id="<%= note.id %>"><p><%= note.body %></p>
   <% if (currentUser) { %>
     <%= JST["votes/div"]({
       totalVotes:  note.total_votes,
@@ -25,7 +24,7 @@
     <% } %>
 
     <div class="note-comments">
-      Comments on this note:
+      <div class="note-comments-infobox"> <%= note.comments.length %> comments on this note:</div>
       <% _.each(note.comments, function(comment) { %>
         <%= JST["comments/show"]({
           comment: comment,
