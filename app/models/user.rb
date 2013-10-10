@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
     LEFT JOIN comments ON
       votes.votable_id = comments.id AND votes.votable_type = 'Comment'
     LEFT JOIN notes ON
-      votes.votable_id = comments.id AND votes.votable_type = 'Note'
+      votes.votable_id = notes.id AND votes.votable_type = 'Note'
     LEFT JOIN songs ON
       votes.votable_id = songs.id AND votes.votable_type = 'Song'
     WHERE
