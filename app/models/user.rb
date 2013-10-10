@@ -36,6 +36,27 @@ class User < ActiveRecord::Base
     sum
   end
 
+  # Same as above, but only counting votes from last 24 hours. TODO: merge?
+  def recent_score
+    votes = Vote.find_by_sql([<<-SQL, 1.day.ago, self.id, self.id, self.id])
+    SELECT votes.* FROM votes
+    LEFT JOIN comments ON
+      votes.votable_id = comments.id AND votes.votable_type = 'Comment'
+    LEFT JOIN notes ON
+      votes.votable_id = comments.id AND votes.votable_type = 'Note'
+    LEFT JOIN songs ON
+      votes.votable_id = songs.id AND votes.votable_type = 'Song'
+    WHERE
+      votes.created_at > ? AND ((comments.user_id = ?) OR (notes.author_id = ?) OR (songs.user_id = ?))
+    SQL
+
+    sum = 0
+    votes.each do |vote|
+      sum += vote.value
+    end
+    sum
+  end
+
   def self.find_by_credentials(username, password)
     user = User.find_by_username(username)
 
