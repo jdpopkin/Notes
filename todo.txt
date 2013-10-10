@@ -109,17 +109,5 @@ to alter the way it changes the score to be displayed. Calculate whether or not
 this is the case BEFORE THE TEMPLATE IS EVEN CALLED - BOOTSTRAP IT LOL - and
 feed extentVote of -1, 0, or 1 to the template based on extent vote.
 
-      <% var showUp = true; %>
-      <% var showDown = true; %>
-      <% for (var i = 0; i < voteSet.length; i++) { %>
-        <% var vote = voteSet[i]; %>
-        <% if (vote.votable_type != votableType || vote.votable_id != votableId) { %>
-          <% continue %>
-        <% } else { %>
-          <% if (vote.value === 1) { %>
-            <% showUp = false; %>
-          <% } else { %>
-            <% showDown = false; %>
-          <% } %>
-        <% } %>
-      <% } %>
+Check the swap value in the submission of the form. If nonzero (evals true),
+change the vote count by two. Replace the current form with a rerender?

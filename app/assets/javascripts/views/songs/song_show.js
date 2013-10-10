@@ -88,7 +88,28 @@ Notes.Views.SongShow = Backbone.View.extend({
       data: formData,
       success: function() {
         var $voteSpan = $target.parents(".vote-container").children(".vote-span");
-        var newNum = parseInt($voteSpan.html()) + parseInt(formData.vote.value);
+        var value = parseInt(formData.vote.value);
+
+        if (formData.swap !== "0") {
+          value *= 2;
+        }
+
+        // disable this input button
+        $target.children(".vote-button").prop("disabled", true);
+
+        // change other form's swap attribute
+        var otherValue = parseInt(formData.vote.value) * -1;
+        // var $otherForm = $target.parents(".vote-container").children("[data-id='" + otherValue.toString() + "']");
+        var $otherForm = $target.siblings("[data-id='" + otherValue.toString() + "']");
+        $otherForm.children("input.swap").attr("value", formData.vote.value);
+
+        // ensure other form's button is not disabled
+        $otherForm.children(".vote-button").prop("disabled", false);
+        console.log($otherForm);
+        console.log(otherValue);
+
+
+        var newNum = parseInt($voteSpan.html()) + value;
         $voteSpan.html(newNum);
         //that.render();
       }

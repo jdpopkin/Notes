@@ -18,25 +18,26 @@
 
 
       <!-- Make these conditional on login and not having already voted. -->
-      <form class="vote-form">
+      <form class="vote-form" data-id="1">
         <input type="hidden" name="vote[user_id]" value="<%= currentUser %>">
         <input type="hidden" name="vote[votable_type]" value="<%= votableType %>">
         <input type="hidden" name="vote[votable_id]" value="<%= votableId %>">
         <input type="hidden" name="vote[value]" value="1">
-
+        <input type="hidden" name="swap" class="swap" value="<%= extentVote %>">
         <% if (extentVote === 1) { %>
-          <input type="submit" value="Upvote this" disabled="disabled">
+          <input type="submit" class="vote-button" value="Upvote this" disabled="disabled">
         <% } else { %>
-          <input type="submit" value="Upvote this">
+          <input type="submit" class="vote-button" value="Upvote this">
         <% } %>
       </form>
 
-      <form class="vote-form">
+      <form class="vote-form" data-id="-1">
         <input type="hidden" name="vote[user_id]" value="<%= currentUser %>">
         <input type="hidden" name="vote[votable_type]" value="<%= votableType %>">
         <input type="hidden" name="vote[votable_id]" value="<%= votableId %>">
         <input type="hidden" name="vote[value]" value="-1">
-        <input type="submit" value="Downvote this"
+        <input type="hidden" name="swap" class="swap" value="<%= extentVote %>">
+        <input type="submit" class="vote-button" value="Downvote this"
         <% if (extentVote === -1) { %>
           disabled="disabled"
         <% } %>
