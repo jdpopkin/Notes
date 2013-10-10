@@ -111,3 +111,5 @@ feed extentVote of -1, 0, or 1 to the template based on extent vote.
 
 Check the swap value in the submission of the form. If nonzero (evals true),
 change the vote count by two. Replace the current form with a rerender?
+
+All forms must clear on submit.

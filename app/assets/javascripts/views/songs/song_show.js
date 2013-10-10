@@ -170,6 +170,7 @@ Notes.Views.SongShow = Backbone.View.extend({
         // append that to $songComments
         //console.log(newComment);
         $songComments.append(newComment);
+        event.currentTarget.reset();
         // do nothing?
       }
     });
