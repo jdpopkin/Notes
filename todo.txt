@@ -119,3 +119,7 @@ Now what? Figure out recent scores? ADD ALL VALIDATIONS.
 Add users. Gameify by tallying users' upvotes.
 
 Expand the infobox at the top of the song page to include artist and album info.
+
+Implement recent score.
+
+Implement total score for users.

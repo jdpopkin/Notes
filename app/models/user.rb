@@ -8,9 +8,33 @@ class User < ActiveRecord::Base
   validates :username, :presence => true
   validates :username, uniqueness: true
   validates :email, uniqueness: true
+
   has_many :comments
+  has_many :notes, class_name: "Note", primary_key: :id, foreign_key: :author_id
 
   after_initialize :ensure_session_token
+
+  # find all votes on songs, notes, and comments by this user and sums them.
+  def score
+    # ActiveRecord::Base.connection.exec_params
+    votes = Vote.find_by_sql([<<-SQL, self.id, self.id, self.id])
+    SELECT votes.* FROM votes
+    LEFT JOIN comments ON
+      votes.votable_id = comments.id AND votes.votable_type = 'Comment'
+    LEFT JOIN notes ON
+      votes.votable_id = comments.id AND votes.votable_type = 'Note'
+    LEFT JOIN songs ON
+      votes.votable_id = songs.id AND votes.votable_type = 'Song'
+    WHERE
+      (comments.user_id = ?) OR (notes.author_id = ?) OR (songs.user_id = ?)
+    SQL
+
+    sum = 0
+    votes.each do |vote|
+      sum += vote.value
+    end
+    sum
+  end
 
   def self.find_by_credentials(username, password)
     user = User.find_by_username(username)
