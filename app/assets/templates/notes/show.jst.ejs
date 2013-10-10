@@ -1,3 +1,6 @@
+<% if (!note.comments) { %>
+  <% note.comments = []; %>
+<% } %>
 <div class="note hidden" data-id="<%= note.id %>"><p><%= note.body %></p>
   <% if (currentUser) { %>
     <%= JST["votes/div"]({
