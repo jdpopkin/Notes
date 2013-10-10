@@ -123,7 +123,7 @@ Notes.Views.SongShow = Backbone.View.extend({
       type: "POST",
       data: formData,
       success: function(data) {
-        var $songComments = $target.parents(".comment-section").children(".song-comments");
+        var $songComments = $target.parents(".comment-section").children(".song-comments, .note-comments");
         // feed form data into comment template
         data.user = { username: Notes.currentUserName };
         var newComment = JST["comments/show"]({
@@ -131,6 +131,7 @@ Notes.Views.SongShow = Backbone.View.extend({
           currentUser: Notes.currentUser
         })
         // append that to $songComments
+        //console.log(newComment);
         $songComments.append(newComment);
         // do nothing?
       }

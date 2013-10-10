@@ -7,26 +7,30 @@
       votableType: "Note",
       votableId: note.id
     }) %>
-
-    <form class="note-comment-form" action="#comment" method="POST">
-      <input type="hidden" name="comment[user_id]" value="<%= currentUser %>">
-      <input type="hidden" name="comment[commentable_id]" value="<%= note.id %>">
-      <input type="hidden" name="comment[commentable_type]" value="Note">
-      <label>
-        Comment on this note!
-        <textarea name="comment[body]"></textarea>
-        <input type="submit" value="Submit comment">
-      </label>
-    </form>
   <% } %>
 
-  <div class="note-comments">
-    Comments on this note:
-    <% _.each(note.comments, function(comment) { %>
-      <%= JST["comments/show"]({
-        comment: comment,
-        currentUser: currentUser
-      })%>
-    <% }) %>
+  <div class="comment-section">
+    <% if (currentUser) { %>
+      <form class="note-comment-form" action="#comment" method="POST">
+        <input type="hidden" name="comment[user_id]" value="<%= currentUser %>">
+        <input type="hidden" name="comment[commentable_id]" value="<%= note.id %>">
+        <input type="hidden" name="comment[commentable_type]" value="Note">
+        <label>
+          Comment on this note!
+          <textarea name="comment[body]"></textarea>
+          <input type="submit" value="Submit comment">
+        </label>
+      </form>
+    <% } %>
+
+    <div class="note-comments">
+      Comments on this note:
+      <% _.each(note.comments, function(comment) { %>
+        <%= JST["comments/show"]({
+          comment: comment,
+          currentUser: currentUser
+        })%>
+      <% }) %>
+    </div>
   </div>
 </div>
