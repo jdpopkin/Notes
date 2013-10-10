@@ -107,11 +107,6 @@ Notes.Views.SongShow = Backbone.View.extend({
       type: "POST",
       data: formData,
       success: function(data) {
-        // add link first
-        // using link's position, render note div.
-
-
-        // or use that.render(); ?
         var newNote = data;
         var added = false;
         for (var i = 0; i < that.notes.length; i++) {
@@ -128,12 +123,9 @@ Notes.Views.SongShow = Backbone.View.extend({
         }
 
         that.render();
-
-
       }
     });
 
-    //that.render();
   },
 
   createComment: function(event) {

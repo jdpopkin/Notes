@@ -4,7 +4,8 @@
     totalVotes: comment.total_votes,
     currentUser: currentUser,
     votableType: "Comment",
-    votableId: comment.id
+    votableId: comment.id,
+    voteSet: Notes.votes
   }) %>
   <div class="comment-body">
     <%= comment.body %>

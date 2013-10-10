@@ -1,3 +1,17 @@
+<% var voteValue = function(currentUser, votableType, votableId, voteSet) { %>
+  <% for (var i = 0; i < voteSet.length; i++) { %>
+    <% var vote = voteSet[i]; %>
+    <% if (vote.votable_type != votableType || vote.votable_id != votableId) { %>
+      <% continue %>
+    <% } else { %>
+      <% return vote.value; %>
+    <% } %>
+  <% } %>
+  <% return 0; %>
+<% } %>
+
+<% var extentVote = voteValue(currentUser, votableType, votableId, voteSet) %>
+
 <div class="vote-container">Score: <span class="vote-span"><%= totalVotes %></span>
   <% if (currentUser) { %>
     <div class="vote">
@@ -9,7 +23,12 @@
         <input type="hidden" name="vote[votable_type]" value="<%= votableType %>">
         <input type="hidden" name="vote[votable_id]" value="<%= votableId %>">
         <input type="hidden" name="vote[value]" value="1">
-        <input type="submit" value="Upvote this">
+
+        <% if (extentVote === 1) { %>
+          <input type="submit" value="Upvote this" disabled="disabled">
+        <% } else { %>
+          <input type="submit" value="Upvote this">
+        <% } %>
       </form>
 
       <form class="vote-form">
@@ -17,7 +36,12 @@
         <input type="hidden" name="vote[votable_type]" value="<%= votableType %>">
         <input type="hidden" name="vote[votable_id]" value="<%= votableId %>">
         <input type="hidden" name="vote[value]" value="-1">
-        <input type="submit" value="Downvote this">
+        <input type="submit" value="Downvote this"
+        <% if (extentVote === -1) { %>
+          disabled="disabled"
+        <% } %>
+        >
+
       </form>
     </div>
   <% } %>
