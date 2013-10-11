@@ -16,7 +16,7 @@ class Album < ActiveRecord::Base
 
   def self.top_with_cutoff(cutoff, n)
     Album.find_by_sql([<<-SQL, cutoff, n])
-      SELECT albums.* FROM albums JOIN songs ON
+      SELECT albums.*, SUM(votes.value) AS cached_score FROM albums JOIN songs ON
         albums.id = songs.album_id
       JOIN votes ON
         (votes.votable_id = songs.id AND votes.votable_type = 'Song')
@@ -24,6 +24,10 @@ class Album < ActiveRecord::Base
       GROUP BY albums.id
       ORDER BY SUM(votes.value) DESC LIMIT ?
     SQL
+  end
+
+  def cached_score
+    attributes["cached_score"]
   end
 
   def score

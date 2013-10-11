@@ -9,7 +9,7 @@
 <ul>
 <% @songs.each do |song| %>
   <li>
-    <%= link_to song.title, song_url(song) %>
+    <%= link_to song.title, song_url(song) %> <%= song.cached_score %>
   </li>
 <% end %>
 </ul>

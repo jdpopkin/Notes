@@ -1,7 +1,7 @@
 class ArtistsController < ApplicationController
 
   def index
-    @artists = Artist.all
+    @artists = Artist.recent_top(Artist.count)
     render :index
   end
 

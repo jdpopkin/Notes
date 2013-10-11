@@ -1,6 +1,6 @@
 class AlbumsController < ApplicationController
   def index
-    @albums = Album.all
+    @albums = Album.recent_top(Album.count)
     render :index
   end
 

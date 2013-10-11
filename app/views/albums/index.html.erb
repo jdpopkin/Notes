@@ -10,7 +10,7 @@
 <ul>
 <% @albums.each do |album| %>
   <li>
-    <%= link_to album.title, album_url(album) %>
+    <%= link_to album.title, album_url(album) %> <%= album.cached_score %>
   </li>
 <% end %>
 </ul>
