@@ -24,7 +24,7 @@
         <input type="hidden" name="vote[votable_id]" value="<%= votableId %>">
         <input type="hidden" name="vote[value]" value="1">
         <input type="hidden" name="swap" class="swap" value="<%= extentVote %>">
-        <% if (extentVote === 1) { %>
+        <% if (extentVote === 1 || currentUser == author) { %>
           <input type="submit" class="vote-button" value="Upvote this" disabled="disabled">
         <% } else { %>
           <input type="submit" class="vote-button" value="Upvote this">
@@ -38,7 +38,7 @@
         <input type="hidden" name="vote[value]" value="-1">
         <input type="hidden" name="swap" class="swap" value="<%= extentVote %>">
         <input type="submit" class="vote-button" value="Downvote this"
-        <% if (extentVote === -1) { %>
+        <% if (extentVote === -1 || currentUser == author) { %>
           disabled="disabled"
         <% } %>
         >

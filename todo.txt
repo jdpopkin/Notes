@@ -6,11 +6,6 @@ Need sessions controller etc.
 Note: if we're going to have a BFS for collaborations, we need to have
 complicated relations between songs and artists (a link table).
 
-Q: is there a way to avoid duplicating extremely similar models? For example:
-vote model on songs, comments, notes. SEE RAILS GUIDES - POLYMORPHIC ASSOCIATIONS.
-
-Fill out db:seeds.
-
 Ask how partial Backbone works: you only have one application.js, so how can you
 have meaningfully different javascript behavior on different pages of your site?
 Maybe it's trivial but thus far our Backbone stuff have mostly involved a single
@@ -18,8 +13,6 @@ HTML page with Backbone doing everything.
 
 Backbone with multiple routers? Do we simply initialize a different router on
 each page?
-
-Find a way to rate songs (either by votes or ideally by recent votes).
 
 Should the root use Backbone? Currently it only needs to show and hide the login
 form.
@@ -73,10 +66,6 @@ The heroku problem was that someone had used heroku login previously, leading
 the computer's "heroku apps" output to be different from my actual list of apps.
 Now: seed db?
 
-Then: add voting system. Voting will be a polymorphic class like comment. Display
-of votes and vote-buttons: don't show the vote button if the user has a vote for
-the current song/note/comment?
-
 Vote buttons: should we have a separate vote form for each of these votes? They will
 hold hidden fields and only display the button.
 
@@ -96,11 +85,6 @@ to the number of votable elements on the page (in the worst case).
 
 .methods to include outcome of method call in json object. Use .as_json(methods: :vote_total).
 
-To add comments/notes in real time: add them to this.comments or this.notes. Comments
-can simply be appended to appropriate part of parent area. Notes will require a
-search through this.notes to find appropriate index (remember this.notes is
-ordered descending by start_index), then a rerender.
-
 Next: do this for notes. Then restrict a user's ability to vote more than once on something.
 
 Second vote: add a hidden input in the form related to the question of whether
@@ -108,9 +92,6 @@ or not the user has already voted on this one that will inform our ajax callback
 to alter the way it changes the score to be displayed. Calculate whether or not
 this is the case BEFORE THE TEMPLATE IS EVEN CALLED - BOOTSTRAP IT LOL - and
 feed extentVote of -1, 0, or 1 to the template based on extent vote.
-
-Check the swap value in the submission of the form. If nonzero (evals true),
-change the vote count by two. Replace the current form with a rerender?
 
 All forms must clear on submit.
 
@@ -120,19 +101,11 @@ Add users. Gameify by tallying users' upvotes.
 
 Expand the infobox at the top of the song page to include artist and album info.
 
-Implement recent score.
-
-Implement total score for users.
-
 Issue: the site doesn't really work without Javascript. Problem: if using Backbone,
 you need different urls (ones that include #) in order to have your routers take
 effective action. These URLs will not work as normal links.
 
-Get top n for: songs albums artists users.
-
-Refactor. Replace all calls to #total_votes with calls to #score. This involves changing
-the show.html.erb page which loads the comments and notes. It also involves changing
-the ejs files which render these scores (probably just the vote render one).
+Get top n for: users.
 
 Important stuff to do soon: featured users? Recent content? Most pressingly, seeds.rb.
 
@@ -151,4 +124,3 @@ HEY - you can use Coalesce (SUM(votes.value), 0) to make null values appear as 0
 
 Stop ranking users based on the scores of the songs they post. Makes no sense.
 
-For a better index: http://stackoverflow.com/questions/582431/rails-find-by-sql-and-virtual-column

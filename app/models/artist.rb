@@ -25,7 +25,7 @@ class Artist < ActiveRecord::Base
   end
 
   def cached_score
-    self.attributes["cached_score"]
+    self.attributes["cached_score"] ||= self.recent_score
   end
 
   def score

@@ -32,7 +32,7 @@ class Song < ActiveRecord::Base
   end
 
   def cached_score
-    attributes["cached_score"]
+    attributes["cached_score"] ||= self.recent_score
   end
 
   def score

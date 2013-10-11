@@ -35,7 +35,7 @@
   <ul class="featured-songs">
   <% Song.recent_top(5).each do |song| %>
     <li class="featured-song">
-      <%= link_to song.title, song_url(song) %>, <%= song.recent_score %>
+      <%= link_to song.title, song_url(song) %>, <%= song.cached_score %>
     </li>
   <% end %>
   </ul>
@@ -45,7 +45,7 @@
   <ul class="featured-albums">
     <% Album.recent_top(5).each do |album| %>
       <li class="featured-song">
-        <%= link_to album.title, album_url(album) %>, <%= album.recent_score %>
+        <%= link_to album.title, album_url(album) %>, <%= album.cached_score %>
       </li>
     <% end %>
   </ul>
@@ -55,7 +55,7 @@
   <ul class="featured-artists">
     <% Artist.recent_top(5).each do |artist| %>
     <li class="featured-artist">
-      <%= link_to artist.name, artist_url(artist) %>, <%= artist.recent_score %>
+      <%= link_to artist.name, artist_url(artist) %>, <%= artist.cached_score %>
     </li>
     <% end %>
   </ul>
