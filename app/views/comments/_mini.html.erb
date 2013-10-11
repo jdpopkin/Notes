@@ -1,5 +1,5 @@
 <% if commentable.class == Song %>
-  <%= user.username %> added a new comment to <%= commentable.title %>
+  <%= user.username %> added a new comment to <%= commentable.title %> <%= time %> ago.
 <% else %>
-  <%= user.username %> added a new comment to a note on <%= commentable.song.title %>
+  <%= user.username %> added a new comment to a note on <%= commentable.song.title %> <%= time %> ago.
 <% end %>

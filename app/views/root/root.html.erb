@@ -63,48 +63,28 @@
 
 <div class="recent-content">
 <h2>Recent Content</h2>
-<!-- Code for recent content -->
-<ul class="recent-content-list">
-  <% recent_content = recent_content(5) %>
-  <% recent_content.each do |obj| %>
-    <li class="recent-content">
-      <% if obj.class == Song %>
-        <%= render "songs/mini", song: obj, artist: obj.artist, user: obj.user %>
-      <% elsif obj.class == Artist %>
-        <%= render "artists/mini", artist: obj, user: obj.user %>
-      <% elsif obj.class == Album %>
-        <%= render "albums/mini", album: obj, artist: obj.artist, user: obj.user %>
-      <% elsif obj.class == Note %>
-        <%= render "notes/mini", note: obj, user: obj.user, song: obj.song %>
-      <% elsif obj.class == Comment %>
-        <%= render "comments/mini", comment: obj, user: obj.user, commentable: obj.commentable %>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
+  <!-- Code for recent content -->
+  <ul class="recent-content-list">
+    <% recent_content = recent_content(5) %>
+
+    <% recent_content.each do |obj| %>
+      <% time_string = distance_of_time_in_words_to_now(obj.created_at) %>
+      <li class="recent-content">
+        <% if obj.class == Song %>
+          <%= render "songs/mini", song: obj, artist: obj.artist, user: obj.user, time: time_string %>
+        <% elsif obj.class == Artist %>
+          <%= render "artists/mini", artist: obj, user: obj.user, time: time_string %>
+        <% elsif obj.class == Album %>
+          <%= render "albums/mini", album: obj, artist: obj.artist, user: obj.user, time: time_string %>
+        <% elsif obj.class == Note %>
+          <%= render "notes/mini", note: obj, user: obj.user, song: obj.song, time: time_string %>
+        <% elsif obj.class == Comment %>
+          <%= render "comments/mini", comment: obj, user: obj.user, commentable: obj.commentable, time: time_string %>
+        <% end %>
+      </li>
+
+    <% end %>
+
+  </ul>
 </div>
 
-<script type="application/javascript">
-  <% # TODO replace this with Backbone... %>
-  // $(document).ready(function() {
-//     $('#login-link').click(function(event) {
-//       $('#login').toggleClass("hidden");
-//       $('#signup').addClass("hidden");
-//     });
-//
-//     $('#signup-link').click(function(event) {
-//       $('#login').addClass("hidden");
-//       $("#signup").removeClass("hidden");
-//     });
-//
-//     $('#signup').on("submit", function(event) {
-//       $("signup").addClass("hidden");
-//     });
-//
-//     $('#login').on("submit", function(event) {
-//       $("login").addClass("hidden");
-//     });
-//
-//
-//   })
-</script>
