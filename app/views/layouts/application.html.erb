@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="javascript-request">You must have Javascript enabled to view this page.</div>
 
   <%= ("<span id='current-user'>Signed in as " << current_user.username << ". You have " << current_user.score.to_s << " points, with " << current_user.recent_score.to_s << " in the last 24 hours.</span>").html_safe if current_user %>
   <% if current_user %>
@@ -38,6 +39,8 @@
 
 <script>
 $(document).ready(function() {
+  $(".javascript-request").remove();
+
   $('#login-link').click(function(event) {
     $('#login').toggleClass("hidden");
     $('#signup').addClass("hidden");

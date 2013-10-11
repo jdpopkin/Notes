@@ -15,3 +15,13 @@ h1, h2, a, body {
 a.logo-link {
   color: lightblue;
 }
+
+div.javascript-request {
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  background-color: black;
+  text-align: center;
+}
