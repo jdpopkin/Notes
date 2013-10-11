@@ -14,13 +14,13 @@ class Artist < ActiveRecord::Base
 
   def self.top_with_cutoff(cutoff, n)
     Artist.find_by_sql([<<-SQL, cutoff, n])
-      SELECT artists.*, SUM(votes.value) AS cached_score FROM artists JOIN songs ON
+      SELECT artists.*, COALESCE(SUM(votes.value), 0) AS cached_score FROM artists LEFT JOIN songs ON
         artists.id = songs.artist_id
-      JOIN votes ON
+      LEFT JOIN votes ON
         (votes.votable_id = songs.id AND votes.votable_type = 'Song')
-      WHERE votes.created_at > ?
+      WHERE votes.created_at > ? OR votes.id IS NULL
       GROUP BY artists.id
-      ORDER BY SUM(votes.value) DESC LIMIT ?
+      ORDER BY COALESCE(SUM(votes.value), 0) DESC LIMIT ?
     SQL
   end
 
