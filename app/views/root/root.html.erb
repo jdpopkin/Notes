@@ -64,20 +64,24 @@
 <div class="recent-content">
 <h2>Recent Content</h2>
 <!-- Code for recent content -->
+<ul class="recent-content-list">
   <% recent_content = recent_content(5) %>
   <% recent_content.each do |obj| %>
-    <% if obj.class == Song %>
-      <%#= render "songs/mini", song: obj, artist: Artist.find(obj.artist_id) %>
-    <% elsif obj.class == Artist %>
-      <%#= render "artists/mini", artist: obj %>
-    <% elsif obj.class == Album %>
-      <%#= render "albums/mini", album: obj, artist: Artist.find(obj.artist_id) %>
-    <% elsif obj.class == Note %>
-      <%#= render "notes/mini", note: obj, user: User.find(obj.author_id) %>
-    <% elsif obj.class == Comment %>
-      <%#= render "comments/mini", comment: obj, user: User.find(obj.user_id) %>
-    <% end %>
+    <li class="recent-content">
+      <% if obj.class == Song %>
+        <%= render "songs/mini", song: obj, artist: obj.artist, user: obj.user %>
+      <% elsif obj.class == Artist %>
+        <%= render "artists/mini", artist: obj, user: obj.user %>
+      <% elsif obj.class == Album %>
+        <%= render "albums/mini", album: obj, artist: obj.artist, user: obj.user %>
+      <% elsif obj.class == Note %>
+        <%= render "notes/mini", note: obj, user: obj.user, song: obj.song %>
+      <% elsif obj.class == Comment %>
+        <%= render "comments/mini", comment: obj, user: obj.user, commentable: obj.commentable %>
+      <% end %>
+    </li>
   <% end %>
+</ul>
 </div>
 
 <script type="application/javascript">

@@ -36,19 +36,30 @@ sunt_note_comment_two = Comment.create(user_id: user_two.id, body: "I don't get 
                       commentable_id: sunt_note.id, commentable_type: "Note")
 
 sunt_note_vote_1 = Vote.create(user_id: placeholder_user.id, value: 1,
-                                votable_id: sunt_note.id, voteable_type: "Note")
+                                votable_id: sunt_note.id, votable_type: "Note")
 
 sunt_note_vote_2 = Vote.create(user_id: user_two.id,
                               value: 1,
                               votable_id: sunt_note.id,
-                              voteable_type: "Note")
+                              votable_type: "Note")
 
 long_lorem_comment_vote_1 = Vote.create(user_id: user_two.id, value: -1,
                                         votable_id: long_lorem_comment.id,
                                         votable_type: "Comment")
 
 
+upvoters = []
+15.times do |i|
+  username = "upvoter_" + i.to_s
+  email = username + "@upvotes.com"
+  upvoter = User.create(email: email, password: "password", username: username)
+  upvoters << upvoter
+end
 
+upvoters.each do |upvoter|
+  Vote.create(user_id: upvoter.id, value: 1, votable_id: sunt_note.id, votable_type: "Note")
+  Vote.create(user_id: upvoter.id, value: -1, votable_id: sunt_note_comment_two.id, votable_type: "Comment")
+end
 
 
 

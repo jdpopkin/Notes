@@ -2,6 +2,7 @@ class Note < ActiveRecord::Base
   attr_accessible :author_id, :body, :end_index, :song_id, :start_index
 
   belongs_to :user, class_name: "User", primary_key: :id, foreign_key: :author_id
+  belongs_to :song
   has_many :comments, as: :commentable
   has_many :votes, as: :votable
 

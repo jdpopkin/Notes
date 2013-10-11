@@ -138,3 +138,5 @@ Important stuff to do soon: featured users? Recent content? Most pressingly, see
 
 Recent content: start by getting the 5 most recent transactions of each kind.
 Add to an array, sort it by created_at. Then render each of them using partials.
+
+Refactor the helper to .includes all the associations we are going to need.
