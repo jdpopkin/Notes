@@ -52,12 +52,32 @@
 
 <h2>Featured Artists</h2>
 <!-- Code for featured artists -->
-
+  <ul class="featured-artists">
+    <% Artist.recent_top(5).each do |artist| %>
+    <li class="featured-artist">
+      <%= link_to artist.name, artist_url(artist) %>, <%= artist.recent_score %>
+    </li>
+    <% end %>
+  </ul>
 </div>
 
 <div class="recent-content">
 <h2>Recent Content</h2>
 <!-- Code for recent content -->
+  <% recent_content = recent_content(5) %>
+  <% recent_content.each do |obj| %>
+    <% if obj.class == Song %>
+      <%#= render "songs/mini", song: obj, artist: Artist.find(obj.artist_id) %>
+    <% elsif obj.class == Artist %>
+      <%#= render "artists/mini", artist: obj %>
+    <% elsif obj.class == Album %>
+      <%#= render "albums/mini", album: obj, artist: Artist.find(obj.artist_id) %>
+    <% elsif obj.class == Note %>
+      <%#= render "notes/mini", note: obj, user: User.find(obj.author_id) %>
+    <% elsif obj.class == Comment %>
+      <%#= render "comments/mini", comment: obj, user: User.find(obj.user_id) %>
+    <% end %>
+  <% end %>
 </div>
 
 <script type="application/javascript">
