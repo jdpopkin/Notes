@@ -1,7 +1,7 @@
 class SongsController < ApplicationController
 
   def index
-    @songs = Song.all
+    @songs = Song.recent_top(Song.count)
 
     render :index
   end

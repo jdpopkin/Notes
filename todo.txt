@@ -138,3 +138,17 @@ Important stuff to do soon: featured users? Recent content? Most pressingly, see
 
 Better infobox on song page.
 Non-useless index pages for artists, albums, and songs.
+
+You also have show pages for albums and artists which are currently totally useless.
+Fix that.
+
+Add a validation or something that ensures that albums specified upon song creation
+match the artist chosen. http://www.htmlgoodies.com/tutorials/forms/article.php/3882051
+
+Don't let users vote on their own content.
+
+HEY - you can use Coalesce (SUM(votes.value), 0) to make null values appear as 0.
+
+Stop ranking users based on the scores of the songs they post. Makes no sense.
+
+For a better index: http://stackoverflow.com/questions/582431/rails-find-by-sql-and-virtual-column
