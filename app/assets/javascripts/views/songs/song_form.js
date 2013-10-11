@@ -16,6 +16,7 @@ Notes.Views.SongForm = Backbone.View.extend({
 
   render: function() {
     var that = this;
+    console.log(Notes.currentUser);
     renderedContent = JST["songs/form"]( {
       url: Notes.rootUrl + "/songs/",
       method: "POST",

@@ -189,7 +189,7 @@ Notes.Views.SongShow = Backbone.View.extend({
   handleSelect: function(event) {
     var that = this;
     var sel = window.getSelection();
-    console.log(sel);
+    // console.log(sel); KEEP THIS
 
     if (that.keepBox) {
       that.keepBox = false;
@@ -222,8 +222,8 @@ Notes.Views.SongShow = Backbone.View.extend({
 
     var lowEnd = sel.focusOffset < sel.anchorOffset ? sel.focusOffset : sel.anchorOffset;
     var highEnd = sel.focusOffset < sel.anchorOffset ? sel.anchorOffset : sel.focusOffset;
-    console.log(lowEnd);
-    console.log(highEnd);
+    //console.log(lowEnd); KEEP THIS
+    //console.log(highEnd); KEEP THIS
 
     var htmlCopy = $("#lyrics").html();
 

@@ -38,9 +38,19 @@
 
   Notes.currentUser = <%= id %>;
 
-  console.log($('#bootstrapped_albums_json').html());
+  // console.log($('#bootstrapped_albums_json').html());
   Notes.Albums = JSON.parse($('#bootstrapped_albums_json').html());
   Notes.Artists = JSON.parse($('#bootstrapped_artists_json').html());
+
+  <% if current_user %>
+    <% id = current_user.id %>
+    <% user_name = current_user.username %>
+  <% else %>
+    <% id = 0 %>
+    <% user_name = nil %>
+  <% end %>
+  Notes.currentUser = <%= id %>;
+  Notes.currentUserName = "<%= user_name %>";
 
 
   new Notes.Routers.SongsRouter($('#content'));

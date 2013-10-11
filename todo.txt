@@ -136,7 +136,5 @@ the ejs files which render these scores (probably just the vote render one).
 
 Important stuff to do soon: featured users? Recent content? Most pressingly, seeds.rb.
 
-Recent content: start by getting the 5 most recent transactions of each kind.
-Add to an array, sort it by created_at. Then render each of them using partials.
-
-Refactor the helper to .includes all the associations we are going to need.
+Better infobox on song page.
+Non-useless index pages for artists, albums, and songs.
