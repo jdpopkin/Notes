@@ -15,6 +15,9 @@
 <% end %>
 </ul>
 
+<script type="application/json" id="bootstrapped_artists_json">
+  <%= Artist.all.to_json.html_safe %>
+</script>
 
 <%# TODO: determine if there is any need for this at all %>
 <script type="application/javascript">
@@ -28,6 +31,7 @@
     <% end %>
 
     Notes.currentUser = <%= id %>;
+    Notes.Artists = JSON.parse($('#bootstrapped_artists_json').html());
 
     Notes.authToken = "<%= form_authenticity_token %>"
     new Notes.Routers.AlbumsRouter($('#content'));
