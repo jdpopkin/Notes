@@ -4,7 +4,7 @@
 <div class="note hidden" data-id="<%= note.id %>"><p><%= note.body %></p>
   <% if (currentUser) { %>
     <%= JST["votes/div"]({
-      totalVotes:  note.total_votes,
+      totalVotes:  note.score,
       currentUser: currentUser,
       votableType: "Note",
       votableId: note.id,

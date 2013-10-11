@@ -4,7 +4,7 @@
     <%= comment.body %>
   </div>
   <%= JST["votes/div"]({
-    totalVotes: comment.total_votes,
+    totalVotes: comment.score,
     currentUser: currentUser,
     votableType: "Comment",
     votableId: comment.id,

@@ -129,3 +129,7 @@ you need different urls (ones that include #) in order to have your routers take
 effective action. These URLs will not work as normal links.
 
 Get top n for: songs albums artists users.
+
+Refactor. Replace all calls to #total_votes with calls to #score. This involves changing
+the show.html.erb page which loads the comments and notes. It also involves changing
+the ejs files which render these scores (probably just the vote render one).
