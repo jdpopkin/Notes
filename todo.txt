@@ -123,3 +123,7 @@ Expand the infobox at the top of the song page to include artist and album info.
 Implement recent score.
 
 Implement total score for users.
+
+Issue: the site doesn't really work without Javascript. Problem: if using Backbone,
+you need different urls (ones that include #) in order to have your routers take
+effective action. These URLs will not work as normal links.

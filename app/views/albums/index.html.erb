@@ -2,8 +2,8 @@
 
 <div id="content">
   <%# TODO: prevent default (keep an entry from being added in history) %>
-  <% if current_user %>
-    <a href="#albums/new">Add new album</a>
+  <% if current_user # care re # %>
+    <a class="albums-new" href="#albums/new">Add new album</a>
   <% end %>
 </div>
 
@@ -18,17 +18,19 @@
 
 <%# TODO: determine if there is any need for this at all %>
 <script type="application/javascript">
-  Notes.initialize("<%= root_url %>");
+  $(document).ready(function() {
+    Notes.initialize("<%= root_url %>");
 
-  <% if current_user %>
-    <% id = current_user.id %>
-  <% else %>
-    <% id = 0 %>
-  <% end %>
+    <% if current_user %>
+      <% id = current_user.id %>
+    <% else %>
+      <% id = 0 %>
+    <% end %>
 
-  Notes.currentUser = <%= id %>;
+    Notes.currentUser = <%= id %>;
 
-  Notes.authToken = "<%= form_authenticity_token %>"
-  new Notes.Routers.AlbumsRouter($('#content'));
-  Backbone.history.start();
+    Notes.authToken = "<%= form_authenticity_token %>"
+    new Notes.Routers.AlbumsRouter($('#content'));
+    Backbone.history.start();
+  });
 </script>

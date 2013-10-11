@@ -12,6 +12,26 @@ class Song < ActiveRecord::Base
   has_many :comments, as: :commentable
   has_many :votes, as: :votable
 
+  # Should return the n songs with the highest scores.
+  def self.top(n)
+    Song.find_by_sql([<<-SQL, n])
+    SELECT songs.* FROM songs JOIN votes ON
+      (songs.id = votes.votable_id AND votes.votable_type = 'Song')
+    GROUP BY songs.id
+    ORDER BY SUM(votes.value) DESC LIMIT ?
+    SQL
+  end
+
+  def self.recent_top(n)
+    Song.find_by_sql([<<-SQL, 1.day.ago, n])
+    SELECT songs.* FROM songs JOIN votes ON
+      (songs.id = votes.votable_id AND votes.votable_type = 'Song')
+    WHERE votes.created_at > ?
+    GROUP BY songs.id
+    ORDER BY SUM(votes.value) DESC LIMIT ?
+    SQL
+  end
+
   # TODO: this is unnecessary. refactor bootstrap calls. cf what was done for comments
   def total_votes
     total = 0

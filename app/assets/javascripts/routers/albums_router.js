@@ -3,10 +3,21 @@ Notes.Routers.AlbumsRouter = Backbone.Router.extend({
     this.$rootEl = $rootEl;
   },
 
+  // events: {
+//     "click a.albums-new": "newButton"
+//   },
+
   routes: {
     //"": "index",
     "albums/new": "new"
   },
+
+  // newButton: function(event) {
+//     var that = this;
+//     console.log("Triggered");
+//     event.preventDefault();
+//     that.new();
+//   },
 
   new: function() {
     // render new

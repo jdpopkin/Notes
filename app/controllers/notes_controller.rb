@@ -2,10 +2,14 @@ class NotesController < ApplicationController
 
   def create
     @note = Note.new(params[:note])
-    if @note.save
-      render json: @note
+    if request.xhr?
+      if @note.save
+        render json: @note
+      else
+        render json: @note.errors
+      end
     else
-      render json: @note.errors
+      redirect_to song_url(@note.song_id)
     end
   end
 end
