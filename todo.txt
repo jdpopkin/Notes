@@ -127,5 +127,4 @@ Stop ranking users based on the scores of the songs they post. Makes no sense.
 Make show pages that aren't bad. Are these show pages going to be ordered by score?
 If so, how can we preload scores?
 
-Issue: we will now display songs who have 0 votes total. What about songs who have
-only been voted on more than 24 hours ago?
+Better seeds. Better layout.

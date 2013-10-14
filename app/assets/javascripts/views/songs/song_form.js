@@ -27,6 +27,8 @@ Notes.Views.SongForm = Backbone.View.extend({
       song: { lyrics: "" }
     });
 
+
+
     if (Notes.currentUser) {
       that.$el.html(renderedContent);
     }
