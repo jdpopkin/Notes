@@ -15,6 +15,27 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
 
+  def self.top(n)
+    self.top_with_cutoff(100.years.ago, n)
+  end
+
+  def self.recent_top(n)
+    self.top_with_cutoff(1.day.ago, n)
+  end
+
+  def self.top_with_cutoff(cutoff, n)
+    User.find_by_sql([<<-SQL, cutoff, cutoff, n])
+    SELECT users.*, COALESCE(SUM(CASE WHEN votes.created_at > ? THEN votes.value ELSE 0 END), 0)
+      AS cached_score FROM users
+    LEFT JOIN comments ON users.id = comments.user_id
+    LEFT JOIN notes ON users.id = notes.author_id
+    LEFT JOIN votes ON (comments.id = votes.votable_id AND votes.votable_type = 'Comment') OR
+      (notes.id = votes.votable_id AND votes.votable_type = 'Note')
+    GROUP BY users.id
+    ORDER BY COALESCE(SUM(CASE WHEN votes.created_at > ? THEN votes.value ELSE 0 END), 0) DESC LIMIT ?
+    SQL
+  end
+
   # find all votes on songs, notes, and comments by this user and sums them.
   def score
     # ActiveRecord::Base.connection.exec_params
@@ -48,7 +69,8 @@ class User < ActiveRecord::Base
     -- LEFT JOIN songs ON
 --       votes.votable_id = songs.id AND votes.votable_type = 'Song'
     WHERE
-      votes.created_at > ? AND ((comments.user_id = ?) OR (notes.author_id = ?) OR (songs.user_id = ?))
+      votes.created_at > ? AND ((comments.user_id = ?) OR (notes.author_id = ?))
+     -- OR (songs.user_id = ?))
     SQL
 
     sum = 0
