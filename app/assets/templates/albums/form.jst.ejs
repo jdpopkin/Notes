@@ -13,7 +13,9 @@
     Artist
     <select name="album[artist_id]">
       <!-- TODO: dynamically populate this using collection of artists -->
-      <option value="">Choose an artist</option>
+      <% if (Notes.Artists.length > 1) { %>
+        <option value="">Choose an artist</option>
+      <% } %>
       <% for (var i = 0; i < Notes.Artists.length; i++) { %>
         <% var artist = Notes.Artists[i]; %>
         <option value="<%= artist.id %>"><%= artist.name %></option>

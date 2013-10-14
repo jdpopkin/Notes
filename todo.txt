@@ -128,5 +128,5 @@ Make show pages that aren't bad. Are these show pages going to be ordered by sco
 If so, how can we preload scores?
 
 Better seeds. Better layout.
-Error handling everywhere. Still needed for: users, sessions.
+
 Make it possible to add songs directly to an album or artist?

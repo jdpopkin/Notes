@@ -15,7 +15,7 @@ Notes.Views.AlbumForm = Backbone.View.extend({
     var formData = $target.serializeJSON();
 
     $.ajax({
-      url: formData.url,
+      url: Notes.rootUrl + "albums",
       type: "POST",
       data: formData,
       success: function(data) {
