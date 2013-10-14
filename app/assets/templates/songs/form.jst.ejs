@@ -12,7 +12,9 @@
   <label>
     Artist
     <select class="artist-select" name="song[artist_id]">
-      <option value="">Choose an artist</option>
+      <% if (Notes.Artists.length > 1) { %>
+        <option value="">Choose an artist</option>
+      <% } %>
           <% for (var i = 0; i < Notes.Artists.length; i++) { %>
             <% var artist = Notes.Artists[i]; %>
             <option value="<%= artist.id %>"><%= artist.name %></option>
@@ -23,12 +25,16 @@
   <label>
     Album
     <select class="album-select" name="song[album_id]">
-      <option value="0">No album</option>
+      <% if (Notes.Albums.length !== 1) { %>
+        <option value="0">No album</option>
+      <% } %>
       <!-- TODO: dynamically generate options based on artist? -->
 
       <% for (var i = 0; i < Notes.Albums.length; i++) { %>
         <% var album = Notes.Albums[i]; %>
-        <% /* <option class="album-option" value="<%= album.id %>"><%= album.title %></option> */ %>
+        <% if (Notes.Albums.length === 1) { %>
+          <option class="album-option" value="<%= album.id %>"><%= album.title %></option>
+        <% } %>
       <% } %>
     </select>
   </label>

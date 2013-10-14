@@ -17,7 +17,7 @@ Notes.Views.SongForm = Backbone.View.extend({
 
 
     $.ajax({
-      url: formData.url,
+      url: Notes.rootUrl + "songs/",
       type: "POST",
       data: formData,
       success: function(data, textStatus, xhr) {
@@ -54,7 +54,7 @@ Notes.Views.SongForm = Backbone.View.extend({
     var that = this;
     console.log(Notes.currentUser);
     renderedContent = JST["songs/form"]( {
-      url: Notes.rootUrl + "/songs/",
+      url: Notes.rootUrl + "songs/",
       method: "POST",
       artists: Notes.Artists,
       albums: Notes.Albums,

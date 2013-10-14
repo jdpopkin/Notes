@@ -1,6 +1,6 @@
 <h1>Albums</h1>
 
-<div id="content">
+<div id="new-album-container">
   <%# TODO: prevent default (keep an entry from being added in history) %>
   <% if current_user # care re # %>
     <a class="albums-new" href="#albums/new">Add new album</a>
@@ -34,7 +34,7 @@
     Notes.Artists = JSON.parse($('#bootstrapped_artists_json').html());
 
     Notes.authToken = "<%= form_authenticity_token %>"
-    new Notes.Routers.AlbumsRouter($('#content'));
+    new Notes.Routers.AlbumsRouter($('#new-album-container'));
     Backbone.history.start();
   });
 </script>

@@ -9,19 +9,40 @@
     <% end %>
   </ul>
 
+  <% if current_user %>
+    <div id="new-song-container">
+      <a class="songs-new" href="#songs/new"><%= "Add another song to " << @album.title %></a>
+    </div>
+  <% end %>
+
 </div>
 
-<script id="bootstrapped_album_json" type="application/json">
-  <%# bootstrap current album here. TODO: should we mark this HTML-safe? %>
-  <%= @album.to_json.html_safe %>
+<script id="bootstrapped_albums_json" type="application/json">
+  <%= [@album].to_json.html_safe %>
+</script>
+
+<script id="bootstrapped_artists_json" type="application/json">
+  <%= [@album.artist].to_json.html_safe %>
 </script>
 
 <script>
-  <%# TODO: do we need any of this? %>
-  // console.log($("#bootstrapped_album_json").html());
-  // var album = JSON.parse($("#bootstrapped_album_json").html());
-  //
-  // Notes.initialize("<%= root_url %>");
-  // new Notes.Routers.ShowAlbumRouter($('#content'), album); // TODO: what is this
-  // Backbone.history.start();
+  $(document).ready(function() {
+    Notes.initialize("<%= root_url %>");
+
+    <% if current_user %>
+      <% id = current_user.id %>
+    <% else %>
+      <% id = 0 %>
+    <% end %>
+
+    Notes.currentUser = <%= id %>;
+    Notes.Artists = JSON.parse($('#bootstrapped_artists_json').html());
+    Notes.Albums = JSON.parse($('#bootstrapped_albums_json').html());
+
+
+    Notes.authToken = "<%= form_authenticity_token %>"
+    new Notes.Routers.SongsRouter($('#new-song-container'));
+    Backbone.history.start();
+  });
+
 </script>
