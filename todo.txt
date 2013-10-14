@@ -128,5 +128,12 @@ Make show pages that aren't bad. Are these show pages going to be ordered by sco
 If so, how can we preload scores?
 
 Better seeds. Better layout.
+Better seeds. Better layout.
+Better seeds. Better layout.
+Better seeds. Better layout.
+Better seeds. Better layout.
+Better seeds. Better layout.
+Better seeds. Better layout.
+Better seeds. Better layout.
 
-Make it possible to add songs directly to an album or artist?
+Pagination of index pages?

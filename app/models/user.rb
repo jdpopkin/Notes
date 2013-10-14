@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
     LEFT JOIN songs ON
       votes.votable_id = songs.id AND votes.votable_type = 'Song'
     WHERE
-      (comments.user_id = ?) OR (notes.author_id = ?) OR (songs.user_id = ?)
+      (comments.user_id = ?) OR (notes.author_id = ?) -- OR (songs.user_id = ?)
     SQL
 
     sum = 0
@@ -45,8 +45,8 @@ class User < ActiveRecord::Base
       votes.votable_id = comments.id AND votes.votable_type = 'Comment'
     LEFT JOIN notes ON
       votes.votable_id = notes.id AND votes.votable_type = 'Note'
-    LEFT JOIN songs ON
-      votes.votable_id = songs.id AND votes.votable_type = 'Song'
+    -- LEFT JOIN songs ON
+--       votes.votable_id = songs.id AND votes.votable_type = 'Song'
     WHERE
       votes.created_at > ? AND ((comments.user_id = ?) OR (notes.author_id = ?) OR (songs.user_id = ?))
     SQL
