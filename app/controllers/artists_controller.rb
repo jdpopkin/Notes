@@ -14,9 +14,9 @@ class ArtistsController < ApplicationController
     @artist = Artist.new(params[:artist])
 
     if @artist.save
-      render :show
+      render json: @artist
     else
-      render json: @artist.errors
+      render json: @artist.errors, status: :unprocessable_entity
     end
 
   end

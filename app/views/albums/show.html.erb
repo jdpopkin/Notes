@@ -1,5 +1,5 @@
 <div id="content">
-  <h2><%= @album.title %></h2>
+  <h2><%= @album.title %> by <%= link_to @album.artist.name, artist_url(@album.artist) %></h2>
 
   <ul id='song-list'>
     <% @album.songs.each do |song| %>

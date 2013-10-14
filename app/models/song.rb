@@ -12,6 +12,9 @@ class Song < ActiveRecord::Base
   has_many :comments, as: :commentable
   has_many :votes, as: :votable
 
+  include PgSearch
+  multisearchable against: [:title, :lyrics]
+
   # Returns the n songs with the highest scores.
   def self.top(n)
     self.top_with_cutoff(100.years.ago, n)

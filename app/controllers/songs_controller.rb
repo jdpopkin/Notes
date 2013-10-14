@@ -19,9 +19,10 @@ class SongsController < ApplicationController
     @song = Song.new(params[:song])
 
     if @song.save
-      redirect_to song_url(@song)
+      # redirect_to song_url(@song)
+      render json: @song
     else
-      render_json @song.errors
+      render json: @song.errors, status: :unprocessable_entity
     end
   end
 end

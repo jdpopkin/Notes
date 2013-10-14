@@ -7,6 +7,7 @@ gem 'rails', '3.2.13'
 
 gem 'pg'
 gem 'newrelic_rpm'
+gem 'pg_search'
 
 
 # Gems used only for assets and not required

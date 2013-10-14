@@ -4,6 +4,10 @@ class Album < ActiveRecord::Base
   belongs_to :user
   has_many :songs
 
+  validates :artist_id, :title, :user_id, presence: true
+  include PgSearch
+  multisearchable against: :title
+
   # Returns the n highest-scoring album based on votes on songs present on these
   # albums.
   def self.top(n)

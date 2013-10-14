@@ -6,7 +6,9 @@
   <% end %>
 </div>
 
-<ul>
+<div class="success"></div>
+
+<ul class="songs-list">
 <% @songs.each do |song| %>
   <li>
     <%= link_to song.title, song_url(song) %> <%= song.cached_score %>

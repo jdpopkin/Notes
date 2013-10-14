@@ -8,6 +8,17 @@ h1, h2, a, body {
   color:white;
 }
 
+body {
+  font-size: 18px;
+  font-family: sans-serif;
+}
+
+.group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 .hidden {
   display:none;
 }
@@ -24,4 +35,18 @@ div.javascript-request {
   top: 0;
   background-color: black;
   text-align: center;
+}
+
+ul.navlist {
+  list-style: none;
+  float: right;
+}
+
+ul.navlist > li {
+  float: left;
+  padding: 0 10px 0 10px;
+}
+
+.errors {
+  color: red;
 }

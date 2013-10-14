@@ -1,5 +1,6 @@
 Notes::Application.routes.draw do
   root to: "root#root"
+  get 'root/search'
 
   resource :session, only: [:create, :new, :destroy]
   resources :users, only: [:create]

@@ -10,7 +10,29 @@ Notes.Views.ArtistForm = Backbone.View.extend({
   submit: function(event) {
     // TODO: determine if this needs to do anything non-default
     var that = this;
-    that.$el.addClass("hidden");
+    event.preventDefault();
+    var $target = $(event.currentTarget);
+    var formData = $target.serializeJSON();
+
+    $.ajax({
+      url: formData.url,
+      type: "POST",
+      data: formData,
+      success: function(data) {
+        that.$el.addClass("hidden");
+        if (parseInt(data.id)) {
+          location.href = Notes.rootUrl + "artists/" + parseInt(data.id);
+        }
+      },
+
+      error: function(data) {
+        for (var key in data.responseJSON) {
+          var errorString = "Error: " + key.toString() + " " + data.responseJSON[key][0].toString();
+          $(".errors").html(errorString);
+          break;
+        }
+      }
+    })
   },
 
   render: function() {

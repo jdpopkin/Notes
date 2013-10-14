@@ -4,6 +4,11 @@ class Artist < ActiveRecord::Base
   has_many :albums
   belongs_to :user
 
+  validates :name, :user_id, presence: true
+
+  include PgSearch
+  multisearchable against: :name
+
   def self.top(n)
     self.top_with_cutoff(100.years.ago, n)
   end

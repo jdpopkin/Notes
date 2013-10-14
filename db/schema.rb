@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131009165221) do
+ActiveRecord::Schema.define(:version => 20131014174112) do
 
   create_table "albums", :force => true do |t|
     t.string   "title"
@@ -53,6 +53,14 @@ ActiveRecord::Schema.define(:version => 20131009165221) do
 
   add_index "notes", ["author_id"], :name => "index_notes_on_author_id"
   add_index "notes", ["song_id"], :name => "index_notes_on_song_id"
+
+  create_table "pg_search_documents", :force => true do |t|
+    t.text     "content"
+    t.integer  "searchable_id"
+    t.string   "searchable_type"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "songs", :force => true do |t|
     t.string   "title",      :null => false

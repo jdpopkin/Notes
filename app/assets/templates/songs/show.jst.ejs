@@ -1,5 +1,5 @@
 <div id="content">
-  <h2><%= song.title %></h2>
+  <h2><%= song.title %> by <a href="<%= Notes.rootUrl + "artists/" + song.artist.id %>"><%= song.artist.name %></a></h2>
 
   <%= JST["votes/div"]({
     totalVotes: song.score,

@@ -1,5 +1,5 @@
 <div id="content">
-  <h2><%= @song.title %></h2>
+  <h2><%= @song.title %> by <%= @song.artist.name %></h2>
 
   <p id="lyrics">
     <%= @song.lyrics %>
@@ -8,7 +8,7 @@
 
 <script id="bootstrapped_song_json" type="application/json">
   <%# bootstrap current song here. TODO: should we mark this HTML-safe? %>
-  <%= @song.to_json(include: {:comments => {:include => :user, :methods => :score}}).html_safe %>
+  <%= @song.to_json(include: [:artist, {:comments => {:include => :user, :methods => :score}}]).html_safe %>
 
   <% if current_user
     id = current_user.id

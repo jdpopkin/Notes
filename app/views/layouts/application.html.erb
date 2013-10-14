@@ -34,6 +34,26 @@
   </form>
 
   <h1><a class="logo-link" href="<%= root_url %>">notes</a></h1>
+  <div class="navbar group">
+    <ul class="navlist">
+      <li>
+        <%= link_to "Artists", artists_url %>
+      </li>
+      <li>
+        <%= link_to "Albums", albums_url %>
+      </li>
+      <li>
+        <%= link_to "Songs", songs_url %>
+      </li>
+      <li>
+        <form action="<%= root_search_url %>" method="GET">
+          <label> Search <input type="text" name="search[query]"> </label>
+          <input type="submit" value="Search">
+        </form>
+      </li>
+    </ul>
+  </div>
+
 
 <%= yield %>
 

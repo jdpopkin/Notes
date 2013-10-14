@@ -11,7 +11,43 @@ Notes.Views.SongForm = Backbone.View.extend({
   submit: function(event) {
     // TODO: determine if this needs to do anything non-default
     var that = this;
-    that.$el.addClass("hidden");
+    event.preventDefault();
+    var $target = $(event.currentTarget);
+    var formData = $target.serializeJSON();
+
+
+    $.ajax({
+      url: formData.url,
+      type: "POST",
+      data: formData,
+      success: function(data, textStatus, xhr) {
+        // let the redirect go through?
+        // success if 400. else render errors
+        // console.log(data);
+        that.$el.addClass("hidden");
+        // redirect
+        $(".success").html("Song created!");
+        if (parseInt(data.id)) {
+          location.href = Notes.rootUrl + "songs/" + parseInt(data.id);
+        }
+      },
+
+      error: function(data) {
+        // console.log("error");
+        // console.log(data);
+        for (var key in data.responseJSON) {
+          if (key.toString() === "artist_id") {
+            var errorString = "Error: you must select an artist";
+          } else {
+            var errorString = "Error: " + key.toString() + " " + data.responseJSON[key][0].toString();
+          }
+          $(".errors").html(errorString);
+          console.log(errorString);
+          break;
+        }
+      }
+    })
+
   },
 
   render: function() {

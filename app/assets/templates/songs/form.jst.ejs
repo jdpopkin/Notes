@@ -2,6 +2,8 @@
   <input type="hidden" name="authenticity_token" value="<%= authToken %>">
   <input type="hidden" name="song[user_id]" value="<%= currentUser %>">
 
+  <div class="errors"></div>
+
   <label>
     Song title
     <input type="text" name="song[title]" value="<%= song.title %>">
@@ -10,7 +12,7 @@
   <label>
     Artist
     <select class="artist-select" name="song[artist_id]">
-      <option value="0">Choose an artist</option>
+      <option value="">Choose an artist</option>
           <% for (var i = 0; i < Notes.Artists.length; i++) { %>
             <% var artist = Notes.Artists[i]; %>
             <option value="<%= artist.id %>"><%= artist.name %></option>
