@@ -9,7 +9,7 @@ class UsersController < ApplicationController
       self.current_user = @user
       redirect_to root_url # TODO change this link
     else
-      render :json => @user.errors.full_messages
+      render :json => @user.errors, status: :unprocessable_entity
     end
   end
 

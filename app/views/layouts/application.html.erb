@@ -19,6 +19,7 @@
   <% end %>
 
   <form id="login" class="hidden" action="<%= session_url %>" method="POST">
+    <div class="login-errors"></div>
     <label>Username <input type="text" name="user[username]"></label>
     <label>Password <input type="password" name="user[password]"></label>
     <input type="submit" value="Sign In">
@@ -26,6 +27,7 @@
   </form>
 
   <form id="signup" class="hidden" action="<%= users_url %>" method="POST">
+    <div class="signup-errors"></div>
     <label>Email <input type="text" name="user[email]"></label>
     <label>Username <input type="text" name="user[username]"></label>
     <label>Password <input type="password" name="user[password]"></label>
@@ -33,7 +35,10 @@
     <!-- # TODO password confirmation -->
   </form>
 
-  <h1><a class="logo-link" href="<%= root_url %>">notes</a></h1>
+  <div class="logo-header">
+    <h1><a class="logo-link" href="<%= root_url %>">notes</a></h1>
+  </div>
+
   <div class="navbar group">
     <ul class="navlist">
       <li>
@@ -72,11 +77,70 @@ $(document).ready(function() {
   });
 
   $('#signup').on("submit", function(event) {
+    // prevent default
+    event.preventDefault();
+    var $target = $(event.currentTarget);
+    var formData = $target.serializeJSON();
+
+    // ajax the request
+    $.ajax({
+      url: "<%= users_url %>",
+      type: "POST",
+      data: formData,
+
+      // on success, replace top of page and hide form
+      success: function(data) {
+        $("body").prepend("<div class='signed-in'>You are now signed in as " + formData.user.username + "!</div>");
+        $("#logout-link").removeClass("hidden");
+        $("#signup-link").addClass("hidden");
+        $("#signup").addClass("hidden");
+      },
+
+      // on failure, render errors
+      error: function(data) {
+        console.log(data);
+        var errorString = "Error: "
+        for (key in data.responseJSON) {
+          errorString += key + " " + data.responseJSON[key][0];
+          break;
+        }
+        $(".signup-errors").html(errorString);
+      }
+    })
+
+
+    // on failure, render errors
     $("signup").addClass("hidden");
   });
 
   $('#login').on("submit", function(event) {
-    $("login").addClass("hidden");
+    // prevent default
+    event.preventDefault();
+    var $target = $(event.currentTarget);
+    var formData = $target.serializeJSON();
+
+    // ajax the request
+    $.ajax({
+      url: "<%= root_url << "session" %>" ,
+      type: "POST",
+      data: formData,
+
+      // on success, replace top of page and hide form
+      success: function(data) {
+        $("body").prepend("<div class='signed-in'>You are now signed in as " + formData.user.username + "!</div>");
+        $("#logout-link").removeClass("hidden");
+        $("#login-link").addClass("hidden");
+        $("#login").addClass("hidden");
+      },
+
+      // on failure, render errors
+      error: function(data) {
+        var errorString = "Error: " + data.responseText;
+        $(".login-errors").html(errorString);
+      }
+    })
+
+
   });
 
   $('#logout-link').click(function(event) {
@@ -87,9 +151,16 @@ $(document).ready(function() {
       dataType: "json",
       data: {"_method":"delete"}, // WARNING: SLEAZE. <%# REFACTOR %>
       success: function(data) {
+        console.log("happened");
         $('#login-link').removeClass("hidden");
         $('#logout-link').addClass("hidden");
+        $('.signed-in').remove();
         $('#current-user').remove();
+      },
+      error: function(data, textStatus, errorThrown) {
+        console.log(errorThrown);
+        console.log("error!");
+
       }
     });
 

@@ -17,8 +17,10 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    @user = current_user
     logout_current_user!
-    redirect_to root_url # new_session_url
+    # redirect_to root_url # new_session_url
+    render json: @user
   end
 
   def new

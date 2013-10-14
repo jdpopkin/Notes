@@ -34,7 +34,7 @@ Notes.Views.AlbumForm = Backbone.View.extend({
             var errorString = "Error: " + key.toString() + " " + data.responseJSON[key][0].toString();
           }
 
-          $(".errors").html(errorString);
+          $(".login-errors").html(errorString);
           console.log(errorString);
           break;
         }

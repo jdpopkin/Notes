@@ -13,6 +13,10 @@ body {
   font-family: sans-serif;
 }
 
+.logo-header {
+  text-align: center;
+}
+
 .group:after {
   content: "";
   clear: both;
@@ -47,6 +51,6 @@ ul.navlist > li {
   padding: 0 10px 0 10px;
 }
 
-.errors {
+div.errors, div.login-errors, div.signup-errors {
   color: red;
 }

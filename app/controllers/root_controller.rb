@@ -5,6 +5,7 @@ class RootController < ApplicationController
   end
 
   def search
+    @query = params[:search][:query]
     @results = PgSearch.multisearch(params[:search][:query])
     render :search
   end
