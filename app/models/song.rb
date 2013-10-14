@@ -23,11 +23,12 @@ class Song < ActiveRecord::Base
 
   def self.top_with_cutoff(cutoff, n)
     Song.find_by_sql([<<-SQL, cutoff, n])
-      SELECT songs.*, COALESCE(SUM(votes.value), 0) AS cached_score FROM songs LEFT JOIN votes ON
+      SELECT songs.*, COALESCE(SUM(CASE WHEN votes.created_at > ? THEN votes.value ELSE 0 END), 0) AS cached_score FROM songs LEFT JOIN votes ON
         (songs.id = votes.votable_id AND votes.votable_type = 'Song')
-      WHERE votes.created_at > ? OR votes.id IS NULL
+      -- WHERE votes.created_at >  OR votes.id IS NULL
       GROUP BY songs.id
       ORDER BY COALESCE (SUM(votes.value), 0) DESC LIMIT ?
+
     SQL
   end
 
