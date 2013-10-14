@@ -124,4 +124,5 @@ HEY - you can use Coalesce (SUM(votes.value), 0) to make null values appear as 0
 
 Stop ranking users based on the scores of the songs they post. Makes no sense.
 
-Make show pages that aren't bad
+Make show pages that aren't bad. Are these show pages going to be ordered by score?
+If so, how can we preload scores?
