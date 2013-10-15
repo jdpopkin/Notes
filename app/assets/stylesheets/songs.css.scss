@@ -20,6 +20,14 @@
   color: black;
 }
 
+#lyrics {
+  white-space: pre-wrap;
+}
+
+#lyrics > div {
+  white-space: normal;
+}
+
 #lyrics > a {
   color: lightblue;
 }
@@ -36,6 +44,10 @@
   background-color: #181818 !important;
   border: 1px solid white;
   padding: 10px;
+}
+
+.add-note {
+  background-color: #181818 !important;
 }
 
 .note > p {

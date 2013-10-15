@@ -50,10 +50,24 @@ Notes.Views.SongShow = Backbone.View.extend({
        votes: Notes.votes
     });
     renderedContent = that.addNotes(renderedContent);
+    //renderedContent = that.addBreaks(renderedContent);
 
     that.$el.html(renderedContent);
 
     return that;
+  },
+
+  // Have to somehow limit this to the lyrics paragraph
+  addBreaks: function(renderedContent) {
+    console.log(renderedContent);
+    var pStart = renderedContent.indexOf('<p id="lyrics">') + '<p id="lyrics">'.length;
+    var re = new RegExp('<p id="lyrics">[^]*</p>')
+    var oldLyrics = renderedContent.match(re)[0];
+    var newLyrics = oldLyrics.replace(/\n/g, "&#10;");
+    var newContent = renderedContent.replace(re, newLyrics);
+    //console.log(newContent);
+
+    return newContent;
   },
 
   addNotes: function(renderedContent) {
