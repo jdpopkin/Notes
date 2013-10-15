@@ -8,13 +8,9 @@ h1, h2, a, body {
   color:white;
 }
 
-body {
-  font-size: 18px;
-  font-family: sans-serif;
-}
-
-.logo-header {
-  text-align: center;
+div {
+  border-radius: 15px;
+  -moz-border-radius: 15px;
 }
 
 .group:after {
@@ -23,12 +19,23 @@ body {
   display: table;
 }
 
+#lyrics, .note > p, .comment-body {
+  overflow: auto;
+  word-wrap: break-word;
+}
+
 .hidden {
   display:none;
 }
 
-a.logo-link {
-  color: lightblue;
+body {
+  font-size: 18px;
+  font-family: sans-serif;
+}
+
+textarea, input[type=text], input[type=password] {
+  background-color: #333333;
+  color: white;
 }
 
 div.javascript-request {
@@ -41,9 +48,19 @@ div.javascript-request {
   text-align: center;
 }
 
+.logo-header {
+  text-align: center;
+  float: left;
+}
+
+a.logo-link {
+  color: lightblue;
+}
+
 ul.navlist {
   list-style: none;
   float: right;
+  padding-top: 15px;
 }
 
 ul.navlist > li {
@@ -54,3 +71,4 @@ ul.navlist > li {
 div.errors, div.login-errors, div.signup-errors {
   color: red;
 }
+

@@ -35,11 +35,13 @@
     <!-- # TODO password confirmation -->
   </form>
 
-  <div class="logo-header">
-    <h1><a class="logo-link" href="<%= root_url %>">notes</a></h1>
-  </div>
+
 
   <div class="navbar group">
+    <div class="logo-header">
+      <h1><a class="logo-link" href="<%= root_url %>">notes</a></h1>
+    </div>
+
     <ul class="navlist">
       <li>
         <%= link_to "Artists", artists_url %>
@@ -67,11 +69,13 @@ $(document).ready(function() {
   $(".javascript-request").remove();
 
   $('#login-link').click(function(event) {
+    event.preventDefault();
     $('#login').toggleClass("hidden");
     $('#signup').addClass("hidden");
   });
 
   $('#signup-link').click(function(event) {
+    event.preventDefault();
     $('#login').addClass("hidden");
     $("#signup").removeClass("hidden");
   });
@@ -131,6 +135,12 @@ $(document).ready(function() {
         $("#logout-link").removeClass("hidden");
         $("#login-link").addClass("hidden");
         $("#login").addClass("hidden");
+        console.log(data);
+        if (Notes) {
+          console.log(Notes);
+          Notes.currentUser = data.id;
+          Notes.currentUserName = data.username;
+        }
       },
 
       // on failure, render errors

@@ -285,7 +285,18 @@ Notes.Views.SongShow = Backbone.View.extend({
 
     // console.log($div.text());
     //console.log($div.text().length);
-    return $div.text().length;
+    var htmlizedLength = $div.text().length;
+    var newlineCounter = 0;
+
+    for (var i = 0; i < slicedP.length; i++) {
+      if (slicedP[i] === "\n") {
+        newlineCounter++;
+      }
+    }
+
+    // -1 because there is an extra newline at the start of the <p>
+    // not actually present in song.lyrics
+    return htmlizedLength; // + newlineCounter - 1;
   },
 
   addHighlight: function(htmlCopy, lowEnd, highEnd) {

@@ -2,14 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.add-note {
-  position: absolute;
-  left: 450px;
-  border: 1px solid white;
-  padding: 10px;
+
+
+.song-header {
+  width: 500px;
+  background-color: #161616;
+  border: 1px solid #333333;
 }
 
+.song-header > h2 {
+  background-color: #161616;
+  text-align: center;
+}
 
+.song-header > h2 > a {
+  background-color: #161616;
+}
 
 .lyrics-div {
   width: 400px;
@@ -37,17 +45,37 @@
   color: black;
 }
 
+.add-note {
+  position: absolute;
+  left: 550px;
+  width: 400px;
+  border: 1px solid #333333;
+  padding: 10px;
+}
+
 .note {
   position:absolute; // fixed?
-  left: 500px;
+  width: 400px;
+  left: 550px;
   color: white;
-  background-color: #181818 !important;
-  border: 1px solid white;
+  background-color: #161616 !important;
+  border: 1px solid #333333;
   padding: 10px;
 }
 
 .add-note {
-  background-color: #181818 !important;
+  background-color: #161616 !important;
+}
+
+.add-note-form > input, .add-note-form > label, .add-note-form > label > textarea {
+  display: block;
+}
+
+.add-note-form > label > textarea {
+  width: 390px;
+  margin: auto;
+  background-color: #333333;
+  color: white;
 }
 
 .note > p {
@@ -59,6 +87,8 @@
 div.vote-container {
   padding-top: 20px;
   padding-bottom: 20px;
+  width: 300px;
+  margin: auto;
 }
 
 div.vote-container > div.in-vote-container {
@@ -79,6 +109,10 @@ input:disabled {
   background-color: white;
 }
 
+.comment-section {
+  width: 500px;
+}
+
 .song-comments-infobox, .note-comments-infobox {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -87,8 +121,8 @@ input:disabled {
 .comment {
   padding-bottom: 0px;
   padding-top: 20px;
-  border-top: 1px solid #DADADA;
-  border-bottom: 1px solid #DADADA;
+  border: 1px solid #333333;
+//  border-bottom: 1px solid #DADADA;
 }
 
 .comment-body {

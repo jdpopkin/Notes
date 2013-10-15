@@ -1,4 +1,5 @@
 <div id="content">
+  <div class="song-header">
   <h2><%= song.title %> by <a href="<%= Notes.rootUrl + "artists/" + song.artist.id %>"><%= song.artist.name %></a></h2>
 
   <%= JST["votes/div"]({
@@ -9,6 +10,7 @@
     voteSet: Notes.votes,
     author: song.user_id
   }) %>
+  </div>
 
   <div class="lyrics-div">
 <p id="lyrics">
@@ -39,7 +41,7 @@
     <% } %>
 
     <div class="song-comments">
-      <div class="song-comments-infobox"><%= song.comments.length %> comments on this song:</div>
+      <div class="song-comments-infobox"> <!-- <%= song.comments.length %> --> Comments on this song:</div>
       <% _.each(song.comments, function(comment) { %>
         <%= JST["comments/show"]({
           comment: comment,

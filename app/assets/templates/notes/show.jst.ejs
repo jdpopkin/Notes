@@ -28,7 +28,7 @@
     <% } %>
 
     <div class="note-comments">
-      <div class="note-comments-infobox"> <%= note.comments.length %> comments on this note:</div>
+      <div class="note-comments-infobox"> <!-- <%= note.comments.length %> --> Comments on this note:</div>
       <% _.each(note.comments, function(comment) { %>
         <%= JST["comments/show"]({
           comment: comment,
