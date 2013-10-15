@@ -1,0 +1,39 @@
+<h2><%= @user.username %></h2>
+
+<div class="recent-activity">
+  <h3>Recent Activity</h3>
+  <ul class="recent-activity-list">
+    <% @user.recent_activity(5).each do |obj| %>
+      <% time_string = distance_of_time_in_words_to_now(obj.created_at) %>
+      <li class="recent-action">
+        <% if obj.class == Song %>
+          <%= render "songs/mini", song: obj, artist: obj.artist, user: @user, time: time_string %>
+        <% elsif obj.class == Artist %>
+          <%= render "artists/mini", artist: obj, user: @user, time: time_string %>
+        <% elsif obj.class == Album %>
+          <%= render "albums/mini", album: obj, artist: obj.artist, user: @user, time: time_string %>
+        <% elsif obj.class == Note %>
+          <%= render "notes/mini", note: obj, user: @user, song: obj.song, time: time_string %>
+        <% elsif obj.class == Comment %>
+          <%= render "comments/mini", comment: obj, user: @user, commentable: obj.commentable, time: time_string %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="top-activity">
+  <h3>Top Activity</h3>
+  <ul class="top-activity-list">
+    <% @user.top_activity(5).each do |obj| %>
+      <% time_string = distance_of_time_in_words_to_now(obj.created_at) %>
+      <li class="top-action">
+        <% if obj.class == Note %>
+          <%= render "notes/mini", note: obj, user: @user, song: obj.song, time: time_string %> <%= obj.recent_score %>
+        <% elsif obj.class == Comment %>
+          <%= render "comments/mini", comment: obj, user: @user, commentable: obj.commentable, time: time_string %> <%= obj.recent_score %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>

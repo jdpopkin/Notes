@@ -15,6 +15,26 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
 
+  # includes all activity
+  def recent_activity(n)
+    big_array = Artist.where(user_id: self.id).last(n).to_a +
+                Song.includes(:artist).where(user_id: self.id).last(n).to_a +
+                Note.includes(:song).where(author_id: self.id).last(n).to_a +
+                Comment.includes(:commentable).where(user_id: self.id).last(n).to_a +
+                Album.includes(:artist).where(user_id: self.id).last(n).to_a
+
+    big_array.sort_by! { |obj| obj.created_at }
+    big_array.last(n).reverse
+  end
+
+  # doesn't include songs, because users don't get credit for songs
+  def top_activity(n)
+    # get top comments, top notes, merge lists?
+    big_array = Comment.top_for_user(n, self).to_a +
+                Note.top_for_user(n, self).to_a
+    # do this tomorrow probably
+  end
+
   def self.top(n)
     self.top_with_cutoff(100.years.ago, n)
   end

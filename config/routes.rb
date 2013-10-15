@@ -3,7 +3,7 @@ Notes::Application.routes.draw do
   get 'root/search'
 
   resource :session, only: [:create, :new, :destroy]
-  resources :users, only: [:create]
+  resources :users, only: [:create, :show, :index]
   resources :artists
   resources :songs
   resources :albums
