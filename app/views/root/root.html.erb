@@ -31,9 +31,11 @@
 <h2>Featured Songs</h2>
 <!-- Code to load and display featured songs -->
   <ul class="featured-songs">
-  <% Song.recent_top(5).each do |song| %>
+  <% Song.includes(:artist).recent_top(5).each do |song| %>
     <li class="featured-song">
-      <%= link_to song.title, song_url(song) %>, <%= song.cached_score %>
+      <%= link_to song.title, song_url(song) %> by
+        <%= link_to song.artist.name, artist_url(song.artist) %>,
+        <%= song.cached_score %>
     </li>
   <% end %>
   </ul>
@@ -41,9 +43,11 @@
 <h2>Featured Albums</h2>
 <!-- Code for featured albums -->
   <ul class="featured-albums">
-    <% Album.recent_top(5).each do |album| %>
+    <% Album.includes(:artist).recent_top(5).each do |album| %>
       <li class="featured-song">
-        <%= link_to album.title, album_url(album) %>, <%= album.cached_score %>
+        <%= link_to album.title, album_url(album) %> by
+          <%= link_to album.artist.name, artist_url(album.artist) %>,
+          <%= album.cached_score %>
       </li>
     <% end %>
   </ul>

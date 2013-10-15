@@ -137,3 +137,11 @@ Better seeds. Better layout.
 Better seeds. Better layout.
 
 Pagination of index pages?
+
+Remaining issues: seed data, css. Maybe improved search.
+
+Seeds.rb questions: is it possible to quote a string and include EVERYTHING INCLUDING
+WHITESPACE? Is it possible to populate seeds.rb with current content of database or
+something like that? Is there a way to seed database just by using forms on the
+site?
+
