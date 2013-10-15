@@ -84,6 +84,16 @@
   border-bottom: 1px solid #DADADA;
 }
 
+.song-comment-form > input, .song-comment-form > label,
+  .song-comment-form > label > textarea {
+    display: block;
+}
+
+.song-comment-form > label > textarea {
+  width: 500px;
+  //margin: auto;
+}
+
 div.vote-container {
   padding-top: 20px;
   padding-bottom: 20px;

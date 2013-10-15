@@ -203,7 +203,12 @@ Notes.Views.SongShow = Backbone.View.extend({
   handleSelect: function(event) {
     var that = this;
     var sel = window.getSelection();
-    // console.log(sel); KEEP THIS
+    //console.log(sel); // KEEP THIS
+
+    // Exclude selections within textareas.
+    if (sel.anchorNode.constructor.name === "HTMLLabelElement") {
+      return;
+    }
 
     if (that.keepBox) {
       that.keepBox = false;
