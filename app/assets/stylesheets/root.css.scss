@@ -13,6 +13,21 @@ div {
   -moz-border-radius: 15px;
 }
 
+input:disabled {
+  background-color: #fff;
+  color: #C0C0C0;
+}
+
+button, input[type=submit] {
+  background-color: #fff;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+
+a {
+  color: lightblue;
+}
+
 .group:after {
   content: "";
   clear: both;
@@ -72,3 +87,28 @@ div.errors, div.login-errors, div.signup-errors {
   color: red;
 }
 
+.content {
+  width: 950px;
+//  margin: auto;
+}
+
+.featured-content {
+  float: left;
+  padding: 0 0 0 10px;
+}
+
+.recent-content-wrapper {
+  float: right;
+  width: 400px;
+
+}
+
+.recent-content {
+  float: left;
+  width: 400px;
+  padding: 0 40px 0 0;
+}
+
+.recent-content > ul {
+//  float: left;
+}

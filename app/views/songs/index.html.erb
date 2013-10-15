@@ -1,22 +1,24 @@
 <h1>Songs</h1>
 
+<div class="success"></div>
+
+<div class="content-left">
+  <ul id="song-list">
+  <% @songs.each do |song| %>
+    <li>
+      <%= link_to song.title, song_url(song) %> by
+        <%= link_to song.artist.name, artist_url(song.artist) %>
+        <%= song.cached_score %>
+    </li>
+  <% end %>
+  </ul>
+</div>
+
 <div id="content">
   <% if current_user %>
     <a href="#songs/new">Add new song</a>
   <% end %>
 </div>
-
-<div class="success"></div>
-
-<ul class="songs-list">
-<% @songs.each do |song| %>
-  <li>
-    <%= link_to song.title, song_url(song) %> by
-      <%= link_to song.artist.name, artist_url(song.artist) %>
-      <%= song.cached_score %>
-  </li>
-<% end %>
-</ul>
 
 <script type="application/json" id="bootstrapped_albums_json">
   <%# TODO: figure out how to get only those albums made by artist already selected %>

@@ -1,20 +1,22 @@
 <h1>Artists</h1>
 
+
+<div class="content-left">
+  <ul id="artists-list">
+  <% @artists.each do |artist| %>
+    <li>
+      <%= link_to artist.name, artist_url(artist) %> <%= artist.cached_score %>
+    </li>
+  <% end %>
+  </ul>
+</div>
+
 <div id="content">
   <%# TODO: prevent default (keep an entry for being added in history) %>
   <% if current_user %>
     <a href="#artists/new">Add new artist</a>
   <% end%>
 </div>
-
-<ul>
-<% @artists.each do |artist| %>
-  <li>
-    <%= link_to artist.name, artist_url(artist) %> <%= artist.cached_score %>
-  </li>
-<% end %>
-</ul>
-
 
 <%# TODO: determine if there is any need for this at all %>
 <script type="application/javascript">

@@ -20,7 +20,10 @@
 }
 
 .lyrics-div {
-  width: 400px;
+  width: 460px;
+  padding: 0 20px 0 20px;
+  background-color: #161616;
+  border: 1px solid #333333;
 }
 
 .highlighted {
@@ -81,7 +84,7 @@
 .note > p {
   margin: 0;
   padding-bottom: 10px;
-  border-bottom: 1px solid #DADADA;
+  border-bottom: 1px solid #333333 // #DADADA;
 }
 
 .song-comment-form > input, .song-comment-form > label,
@@ -92,6 +95,36 @@
 .song-comment-form > label > textarea {
   width: 500px;
   //margin: auto;
+}
+
+.comment-author {
+  padding: 0 0 0 10px;
+}
+
+.comment-body {
+  padding: 10px 0 0 10px;
+}
+
+.song-comments-infobox, .note-comments-infobox {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.comment {
+  padding-bottom: 0px;
+  padding-top: 20px;
+  border: 1px solid #333333;
+  background-color: #161616
+//  border-bottom: 1px solid #DADADA;
+}
+
+.note-comment-form > input, .note-comment-form > label,
+  .note-comment-form > label > textarea {
+    display: block;
+}
+
+.note-comment-form > label > textarea {
+  width: 395px;
 }
 
 div.vote-container {
@@ -115,28 +148,8 @@ div.vote-container:after {
   display: table;
 }
 
-input:disabled {
-  background-color: white;
-}
-
 .comment-section {
-  width: 500px;
-}
-
-.song-comments-infobox, .note-comments-infobox {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.comment {
-  padding-bottom: 0px;
-  padding-top: 20px;
-  border: 1px solid #333333;
-//  border-bottom: 1px solid #DADADA;
-}
-
-.comment-body {
-  padding-top: 10px;
+  max-width: 500px;
 }
 
 .hidden {

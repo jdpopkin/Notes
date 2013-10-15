@@ -1,29 +1,31 @@
 <div id="content">
-  <h2><%= @artist.name %></h2>
+  <div class="content-left">
+    <h2 class="artist-header"><%= @artist.name %></h2>
 
-  <h3>Songs by <%= @artist.name %></h3>
-  <ul id='song-list'>
-    <% @artist.songs.each do |song| %>
+    <h3>Songs by <%= @artist.name %></h3>
+    <ul id='song-list'>
+      <% @artist.songs.each do |song| %>
+        <li>
+          <%= link_to song.title, song_url(song) %>
+        </li>
+      <% end %>
+    </ul>
+
+    <h3>Albums by <%= @artist.name %></h3>
+    <ul id='albums-list'>
+      <% @artist.albums.each do |album| %>
       <li>
-        <%= link_to song.title, song_url(song) %>
+        <%= link_to album.title, album_url(album) %>
       </li>
-    <% end %>
-  </ul>
+      <% end %>
+    </ul>
 
-  <h3>Albums by <%= @artist.name %></h3>
-  <ul id='albums-list'>
-    <% @artist.albums.each do |album| %>
-    <li>
-      <%= link_to album.title, album_url(album) %>
-    </li>
+    <% if current_user %>
+      <div id="new-album-container">
+        <a class="albums-new" href="#albums/new"><%= "Add another album by " << @artist.name %></a>
+      </div>
     <% end %>
-  </ul>
-
-  <% if current_user %>
-    <div id="new-album-container">
-      <a class="albums-new" href="#albums/new"><%= "Add another album by " << @artist.name %></a>
-    </div>
-  <% end %>
+  </div>
 
 </div>
 

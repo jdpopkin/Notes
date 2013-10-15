@@ -1,13 +1,15 @@
 <div id="content">
   <h2><%= @album.title %> by <%= link_to @album.artist.name, artist_url(@album.artist) %></h2>
 
-  <ul id='song-list'>
-    <% @album.songs.each do |song| %>
-      <li>
-        <%= link_to song.title, song_url(song) %>
-      </li>
-    <% end %>
-  </ul>
+  <div class="content-left">
+    <ul id='song-list'>
+      <% @album.songs.each do |song| %>
+        <li>
+          <%= link_to song.title, song_url(song) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 
   <% if current_user %>
     <div id="new-song-container">

@@ -27,66 +27,70 @@
   <!-- # TODO password confirmation -->
 </form>
 
-<div class="featured-content">
-<h2>Featured Songs</h2>
-<!-- Code to load and display featured songs -->
-  <ul class="featured-songs">
-  <% Song.includes(:artist).recent_top(5).each do |song| %>
-    <li class="featured-song">
-      <%= link_to song.title, song_url(song) %> by
-        <%= link_to song.artist.name, artist_url(song.artist) %>,
-        <%= song.cached_score %>
-    </li>
-  <% end %>
-  </ul>
-
-<h2>Featured Albums</h2>
-<!-- Code for featured albums -->
-  <ul class="featured-albums">
-    <% Album.includes(:artist).recent_top(5).each do |album| %>
+<div class="content group">
+  <div class="featured-content">
+  <h2>Featured Songs</h2>
+  <!-- Code to load and display featured songs -->
+    <ul class="featured-songs">
+    <% Song.includes(:artist).recent_top(5).each do |song| %>
       <li class="featured-song">
-        <%= link_to album.title, album_url(album) %> by
-          <%= link_to album.artist.name, artist_url(album.artist) %>,
-          <%= album.cached_score %>
+        <%= link_to song.title, song_url(song) %> by
+          <%= link_to song.artist.name, artist_url(song.artist) %>,
+          <%= song.cached_score %>
       </li>
     <% end %>
-  </ul>
+    </ul>
 
-<h2>Featured Artists</h2>
-<!-- Code for featured artists -->
-  <ul class="featured-artists">
-    <% Artist.recent_top(5).each do |artist| %>
-    <li class="featured-artist">
-      <%= link_to artist.name, artist_url(artist) %>, <%= artist.cached_score %>
-    </li>
-    <% end %>
-  </ul>
-</div>
+  <h2>Featured Albums</h2>
+  <!-- Code for featured albums -->
+    <ul class="featured-albums">
+      <% Album.includes(:artist).recent_top(5).each do |album| %>
+        <li class="featured-song">
+          <%= link_to album.title, album_url(album) %> by
+            <%= link_to album.artist.name, artist_url(album.artist) %>,
+            <%= album.cached_score %>
+        </li>
+      <% end %>
+    </ul>
 
-<div class="recent-content">
-<h2>Recent Content</h2>
-  <!-- Code for recent content -->
-  <ul class="recent-content-list">
-    <% recent_content = recent_content(5) %>
+  <h2>Featured Artists</h2>
+  <!-- Code for featured artists -->
+    <ul class="featured-artists">
+      <% Artist.recent_top(5).each do |artist| %>
+      <li class="featured-artist">
+        <%= link_to artist.name, artist_url(artist) %>, <%= artist.cached_score %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
 
-    <% recent_content.each do |obj| %>
-      <% time_string = distance_of_time_in_words_to_now(obj.created_at) %>
-      <li class="recent-content">
-        <% if obj.class == Song %>
-          <%= render "songs/mini", song: obj, artist: obj.artist, user: obj.user, time: time_string %>
-        <% elsif obj.class == Artist %>
-          <%= render "artists/mini", artist: obj, user: obj.user, time: time_string %>
-        <% elsif obj.class == Album %>
-          <%= render "albums/mini", album: obj, artist: obj.artist, user: obj.user, time: time_string %>
-        <% elsif obj.class == Note %>
-          <%= render "notes/mini", note: obj, user: obj.user, song: obj.song, time: time_string %>
-        <% elsif obj.class == Comment %>
-          <%= render "comments/mini", comment: obj, user: obj.user, commentable: obj.commentable, time: time_string %>
+  <div class="recent-content-wrapper">
+    <div class="recent-content">
+      <h2>Recent Content</h2>
+      <!-- Code for recent content -->
+      <ul class="recent-content-list">
+        <% recent_content = recent_content(5) %>
+
+        <% recent_content.each do |obj| %>
+          <% time_string = distance_of_time_in_words_to_now(obj.created_at) %>
+          <li class="recent-content">
+            <% if obj.class == Song %>
+              <%= render "songs/mini", song: obj, artist: obj.artist, user: obj.user, time: time_string %>
+            <% elsif obj.class == Artist %>
+              <%= render "artists/mini", artist: obj, user: obj.user, time: time_string %>
+            <% elsif obj.class == Album %>
+              <%= render "albums/mini", album: obj, artist: obj.artist, user: obj.user, time: time_string %>
+            <% elsif obj.class == Note %>
+              <%= render "notes/mini", note: obj, user: obj.user, song: obj.song, time: time_string %>
+            <% elsif obj.class == Comment %>
+              <%= render "comments/mini", comment: obj, user: obj.user, commentable: obj.commentable, time: time_string %>
+            <% end %>
+          </li>
+
         <% end %>
-      </li>
 
-    <% end %>
-
-  </ul>
+      </ul>
+    </div>
+  </div>
 </div>
 

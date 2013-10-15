@@ -1,3 +1,26 @@
 // Place all the styles related to the Artists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.artist-header {
+  //text-transform: uppercase;
+}
+
+.content-left {
+  width: 500px;
+}
+
+#song-list, #albums-list, #artists-list {
+  list-style: none;
+  padding: 0;
+}
+
+#song-list > li, #albums-list > li, #artists-list > li {
+  padding: 10px 0 10px 0;
+  border-bottom: 1px solid #333333;
+}
+
+#song-list > li:first-child, #albums-list > li:first-child, #artists-list:first-child {
+  border-top: 1px solid #333333;
+}
+

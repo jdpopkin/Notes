@@ -1,21 +1,23 @@
 <h1>Albums</h1>
 
+<div class="content-left">
+  <ul id="albums-list">
+  <% @albums.each do |album| %>
+    <li>
+      <%= link_to album.title, album_url(album) %> by
+        <%= link_to album.artist.name, artist_url(album.artist) %>
+        <%= album.cached_score %>
+    </li>
+  <% end %>
+  </ul>
+</div>
+
 <div id="new-album-container">
   <%# TODO: prevent default (keep an entry from being added in history) %>
   <% if current_user # care re # %>
     <a class="albums-new" href="#albums/new">Add new album</a>
   <% end %>
 </div>
-
-<ul>
-<% @albums.each do |album| %>
-  <li>
-    <%= link_to album.title, album_url(album) %> by
-      <%= link_to album.artist.name, artist_url(album.artist) %>
-      <%= album.cached_score %>
-  </li>
-<% end %>
-</ul>
 
 <script type="application/json" id="bootstrapped_artists_json">
   <%= Artist.all.to_json.html_safe %>
