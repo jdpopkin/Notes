@@ -1,1 +1,2 @@
-<%= user.username %> added a new song: <%= song.title %> by <%= artist.name %> <%= time %> ago.
+<%= user.username %> added the song <%= link_to song.title, song_url(song) %> by
+  <%= link_to artist.name, artist_url(artist) %> <%= time %> ago.

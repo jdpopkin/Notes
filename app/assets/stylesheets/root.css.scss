@@ -49,7 +49,7 @@ body {
 }
 
 textarea, input[type=text], input[type=password] {
-  background-color: #333333;
+  background-color: #161616; // #333333;
   color: white;
 }
 
@@ -97,6 +97,20 @@ div.errors, div.login-errors, div.signup-errors {
   padding: 0 0 0 10px;
 }
 
+.featured-content > ul {
+  list-style: none;
+  padding: 0;
+}
+
+.featured-content > ul > li {
+  padding: 10px 0 10px 0;
+  border-bottom: 1px solid #333333;
+}
+
+.featured-content > ul > li:first-child {
+  border-top: 1px solid #333333;
+}
+
 .recent-content-wrapper {
   float: right;
   width: 400px;
@@ -109,6 +123,18 @@ div.errors, div.login-errors, div.signup-errors {
   padding: 0 40px 0 0;
 }
 
-.recent-content > ul {
-//  float: left;
+.recent-content > ul, .recent-content-list {
+  list-style: none;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+.recent-content > ul > li {
+  padding: 10px 0 10px 0;
+  border-bottom: 1px solid #333333;
+}
+
+.recent-content > ul > li:first-child {
+  border-top: 1px solid #333333;
 }

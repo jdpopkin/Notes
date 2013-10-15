@@ -1,15 +1,17 @@
 <div id="content">
-  <div class="song-header">
-  <h2><%= song.title %> by <a href="<%= Notes.rootUrl + "artists/" + song.artist.id %>"><%= song.artist.name %></a></h2>
+  <div class="song-header-container">
+    <div class="song-header">
+    <h2><%= song.title %> by <a href="<%= Notes.rootUrl + "artists/" + song.artist.id %>"><%= song.artist.name %></a></h2>
 
-  <%= JST["votes/div"]({
-    totalVotes: song.score,
-    currentUser: currentUser,
-    votableType: "Song",
-    votableId: song.id,
-    voteSet: Notes.votes,
-    author: song.user_id
-  }) %>
+    <%= JST["votes/div"]({
+      totalVotes: song.score,
+      currentUser: currentUser,
+      votableType: "Song",
+      votableId: song.id,
+      voteSet: Notes.votes,
+      author: song.user_id
+    }) %>
+    </div>
   </div>
 
   <div class="lyrics-div">

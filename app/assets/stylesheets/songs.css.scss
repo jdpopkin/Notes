@@ -2,7 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+.song-header-container {
+  padding-bottom: 10px;
+}
 
 .song-header {
   width: 500px;
@@ -59,6 +61,8 @@
 .note {
   position:absolute; // fixed?
   width: 400px;
+  max-height: 500px;
+  overflow: auto;
   left: 550px;
   color: white;
   background-color: #161616 !important;
@@ -124,7 +128,7 @@
 }
 
 .note-comment-form > label > textarea {
-  width: 395px;
+  width: 380px;
 }
 
 div.vote-container {
@@ -150,6 +154,7 @@ div.vote-container:after {
 
 .comment-section {
   max-width: 500px;
+  padding-top: 20px;
 }
 
 .hidden {

@@ -1,1 +1,1 @@
-<%= user.username %> added a new note on <%= song.title %> <%= time %> ago.
+<%= user.username %> added a new note on <%= link_to song.title, song_url(song) %> <%= time %> ago.
