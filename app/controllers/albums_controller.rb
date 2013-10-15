@@ -1,6 +1,6 @@
 class AlbumsController < ApplicationController
   def index
-    @albums = Album.recent_top(Album.count)
+    @albums = Album.includes(:artist).recent_top(Album.count)
     render :index
   end
 

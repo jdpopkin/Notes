@@ -11,7 +11,9 @@
 <ul class="songs-list">
 <% @songs.each do |song| %>
   <li>
-    <%= link_to song.title, song_url(song) %> <%= song.cached_score %>
+    <%= link_to song.title, song_url(song) %> by
+      <%= link_to song.artist.name, artist_url(song.artist) %>
+      <%= song.cached_score %>
   </li>
 <% end %>
 </ul>
