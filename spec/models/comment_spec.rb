@@ -36,6 +36,27 @@ describe Comment do
     expect(comment.score).to eq(-1)
   end
 
+  it "should include score when converted to json" do
+    comment = Comment.new(user_id: 1, commentable_id: 1, commentable_type: "Song",
+                          body: "Word")
+
+    comment.stub(:score).and_return(4)
+
+    expect(comment.as_json["score"]).to eq(4)
+  end
+
+  it "should return #score when #cached_score is called" do
+    comment = Comment.new(user_id: 1, commentable_id: 1,
+                          commentable_type: "Song", body: "Word")
+
+    comment.stub(:score).and_return(3)
+
+    expect(comment.cached_score).to eq(3)
+
+
+  end
+
+  # integration tests
   it "should return the recent score of a comment" do
     comment = Comment.create(user_id: 1, commentable_id: 1,
                             commentable_type: "Song", body: "Word")
@@ -64,14 +85,5 @@ describe Comment do
     expect(comment.recent_score).to eq(1)
   end
 
-  it "should return #score when #cached_score is called" do
-    comment = Comment.new(user_id: 1, commentable_id: 1,
-                          commentable_type: "Song", body: "Word")
 
-    comment.stub(:score).and_return(3)
-
-    expect(comment.cached_score).to eq(3)
-
-
-  end
 end

@@ -156,10 +156,6 @@ Do something less plain for artist and album pages. Use RG as a model.
 Add featured users and float recent content right on root page.
 Add links to recent content.
 
-Add description fields to artists, songs, albums? Update seeds etc. Probably
-can't do that for songs with the current implementation of notes, though. Could
-just give notes a z-index, though, right?
-
 PAD EVERYTHING CIRCA 20PX TO BE LIKE THE SONGS PAGE.
 Add user pages. <---- this next
 Fix recent content
@@ -181,14 +177,19 @@ and then write tests for them?
 
 Testing for vote: custom validation that voter isn't votee
 
-Testing for artist: TODO: rewrite #score and #recent_score? and write tests for them
+Testing for artist: rewrite #score and #recent_score? and write tests for them
 
-Testing for comment:
+Testing for comment: same as album/artist plus a json test like in song
 
-Testing for note: score, recent_score, as_json
+
+Testing for note: TODO score, recent_score, as_json
 
 Testing for user:
 
+Add description fields to artists, songs, albums? Update seeds etc. Probably
+can't do that for songs with the current implementation of notes, though. Could
+just give notes a z-index, though, right?
+Maybe kaminari? Extra padding on left for things?
 
 
 
