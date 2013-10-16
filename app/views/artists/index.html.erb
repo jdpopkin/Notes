@@ -5,7 +5,7 @@
   <ul id="artists-list">
   <% @artists.each do |artist| %>
     <li>
-      <%= link_to artist.name, artist_url(artist) %> <%= artist.cached_score %>
+      <%= link_to artist.name, artist_url(artist) %> (<%= "%+d" % artist.cached_score %> today)
     </li>
   <% end %>
   </ul>

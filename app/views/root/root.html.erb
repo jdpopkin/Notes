@@ -1,32 +1,3 @@
-<!-- <h1>notes</h1> -->
-
-
-
-
-
-<!-- <% if current_user %>
-  <a id="login-link" class="hidden" href="#/sign_in">Sign In</a>
-  <a id="logout-link" href="#/sign_out">Log Out</a>
-<% else %>
-  <a id="login-link" href="#/sign_in">Sign In</a>
-  <a id="logout-link" class="hidden" href="#/sign_out">Log Out</a>
-<% end %>
-
-<form id="login" class="hidden" action="<%= session_url %>" method="POST">
-  <label>Username <input type="text" name="user[username]"></label>
-  <label>Password <input type="password" name="user[password]"></label>
-  <input type="submit" value="Sign In">
-  <a id="signup-link" href="#<%#= new_user_url %>">Sign Up</a>
-</form>
-
-<form id="signup" class="hidden" action="<%= users_url %>" method="POST">
-  <label>Email <input type="text" name="user[email]"></label>
-  <label>Username <input type="text" name="user[username]"></label>
-  <label>Password <input type="password" name="user[password]"></label>
-  <input type="submit" value="Sign Up"> -->
-  <!-- # TODO password confirmation -->
-</form>
-
 <div class="content group">
   <div class="featured-content">
   <h2>Featured Songs</h2>
@@ -35,8 +6,8 @@
     <% Song.includes(:artist).recent_top(5).each do |song| %>
       <li class="featured-song">
         <%= link_to song.title, song_url(song) %> by
-          <%= link_to song.artist.name, artist_url(song.artist) %>,
-          Score: <%= song.cached_score %>
+          <%= link_to song.artist.name, artist_url(song.artist) %>
+          (<%= "%+d" % song.cached_score %> today)
       </li>
     <% end %>
     </ul>
@@ -47,8 +18,8 @@
       <% Album.includes(:artist).recent_top(5).each do |album| %>
         <li class="featured-song">
           <%= link_to album.title, album_url(album) %> by
-            <%= link_to album.artist.name, artist_url(album.artist) %>,
-            Score: <%= album.cached_score %>
+            <%= link_to album.artist.name, artist_url(album.artist) %>
+            (<%= "%+d" % album.cached_score %> today)
         </li>
       <% end %>
     </ul>
@@ -58,7 +29,7 @@
     <ul class="featured-artists">
       <% Artist.recent_top(5).each do |artist| %>
       <li class="featured-artist">
-        <%= link_to artist.name, artist_url(artist) %>, Score: <%= artist.cached_score %>
+        <%= link_to artist.name, artist_url(artist) %> (<%= "%+d" % artist.cached_score %> today)
       </li>
       <% end %>
     </ul>

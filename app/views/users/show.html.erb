@@ -10,9 +10,9 @@ Score: <%= @user.score %>
         <% time_string = distance_of_time_in_words_to_now(obj.created_at) %>
         <li class="top-action">
           <% if obj.class == Note %>
-            <%= render "notes/mini", note: obj, user: @user, song: obj.song, time: time_string %> Score: <%= obj.recent_score %>
+            <%= render "notes/mini", note: obj, user: @user, song: obj.song, time: time_string %> (<%= "%+d" % obj.recent_score %>)
           <% elsif obj.class == Comment %>
-            <%= render "comments/mini", comment: obj, user: @user, commentable: obj.commentable, time: time_string %> Score: <%= obj.recent_score %>
+            <%= render "comments/mini", comment: obj, user: @user, commentable: obj.commentable, time: time_string %> (<%= "%+d" % obj.recent_score %>)
           <% end %>
         </li>
       <% end %>

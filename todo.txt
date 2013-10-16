@@ -181,8 +181,8 @@ Testing for artist: rewrite #score and #recent_score? and write tests for them
 
 Testing for comment: same as album/artist plus a json test like in song
 
+Testing for note: score, recent_score, as_json
 
-Testing for note: TODO score, recent_score, as_json
 
 Testing for user:
 
@@ -190,6 +190,22 @@ Add description fields to artists, songs, albums? Update seeds etc. Probably
 can't do that for songs with the current implementation of notes, though. Could
 just give notes a z-index, though, right?
 Maybe kaminari? Extra padding on left for things?
+ADD EXPLANATIONS FOR SCORE NUMBERS EVERYWHERE. SPECIFY WHEN RECENT_SCORE CALLED.
+MAYBE "SCORE TODAY" OR SOMETHING.
+Should all these scores and recent scores get prefixed with + ? YES.
+http://stackoverflow.com/questions/2389370/convert-an-integer-into-a-signed-string-in-ruby
+for signed int printing. fprintf! woop
 
+recent score updated for:
+albums (all).
+artists (all). note: no scores on show page, same as albums.
+# comments
+# layouts
+# notes # these only need overall scores, not recent ones?
+root: root page
+songs: index (probably need to do show for all non-recent scores)
+users: show page
 
+TODO: update static permanent scores, like on the song show page.
 
+TODO: LINKS TO USER PAGES BREAK NOTE SUBMISSION

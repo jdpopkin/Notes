@@ -4,7 +4,7 @@ class NotesController < ApplicationController
     @note = Note.new(params[:note])
     if request.xhr?
       if @note.save
-        render json: @note
+        render json: @note.to_json(include: :user)
       else
         render json: @note.errors
       end

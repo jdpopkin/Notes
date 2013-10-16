@@ -6,7 +6,7 @@
     <li>
       <%= link_to album.title, album_url(album) %> by
         <%= link_to album.artist.name, artist_url(album.artist) %>
-        <%= album.cached_score %>
+        (<%= "%+d" % album.cached_score %> today)
     </li>
   <% end %>
   </ul>
