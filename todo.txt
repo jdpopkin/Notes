@@ -196,13 +196,5 @@ Should all these scores and recent scores get prefixed with + ? YES.
 http://stackoverflow.com/questions/2389370/convert-an-integer-into-a-signed-string-in-ruby
 for signed int printing. fprintf! woop
 
-recent score updated for:
-albums (all).
-artists (all). note: no scores on show page, same as albums.
-comments (all)
-layouts (all)
-notes (all) # these only need overall scores, not recent ones?
-root: root page
-songs: index (probably need to do show for all non-recent scores)
-users: show page
+
 
