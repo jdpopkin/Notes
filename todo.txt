@@ -180,6 +180,6 @@ Testing for artist:
 Testing for comment:
 Testing for note:
 Testing for user:
-Testing for vote:
+Testing for vote: custom validation that voter isn't votee
 
 
