@@ -40,7 +40,7 @@
       <h2>Recent Content</h2>
       <!-- Code for recent content -->
       <ul class="recent-content-list">
-        <% recent_content = recent_content(5) %>
+        <% recent_content = recent_content(10) %>
 
         <% recent_content.each do |obj| %>
           <% time_string = distance_of_time_in_words_to_now(obj.created_at) %>

@@ -192,5 +192,6 @@ Add description fields to artists, songs, albums? Update seeds etc. Probably
 can't do that for songs with the current implementation of notes, though. Could
 just give notes a z-index, though, right?
 Maybe kaminari? Extra padding on left for things?
+Maybe redis. Definitely set up a domain name today, though.
 
 
