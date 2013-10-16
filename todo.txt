@@ -179,6 +179,8 @@ Testing for song: before_validation :remove_crs, score, recent_score, as_json
 Testing for album: Rewrite #score and #recent_score for consistency with Song
 and then write tests for them?
 
+Testing for vote: custom validation that voter isn't votee
+
 Testing for artist: TODO: rewrite #score and #recent_score? and write tests for them
 
 Testing for comment:
@@ -187,6 +189,6 @@ Testing for note: score, recent_score, as_json
 
 Testing for user:
 
-Testing for vote: custom validation that voter isn't votee
+
 
 

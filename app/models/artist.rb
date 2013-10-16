@@ -2,6 +2,7 @@ class Artist < ActiveRecord::Base
   attr_accessible :name, :user_id
   has_many :songs
   has_many :albums
+  has_many :votes, through: :songs, source: :votes
   belongs_to :user
 
   validates :name, :user_id, presence: true
@@ -34,11 +35,15 @@ class Artist < ActiveRecord::Base
   end
 
   def score
-    self.score_with_cutoff(100.years.ago)
+    self.votes.inject(0) { |sum, vote| sum += vote.value }
+    # self.score_with_cutoff(100.years.ago)
   end
 
   def recent_score
-    self.score_with_cutoff(1.day.ago)
+    self.votes.where("votes.created_at > ?", 1.day.ago).inject(0) do |sum, vote|
+      sum += vote.value
+    end
+    # self.score_with_cutoff(1.day.ago)
   end
 
   def score_with_cutoff(cutoff)
