@@ -3,8 +3,10 @@ class Album < ActiveRecord::Base
   belongs_to :artist
   belongs_to :user
   has_many :songs
+  has_many :votes, through: :songs, source: :votes
 
   validates :artist_id, :title, :user_id, presence: true
+
   include PgSearch
   multisearchable against: :title
 
@@ -35,11 +37,13 @@ class Album < ActiveRecord::Base
   end
 
   def score
-    self.score_with_cutoff(100.years.ago)
+    self.votes.inject(0) { |sum, vote| sum += vote.value }
   end
 
   def recent_score
-    self.score_with_cutoff(1.day.ago)
+    self.where("created_at > ?", 1.day.ago).votes.inject(0) do |sum, vote|
+      sum += vote.value
+    end
   end
 
   def score_with_cutoff(cutoff)

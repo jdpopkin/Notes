@@ -45,19 +45,23 @@ class Song < ActiveRecord::Base
   end
 
   def score
-    total = 0
-    self.votes.each do |vote|
-      total += vote.value
-    end
-    total
+    self.votes.inject(0) { |sum, vote| sum += vote.value }
+    # total = 0
+    # self.votes.each do |vote|
+    #   total += vote.value
+    # end
+    # total
   end
 
   def recent_score
-    sum = 0
-    self.votes.each do |vote|
-      sum += vote.value if vote.created_at > 1.day.ago
+    self.votes.where("created_at > ?", 1.day.ago).inject(0) do |sum, vote|
+      sum += vote.value
     end
-    sum
+    # sum = 0
+    # self.votes.each do |vote|
+    #   sum += vote.value if vote.created_at > 1.day.ago
+    # end
+    # sum
   end
 
   def as_json(options = {})

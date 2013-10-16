@@ -12,14 +12,11 @@ class Vote < ActiveRecord::Base
   belongs_to :votable, polymorphic: true
 
   def cannot_vote_on_own_votable
-    klass = self.votable.class # self.votable_type.constantize
-    # user_id = nil
+    klass = self.votable.class
     if klass == Note
       target_user = self.votable.author_id
-      # Note.find(self.votable_id).author_id
     else
       target_user = self.votable.user_id
-      # klass.find(self.votable_id).user_id
     end
 
     if target_user == self.user_id

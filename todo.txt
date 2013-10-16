@@ -175,11 +175,15 @@ Which class methods can be tested? Maybe the score methods for comment and note.
 Pagination? More consistent indentation - cf songs - 20px on the left side?
 
 Testing for song: before_validation :remove_crs, score, recent_score, as_json
-Testing for album:
-Testing for artist:
+
+Testing for album: TODO: custom validations for titles? nah. cached_score. Rewrite
+#score and #recent_score for consistency with Song and then write tests for them?
+
+Testing for artist: TODO: rewrite #score and #recent_score?
+
 Testing for comment:
-Testing for note:
+Testing for note: score, recent_score, as_json
 Testing for user:
-Testing for vote: TODO custom validation that voter isn't votee
+Testing for vote: custom validation that voter isn't votee
 
 

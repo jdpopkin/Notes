@@ -38,7 +38,9 @@ class Note < ActiveRecord::Base
   end
 
   def recent_score
-    self.votes.where("created_at > ?", 1.day.ago).inject(0) { |sum, vote| sum += vote.value }
+    self.votes.where("created_at > ?", 1.day.ago).inject(0) do |sum, vote|
+      sum += vote.value
+    end
 
     # sum = 0
     #     self.votes.each do |vote|
