@@ -122,7 +122,7 @@ Notes.Views.SongShow = Backbone.View.extend({
         $otherForm.children(".vote-button").prop("disabled", false);
 
         var newNum = parseInt($voteSpan.html()) + value;
-        $voteSpan.html(newNum);
+        $voteSpan.html(Notes.toSigned(newNum));
         //that.render();
       }
     });

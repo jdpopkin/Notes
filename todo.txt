@@ -199,13 +199,10 @@ for signed int printing. fprintf! woop
 recent score updated for:
 albums (all).
 artists (all). note: no scores on show page, same as albums.
-# comments
-# layouts
-# notes # these only need overall scores, not recent ones?
+comments (all)
+layouts (all)
+notes (all) # these only need overall scores, not recent ones?
 root: root page
 songs: index (probably need to do show for all non-recent scores)
 users: show page
 
-TODO: update static permanent scores, like on the song show page.
-
-TODO: LINKS TO USER PAGES BREAK NOTE SUBMISSION
