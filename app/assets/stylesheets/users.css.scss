@@ -2,3 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.top-activity {
+  float: left;
+  max-width: 400px;
+}
+
+.recent-activity {
+  float: right;
+  max-width: 400px;
+}
+
+.recent-activity-list, .top-activity-list {
+  list-style: none;
+  padding: 0;
+}
+
+.recent-activity-list > li, .top-activity-list > li {
+  padding: 10px 0 10px 0;
+  border-bottom: 1px solid #333333;
+}
+
+.recent-activity-list > li:first-child, .top-activity-list > li:first-child {
+  border-top: 1px solid #333333;
+}

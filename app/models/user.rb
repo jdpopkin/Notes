@@ -33,6 +33,12 @@ class User < ActiveRecord::Base
     big_array = Comment.top_for_user(n, self).to_a +
                 Note.top_for_user(n, self).to_a
     # do this tomorrow probably
+
+    big_array = big_array.sort_by do |obj|
+      obj.cached_score
+    end
+
+    big_array.last(n).reverse
   end
 
   def self.top(n)
