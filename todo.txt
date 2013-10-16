@@ -174,4 +174,12 @@ Testable stuff: carriage return elimination for Song. All associations?
 Which class methods can be tested? Maybe the score methods for comment and note.
 Pagination? More consistent indentation - cf songs - 20px on the left side?
 
+Testing for song: before_validation :remove_crs, score, recent_score, as_json
+Testing for album:
+Testing for artist:
+Testing for comment:
+Testing for note:
+Testing for user:
+Testing for vote:
+
 

@@ -9,11 +9,11 @@
   <% if (currentUser) { %>
     <%= JST["votes/div"]({
       totalVotes:  note.score,
-      currentUser: currentUser,
+      currentUser: Notes.currentUser,
       votableType: "Note",
       votableId: note.id,
       voteSet: Notes.votes,
-      author: note.user_id
+      author: note.author_id
     }) %>
   <% } %>
 
