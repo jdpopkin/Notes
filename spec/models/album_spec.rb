@@ -71,7 +71,7 @@ describe Album do
     expect(album.recent_score).to eq(1)
   end
 
-  it "should return #score when #cached_score is called" do
+  it "should return #recent_score when #cached_score is called" do
     album = Album.new(user_id: 1, artist_id: 1, title: "Test Album")
 
     album.stub(:recent_score).and_return(3)

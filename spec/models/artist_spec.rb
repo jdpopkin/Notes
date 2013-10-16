@@ -62,8 +62,6 @@ describe Artist do
     vote2 = Vote.create(user_id: 2, votable_id: song2.id, votable_type: "Song", value: 1)
     vote3 = Vote.create(user_id: 3, votable_id: song2.id, votable_type: "Song", value: 1)
 
-    p [vote1, vote2, vote3]
-
     vote1.created_at = 1.year.ago
     vote2.created_at = 1.year.ago
 
