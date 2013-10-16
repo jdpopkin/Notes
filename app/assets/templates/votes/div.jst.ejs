@@ -12,7 +12,7 @@
 
 <% var extentVote = voteValue(currentUser, votableType, votableId, voteSet) %>
 
-<div class="vote-container"><div class="in-vote-container">Score: <span class="vote-span"><%= totalVotes %></span></div>
+<div class="vote-container"><div class="in-vote-container">Score: <span class="vote-span"><%= Notes.toSigned(totalVotes) %></span></div>
   <% if (currentUser) { %>
     <div class="vote in-vote-container">
 
