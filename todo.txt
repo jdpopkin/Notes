@@ -176,14 +176,17 @@ Pagination? More consistent indentation - cf songs - 20px on the left side?
 
 Testing for song: before_validation :remove_crs, score, recent_score, as_json
 
-Testing for album: TODO: custom validations for titles? nah. cached_score. Rewrite
-#score and #recent_score for consistency with Song and then write tests for them?
+Testing for album: Rewrite #score and #recent_score for consistency with Song
+and then write tests for them?
 
-Testing for artist: TODO: rewrite #score and #recent_score?
+Testing for artist: TODO: rewrite #score and #recent_score? and write tests for them
 
 Testing for comment:
+
 Testing for note: score, recent_score, as_json
+
 Testing for user:
+
 Testing for vote: custom validation that voter isn't votee
 
 
