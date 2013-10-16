@@ -8,20 +8,22 @@ class Vote < ActiveRecord::Base
   validates :value, inclusion: [-1, 1]
   validate :cannot_vote_on_own_votable
 
+  belongs_to :user
+  belongs_to :votable, polymorphic: true
+
   def cannot_vote_on_own_votable
-    klass = self.votable_type.constantize
+    klass = self.votable.class # self.votable_type.constantize
     # user_id = nil
     if klass == Note
-      target_user = Note.find(self.votable_id).author_id
+      target_user = self.votable.author_id
+      # Note.find(self.votable_id).author_id
     else
-      target_user = klass.find(self.votable_id).user_id
+      target_user = self.votable.user_id
+      # klass.find(self.votable_id).user_id
     end
 
     if target_user == self.user_id
       errors[:base] << "Cannot vote on your own item"
     end
   end
-
-  belongs_to :user
-  belongs_to :votable, polymorphic: true
 end
