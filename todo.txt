@@ -173,6 +173,5 @@ Change the carriage return removal function - make it a custom callback
 Testable stuff: carriage return elimination for Song. All associations?
 Which class methods can be tested? Maybe the score methods for comment and note.
 Pagination? More consistent indentation - cf songs - 20px on the left side?
-Format user page.
 
 
