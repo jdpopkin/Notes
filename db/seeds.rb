@@ -271,7 +271,7 @@ Cause yeah, we were beginners in the hood as 5 percenters
 But something must of got in us cause all of us turned to sinners
 Now some resting in peace and some are sitting in San Quentin
 Others such as myself are trying to carry on tradition
-Keeping this Schweppervescent street ghetto essence inside us
+Keeping that effervescent street ghetto essence inside us
 Cause it provides us with the proper insight to guide us
 Even though, we know somehow we all gotta go
 But as long as we leaving thieving, we'll be leaving with some kind of dough

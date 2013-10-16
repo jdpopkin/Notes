@@ -25,7 +25,12 @@ button, input[type=submit] {
 }
 
 a {
-  color: lightblue;
+//  color: lightblue;
+  color: #ADD8E6;
+}
+
+a:hover {
+  color: #BAE8F7;
 }
 
 .group:after {
@@ -70,6 +75,10 @@ div.javascript-request {
 
 a.logo-link {
   color: lightblue;
+}
+
+a.logo-link:hover {
+  color: #BAE8F7;
 }
 
 ul.navlist {

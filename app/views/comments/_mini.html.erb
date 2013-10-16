@@ -1,5 +1,5 @@
 <% if commentable.class == Song %>
-  <%= user.username %> added a new comment to <%= link_to commentable.title, song_url(commentable.id) %> <%= time %> ago.
+  <%= link_to user.username, user_url(user) %> added a new comment to <%= link_to commentable.title, song_url(commentable.id) %> <%= time %> ago.
 <% else %>
-  <%= user.username %> added a new comment to a note on <%= link_to commentable.song.title, song_url(commentable.song) %> <%= time %> ago.
+  <%= link_to user.username, user_url(user) %> added a new comment to a note on <%= link_to commentable.song.title, song_url(commentable.song) %> <%= time %> ago.
 <% end %>

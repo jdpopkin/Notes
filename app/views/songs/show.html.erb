@@ -34,7 +34,7 @@
   %>
 </script>
 
-<script id="bootstrapped_notes_json" type="application/json"><%= @song.notes.order("start_index DESC").to_json(include: {comments: {include: :user, methods: :score}}).html_safe %></script>
+<script id="bootstrapped_notes_json" type="application/json"><%= @song.notes.order("start_index DESC").to_json(:include => [{:comments => {:include => :user, :methods => :score}}, :user]).html_safe %></script>
 
 <script id="bootstrapped_votes_json" type="application/json">
   <% votes ||= [] %>

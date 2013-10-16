@@ -1,7 +1,11 @@
 <% if (!note.comments) { %>
   <% note.comments = []; %>
 <% } %>
-<div class="note hidden" data-id="<%= note.id %>"><p><%= note.body %></p>
+<div class="note hidden" data-id="<%= note.id %>">
+  <% console.log(note) %>
+  <div class="note-author"><a href="<%= Notes.rootUrl + "users/" + note.user.id %>">
+    <%= note.user.username %></a> posted:</div>
+  <p><%= note.body %></p>
   <% if (currentUser) { %>
     <%= JST["votes/div"]({
       totalVotes:  note.score,

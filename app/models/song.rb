@@ -3,6 +3,7 @@ class Song < ActiveRecord::Base
 
   validates :title, presence: true
   validates :artist_id, presence: true
+  before_validation :remove_carriage_returns
 
   belongs_to :album
   belongs_to :artist
@@ -14,6 +15,10 @@ class Song < ActiveRecord::Base
 
   include PgSearch
   multisearchable against: [:title, :lyrics]
+
+  def remove_carriage_returns
+    self.lyrics = self.lyrics.gsub("\r", "")
+  end
 
   # Returns the n songs with the highest scores.
   def self.top(n)

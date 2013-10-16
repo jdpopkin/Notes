@@ -1,5 +1,6 @@
 <div class="comment">
-  <div class="comment-author"><%= comment.user.username %> posted:</div>
+  <div class="comment-author"><a href="<%= Notes.rootUrl + "users/" + comment.user.id %>">
+    <%= comment.user.username %></a> posted:</div>
   <div class="comment-body">
     <%= comment.body %>
   </div>
