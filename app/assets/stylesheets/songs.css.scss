@@ -131,10 +131,18 @@
   width: 380px;
 }
 
+div.vote-area-div {
+  text-align: center;
+}
+
+span.vote-area {
+  display: inline-block;
+}
+
 div.vote-container {
   padding-top: 20px;
   padding-bottom: 20px;
-  width: 350px;
+  max-width: 350px;
   margin: auto;
 }
 
