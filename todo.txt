@@ -183,8 +183,7 @@ Testing for comment: same as album/artist plus a json test like in song
 
 Testing for note: score, recent_score, as_json
 
-
-Testing for user:
+Testing for user: find by credentials. is_password.
 
 Add description fields to artists, songs, albums? Update seeds etc. Probably
 can't do that for songs with the current implementation of notes, though. Could
