@@ -69,10 +69,6 @@ describe Song do
     vote2 = Vote.create(user_id: 3, votable_id: song.id, votable_type: "Song", value: 1)
     vote3 = Vote.create(user_id: 4, votable_id: song.id, votable_type: "Song", value: 1)
 
-    vote1.created_at = 1.hour.ago
-    vote2.created_at = 1.hour.ago
-    vote3.created_at = 1.hour.ago
-
     song.votes = [vote1, vote2, vote3]
 
     expect(song.recent_score).to eq(3)
@@ -96,8 +92,6 @@ describe Song do
     vote3.save
 
     song.votes = [vote1, vote2, vote3]
-
-    p song.votes.map { |v| v.created_at }
 
     expect(song.recent_score).to eq(1)
   end

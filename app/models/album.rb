@@ -41,7 +41,7 @@ class Album < ActiveRecord::Base
   end
 
   def recent_score
-    self.where("created_at > ?", 1.day.ago).votes.inject(0) do |sum, vote|
+    self.votes.where("votes.created_at > ?", 1.day.ago).inject(0) do |sum, vote|
       sum += vote.value
     end
   end
