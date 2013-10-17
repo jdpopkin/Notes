@@ -36,11 +36,15 @@ class Song < ActiveRecord::Base
   def self.top_with_cutoff(cutoff, n)
     select_arr = ["songs.*, COALESCE(SUM(CASE WHEN votes.created_at > ? THEN votes.value ELSE 0 END), 0) AS cached_score", cutoff]
     select = sanitize_sql_array(select_arr)
+
+    order_arr = ["COALESCE(SUM(CASE WHEN votes.created_at > ? THEN votes.value ELSE 0 END), 0) DESC", cutoff]
+    order = sanitize_sql_array(order_arr)
+
     Song.select(select)
     .joins("LEFT JOIN votes ON
         (songs.id = votes.votable_id AND votes.votable_type = 'Song')")
     .group("songs.id")
-    .order("COALESCE (SUM(votes.value), 0) DESC")
+    .order(order)
     .limit(n)
     # Song.find_by_sql([<<-SQL, cutoff, n])
 #       SELECT songs.*, COALESCE(SUM(CASE WHEN votes.created_at > ? THEN votes.value ELSE 0 END), 0) AS cached_score FROM songs LEFT JOIN votes ON

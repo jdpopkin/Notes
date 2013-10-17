@@ -212,5 +212,7 @@ New model. Tracks each activity. One is created whenever a new
 song/artist/album/comment/note is made. Has timestamp and polymorphic
 association with whatever it's associated with. Nah; paginate artists, albums.
 
+Fix handling of song creation when only one album exists for the artist
+
 
 
