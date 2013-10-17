@@ -2,13 +2,12 @@ Notes.Views.SongShow = Backbone.View.extend({
 
   initialize: function(song, notes) {
     var that = this;
-    that.song = song; // TODO: determine if this should use a model instead
+    that.song = song;
     that.notes = notes;
     that.keepBox = false;
   },
 
   events: {
-    // TODO: determine if it is safe to use JQuery's .on("select") and not this
     "mouseup .add-note": "keepSelect",
     "mouseup #lyrics": "handleSelect",
     "mousedown #lyrics": "startSelect",
@@ -50,14 +49,13 @@ Notes.Views.SongShow = Backbone.View.extend({
        votes: Notes.votes
     });
     renderedContent = that.addNotes(renderedContent);
-    //renderedContent = that.addBreaks(renderedContent);
 
     that.$el.html(renderedContent);
 
     return that;
   },
 
-  // Have to somehow limit this to the lyrics paragraph
+  // Legacy code to include whitespace in lyrics.
   addBreaks: function(renderedContent) {
     console.log(renderedContent);
     var pStart = renderedContent.indexOf('<p id="lyrics">') + '<p id="lyrics">'.length;

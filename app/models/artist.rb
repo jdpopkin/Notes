@@ -6,7 +6,8 @@ class Artist < ActiveRecord::Base
   belongs_to :user
 
   validates :name, :user_id, presence: true
-  #before_save :ensure_html_safe
+  include ERB::Util
+  before_save :ensure_html_safe
 
   include PgSearch
   multisearchable against: :name

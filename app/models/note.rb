@@ -5,8 +5,8 @@ class Note < ActiveRecord::Base
   belongs_to :song
   has_many :comments, as: :commentable
   has_many :votes, as: :votable
-  #include ERB::Util
-  #before_save :ensure_html_safe
+  include ERB::Util
+  before_save :ensure_html_safe
 
   def self.top_for_user(n, user)
     Note.top_for_user_with_cutoff(100.years.ago, n, user)

@@ -6,7 +6,8 @@ class Album < ActiveRecord::Base
   has_many :votes, through: :songs, source: :votes
 
   validates :artist_id, :title, :user_id, presence: true
-  #before_save :ensure_html_safe
+  include ERB::Util
+  before_save :ensure_html_safe
 
   include PgSearch
   multisearchable against: :title

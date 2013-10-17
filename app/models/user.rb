@@ -9,7 +9,8 @@ class User < ActiveRecord::Base
   validates :username, uniqueness: true
   validates :email, presence: true
   validates :email, uniqueness: true
-  #before_save :ensure_html_safe
+  include ERB::Util
+  before_save :ensure_html_safe
 
   has_many :comments
   has_many :notes, class_name: "Note", primary_key: :id, foreign_key: :author_id

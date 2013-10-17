@@ -4,7 +4,8 @@ class Song < ActiveRecord::Base
   validates :title, presence: true
   validates :artist_id, presence: true
   before_validation :remove_carriage_returns
-  #before_save :ensure_html_safe
+  include ERB::Util
+  before_save :ensure_html_safe
 
   belongs_to :album
   belongs_to :artist
@@ -47,22 +48,12 @@ class Song < ActiveRecord::Base
 
   def score
     self.votes.inject(0) { |sum, vote| sum += vote.value }
-    # total = 0
-    # self.votes.each do |vote|
-    #   total += vote.value
-    # end
-    # total
   end
 
   def recent_score
     self.votes.where("created_at > ?", 1.day.ago).inject(0) do |sum, vote|
       sum += vote.value
     end
-    # sum = 0
-    # self.votes.each do |vote|
-    #   sum += vote.value if vote.created_at > 1.day.ago
-    # end
-    # sum
   end
 
   def as_json(options = {})
@@ -73,6 +64,9 @@ class Song < ActiveRecord::Base
 
   def ensure_html_safe
     self.title = h(self.title)
-    self.lyrics = h(self.lyrics)
+
+    self.lyrics = self.lyrics.gsub("<", "")
+    self.lyrics = self.lyrics.gsub(">", "")
+    self.lyrics = self.lyrics.gsub("&", "+")
   end
 end

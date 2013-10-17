@@ -199,4 +199,6 @@ Escape everything. Call .h on each text field before_save.
 Album: escape title. Artist: escape name. Comment: escape body. Note: escape
 body. Song: escape title, lyrics. User: escape username.
 
+Lyrics: validate rather than escape?
+
 
