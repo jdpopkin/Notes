@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h1, h2, a, body {
+h1, h2, body {
   // warning: div removed from this list
   background-color:black;
   color:white;
@@ -114,7 +114,8 @@ div.errors, div.login-errors, div.signup-errors {
 .featured-content {
   float: left;
   padding: 0 0 0 0px; // was 10px left
-  max-width: 400px;
+  width: 475px;
+//  max-width: 400px;
 }
 
 .featured-content > ul {
@@ -133,7 +134,8 @@ div.errors, div.login-errors, div.signup-errors {
 
 .recent-content-wrapper {
   float: right;
-  width: 400px;
+  // width: 400px;
+  width: 475px;
 
 }
 
