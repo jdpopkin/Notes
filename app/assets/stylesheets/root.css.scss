@@ -39,6 +39,11 @@ a:hover {
   display: table;
 }
 
+body {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 #lyrics, .note > p, .comment-body {
   overflow: auto;
   word-wrap: break-word;
@@ -97,13 +102,13 @@ div.errors, div.login-errors, div.signup-errors {
 }
 
 .content {
-  width: 950px;
+  //width: 950px;
 //  margin: auto;
 }
 
 .featured-content {
   float: left;
-  padding: 0 0 0 10px;
+  padding: 0 0 0 0px; // was 10px left
   max-width: 400px;
 }
 
@@ -130,7 +135,8 @@ div.errors, div.login-errors, div.signup-errors {
 .recent-content {
   float: left;
   width: 400px;
-  padding: 0 40px 0 0;
+//  padding: 0 40px 0 0;
+  padding: 0;
 }
 
 .recent-content > ul, .recent-content-list {

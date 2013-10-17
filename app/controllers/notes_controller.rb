@@ -2,6 +2,7 @@ class NotesController < ApplicationController
 
   def create
     @note = Note.new(params[:note])
+    @note.author_id = current_user.id
     if request.xhr?
       if @note.save
         render json: @note.to_json(include: :user)

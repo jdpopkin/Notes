@@ -1,11 +1,13 @@
 class Song < ActiveRecord::Base
   attr_accessible :album_id, :artist_id, :lyrics, :title, :user_id
+  include ERB::Util
 
   validates :title, presence: true
   validates :artist_id, presence: true
   before_validation :remove_carriage_returns
-  include ERB::Util
+
   before_save :ensure_html_safe
+  before_save :generate_description
 
   belongs_to :album
   belongs_to :artist
@@ -68,5 +70,17 @@ class Song < ActiveRecord::Base
     self.lyrics = self.lyrics.gsub("<", "")
     self.lyrics = self.lyrics.gsub(">", "")
     self.lyrics = self.lyrics.gsub("&", "+")
+  end
+
+  def generate_description
+    return if self.description
+
+    if self.album
+      self.description =
+        "#{self.title} is a song on #{self.album.title} by #{self.artist.name}."
+    else
+      self.description =
+        "#{self.title} is a song by #{self.artist.name}."
+    end
   end
 end

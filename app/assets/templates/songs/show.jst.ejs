@@ -14,10 +14,12 @@
     </div>
   </div>
 
-  <div class="lyrics-div">
-<p id="lyrics">
-<%= song.lyrics %>
-</p>
+<div class="lyrics-div"><p id="lyrics"><%= song.lyrics %></p></div>
+
+  <div class="description">
+    <% if (song.description) { %>
+      <%= song.description %>
+    <% } %>
   </div>
 
   <% _.each(notes, function(note) { %>

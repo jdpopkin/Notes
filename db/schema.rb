@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131014174112) do
+ActiveRecord::Schema.define(:version => 20131017180541) do
 
   create_table "albums", :force => true do |t|
     t.string   "title"
@@ -63,13 +63,14 @@ ActiveRecord::Schema.define(:version => 20131014174112) do
   end
 
   create_table "songs", :force => true do |t|
-    t.string   "title",      :null => false
-    t.text     "lyrics",     :null => false
+    t.string   "title",       :null => false
+    t.text     "lyrics",      :null => false
     t.integer  "album_id"
     t.integer  "artist_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.integer  "user_id"
+    t.text     "description"
   end
 
   add_index "songs", ["album_id"], :name => "index_songs_on_album_id"
@@ -79,9 +80,10 @@ ActiveRecord::Schema.define(:version => 20131014174112) do
     t.string   "email"
     t.string   "username"
     t.string   "session_token"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.string   "password_digest"
+    t.boolean  "is_admin",        :default => false
   end
 
   add_index "users", ["session_token"], :name => "index_users_on_session_token"

@@ -25,8 +25,11 @@
 
   <form id="login" class="hidden" action="<%= session_url %>" method="POST">
     <div class="login-errors"></div>
-    <label>Username <input type="text" name="user[username]"></label>
-    <label>Password <input type="password" name="user[password]"></label>
+    <label>Username <input id="login-username" type="text"
+       name="user[username]"></label>
+    <label>Password <input id="login-password" type="password"
+       name="user[password]"></label>
+    <button id="guest-login">Sign In As Guest</button>
     <input type="submit" value="Sign In">
     <a id="signup-link" href="#<%#= new_user_url %>">Sign Up</a>
   </form>
@@ -120,6 +123,17 @@ $(document).ready(function() {
 
     // on failure, render errors
     $("signup").addClass("hidden");
+  });
+
+  $("#guest-login").click(function(event) {
+    // fill #login-username with "guest"
+    $("#login-username").val("guest");
+
+    // fill #login-password with "password"
+    $("#login-password").val("password");
+
+    // submit #login
+    $("#login").submit();
   });
 
   $('#login').on("submit", function(event) {

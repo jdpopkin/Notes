@@ -50,12 +50,26 @@
   color: black;
 }
 
+.lyrics-div {
+  float: left;
+}
+
+.description {
+  float: right;
+  margin-right: 15px;
+  max-width: 400px;
+  background-color: #161616;
+  border: 1px solid #333333;
+  padding: 10px 20px 10px 20px;
+}
+
 .add-note {
   position: absolute;
   left: 550px;
   width: 400px;
   border: 1px solid #333333;
   padding: 10px;
+  z-index: 1;
 }
 
 .note {

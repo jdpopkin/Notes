@@ -11,6 +11,7 @@ class AlbumsController < ApplicationController
 
   def create
     @album = Album.new(params[:album])
+    @album.user_id = current_user.id
 
     if @album.save
       render json: @album

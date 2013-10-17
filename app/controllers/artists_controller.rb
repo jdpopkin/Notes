@@ -12,6 +12,7 @@ class ArtistsController < ApplicationController
 
   def create
     @artist = Artist.new(params[:artist])
+    @artist.user_id = current_user.id
 
     if @artist.save
       render json: @artist

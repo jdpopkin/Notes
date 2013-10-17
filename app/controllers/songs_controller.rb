@@ -17,7 +17,7 @@ class SongsController < ApplicationController
 
   def create
     @song = Song.new(params[:song])
-    #@song.lyrics = @song.lyrics.gsub("\r", "")
+    @song.user_id = current_user.id
 
     if @song.save
       # redirect_to song_url(@song)
