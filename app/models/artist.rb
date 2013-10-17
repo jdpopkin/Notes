@@ -21,15 +21,28 @@ class Artist < ActiveRecord::Base
   end
 
   def self.top_with_cutoff(cutoff, n)
-    Artist.find_by_sql([<<-SQL, cutoff, cutoff, n])
-      SELECT artists.*, COALESCE(SUM(CASE WHEN votes.created_at > ? THEN votes.value ELSE 0 END), 0) AS cached_score FROM artists LEFT JOIN songs ON
-        artists.id = songs.artist_id
-      LEFT JOIN votes ON
-        (votes.votable_id = songs.id AND votes.votable_type = 'Song')
-      -- WHERE votes.created_at >  OR votes.id IS NULL
-      GROUP BY artists.id
-      ORDER BY COALESCE(SUM(CASE WHEN votes.created_at > ? THEN votes.value ELSE 0 END), 0) DESC LIMIT ?
-    SQL
+    select_arr = ["artists.*, COALESCE(SUM(CASE WHEN votes.created_at > ? THEN votes.value ELSE 0 END), 0) AS cached_score", cutoff]
+    select = sanitize_sql_array(select_arr)
+
+    order_arr = ["COALESCE(SUM(CASE WHEN votes.created_at > ? THEN votes.value ELSE 0 END), 0) DESC", cutoff]
+    order = sanitize_sql_array(order_arr)
+
+    Artist.select(select)
+    .joins("LEFT JOIN songs ON artists.id = songs.artist_id")
+    .joins("LEFT JOIN votes ON (votes.votable_id = songs.id AND votes.votable_type = 'Song')")
+    .group("artists.id")
+    .order(order)
+    .limit(n)
+
+    # Artist.find_by_sql([<<-SQL, cutoff, cutoff, n])
+#       SELECT artists.*, COALESCE(SUM(CASE WHEN votes.created_at > ? THEN votes.value ELSE 0 END), 0) AS cached_score FROM artists LEFT JOIN songs ON
+#         artists.id = songs.artist_id
+#       LEFT JOIN votes ON
+#         (votes.votable_id = songs.id AND votes.votable_type = 'Song')
+#       -- WHERE votes.created_at >  OR votes.id IS NULL
+#       GROUP BY artists.id
+#       ORDER BY COALESCE(SUM(CASE WHEN votes.created_at > ? THEN votes.value ELSE 0 END), 0) DESC LIMIT ?
+#     SQL
   end
 
   def cached_score
