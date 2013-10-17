@@ -7,7 +7,10 @@
       <li class="featured-song">
         <%= link_to song.title, song_url(song) %> by
           <%= link_to song.artist.name, artist_url(song.artist) %>
-          (<%= "%+d" % song.cached_score %> today)
+
+          <% sign = song.cached_score.to_i < 0 ? "neg" : "pos" %>
+
+          (<span class="<%= sign %>"><%= "%+d" % song.cached_score %></span> today)
       </li>
     <% end %>
     </ul>
@@ -19,7 +22,10 @@
         <li class="featured-song">
           <%= link_to album.title, album_url(album) %> by
             <%= link_to album.artist.name, artist_url(album.artist) %>
-            (<%= "%+d" % album.cached_score %> today)
+
+            <% sign = album.cached_score.to_i < 0 ? "neg" : "pos" %>
+
+            (<span class="<%= sign %>"><%= "%+d" % album.cached_score %></span> today)
         </li>
       <% end %>
     </ul>
@@ -29,7 +35,11 @@
     <ul class="featured-artists">
       <% Artist.recent_top(5).each do |artist| %>
       <li class="featured-artist">
-        <%= link_to artist.name, artist_url(artist) %> (<%= "%+d" % artist.cached_score %> today)
+
+        <% sign = artist.cached_score.to_i < 0 ? "neg" : "pos" %>
+
+        <%= link_to artist.name, artist_url(artist) %>
+        (<span class="<%= sign %>"><%= "%+d" % artist.cached_score %></span> today)
       </li>
       <% end %>
     </ul>

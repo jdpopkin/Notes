@@ -14,7 +14,8 @@
 
 <div class="vote-area-div">
 <span class="vote-area">
-<div class="vote-container"><div class="in-vote-container"> (<span class="vote-span"><%= Notes.toSigned(totalVotes) %></span>)</div>
+<div class="vote-container"><div class="in-vote-container"> (<span class="vote-span <%= totalVotes < 0 ? "neg" : "pos" %>"><%=
+   Notes.toSigned(totalVotes) %></span>)</div>
   <% if (currentUser) { %>
     <div class="vote in-vote-container"> <!-- also has class in-vote-container -->
 

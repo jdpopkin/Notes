@@ -1,5 +1,6 @@
 <h2><%= @user.username %></h2>
-Score: <%= @user.score %>
+<% sign = @user.score.to_i < 0 ? "neg" : "pos" %>
+Score: <span class="<%= sign %>"><%= "%+d" % @user.score %></span>
 
 <div class="content group">
 
@@ -9,10 +10,12 @@ Score: <%= @user.score %>
       <% @user.top_activity(5).each do |obj| %>
         <% time_string = distance_of_time_in_words_to_now(obj.created_at) %>
         <li class="top-action">
+          <% sign = obj.recent_score.to_i < 0 ? "neg" : "pos" %>
+
           <% if obj.class == Note %>
-            <%= render "notes/mini", note: obj, user: @user, song: obj.song, time: time_string %> (<%= "%+d" % obj.recent_score %>)
+            <%= render "notes/mini", note: obj, user: @user, song: obj.song, time: time_string %> (<span class="<%= sign %>"><%= "%+d" % obj.recent_score %></span>)
           <% elsif obj.class == Comment %>
-            <%= render "comments/mini", comment: obj, user: @user, commentable: obj.commentable, time: time_string %> (<%= "%+d" % obj.recent_score %>)
+            <%= render "comments/mini", comment: obj, user: @user, commentable: obj.commentable, time: time_string %> (<span class="<%= sign %>"><%= "%+d" % obj.recent_score %></span>)
           <% end %>
         </li>
       <% end %>
