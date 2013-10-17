@@ -194,4 +194,9 @@ just give notes a z-index, though, right?
 Maybe kaminari? Extra padding on left for things?
 Maybe redis. Definitely set up a domain name today, though.
 
+Escape everything. Call .h on each text field before_save.
+
+Album: escape title. Artist: escape name. Comment: escape body. Note: escape
+body. Song: escape title, lyrics. User: escape username.
+
 

@@ -4,6 +4,7 @@ class Song < ActiveRecord::Base
   validates :title, presence: true
   validates :artist_id, presence: true
   before_validation :remove_carriage_returns
+  #before_save :ensure_html_safe
 
   belongs_to :album
   belongs_to :artist
@@ -68,5 +69,10 @@ class Song < ActiveRecord::Base
     hash = super(options)
     hash["score"] = self.score
     hash
+  end
+
+  def ensure_html_safe
+    self.title = h(self.title)
+    self.lyrics = h(self.lyrics)
   end
 end

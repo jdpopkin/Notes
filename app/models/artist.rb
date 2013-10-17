@@ -6,6 +6,7 @@ class Artist < ActiveRecord::Base
   belongs_to :user
 
   validates :name, :user_id, presence: true
+  #before_save :ensure_html_safe
 
   include PgSearch
   multisearchable against: :name
@@ -61,5 +62,9 @@ class Artist < ActiveRecord::Base
       sum += vote.value
     end
     sum
+  end
+
+  def ensure_html_safe
+    self.name = h(self.name)
   end
 end

@@ -5,6 +5,8 @@ class Comment < ActiveRecord::Base
   belongs_to :user
   has_many :votes, as: :votable
 
+  #before_save :ensure_html_safe
+
   def self.top_for_user(n, user)
     Comment.top_for_user_with_cutoff(100.years.ago, n, user)
   end
@@ -48,5 +50,9 @@ class Comment < ActiveRecord::Base
     hash = super(options)
     hash["score"] = self.score
     hash
+  end
+
+  def ensure_html_safe
+    self.body = h(self.body)
   end
 end

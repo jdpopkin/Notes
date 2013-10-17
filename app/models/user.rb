@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   validates :username, uniqueness: true
   validates :email, presence: true
   validates :email, uniqueness: true
+  #before_save :ensure_html_safe
 
   has_many :comments
   has_many :notes, class_name: "Note", primary_key: :id, foreign_key: :author_id
@@ -135,5 +136,9 @@ class User < ActiveRecord::Base
   private
   def ensure_session_token
     self.session_token ||= self.class.generate_session_token
+  end
+
+  def ensure_html_safe
+    self.username = h(self.username)
   end
 end

@@ -180,10 +180,8 @@ Notes.Views.SongShow = Backbone.View.extend({
           currentUser: Notes.currentUser
         })
         // append that to $songComments
-        //console.log(newComment);
         $songComments.append(newComment);
         event.currentTarget.reset();
-        // do nothing?
       }
     });
   },
@@ -261,12 +259,31 @@ Notes.Views.SongShow = Backbone.View.extend({
     var node = sel.anchorNode.previousSibling;
     var sum = 0;
     var bigString = "";
+    var jqString = "";
+
 
     while (node) {
-      var container = document.createElement("div");
-      container.appendChild(node.cloneNode());
-      bigString += container.innerHTML;
-      sum += container.innerHTML.length;
+      // works here but should break elsewhere
+      // var container = document.createElement("div");
+//       container.appendChild(node.cloneNode());
+//       bigString += container.innerHTML;
+//
+//       // A recent and undesirable addition for when innerHTML is, unfathomably,
+//       // not recursive.
+//       if (node.innerHTML) {
+//         bigString += node.innerHTML;
+//       }
+
+      if (node.nodeType === 3) {
+        jqString += node.data;
+      } else {
+        var $node = $(node).clone();
+        var $div = $("<div></div>");
+        $div.append($node);
+        jqString += $div.html();
+      }
+
+
 
       node = node.previousSibling;
       if (node === undefined) {
@@ -274,9 +291,7 @@ Notes.Views.SongShow = Backbone.View.extend({
       }
     }
 
-    // console.log(bigString);
-
-    return sum;
+    return jqString.length // sum;
   },
 
   // Finds text (NOT HTML) within p (prior to lowEnd) and returns length of this text.
