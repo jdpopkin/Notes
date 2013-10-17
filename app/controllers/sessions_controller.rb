@@ -24,6 +24,5 @@ class SessionsController < ApplicationController
     render json: @user
   end
 
-  def new
-  end
+
 end

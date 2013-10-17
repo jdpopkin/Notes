@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   validates :username, uniqueness: true
   validates :email, presence: true
   validates :email, uniqueness: true
-  include ERB::Util
+  include ApplicationHelper
   before_save :ensure_html_safe
 
   has_many :comments
@@ -140,6 +140,6 @@ class User < ActiveRecord::Base
   end
 
   def ensure_html_safe
-    self.username = h(self.username)
+    self.username = escape_html(self.username)
   end
 end

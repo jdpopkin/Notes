@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :require_current_user!, :only => [:show]
+  # before_filter :require_current_user!, :only => [:show]
   before_filter :require_no_current_user!, :only => [:create, :new]
 
   def create
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       render :show
     else
-      redirect_to user_url(current_user) # TODO change this link
+      redirect_to :back # TODO change this link
     end
   end
 end

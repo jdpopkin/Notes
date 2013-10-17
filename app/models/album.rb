@@ -6,7 +6,7 @@ class Album < ActiveRecord::Base
   has_many :votes, through: :songs, source: :votes
 
   validates :artist_id, :title, :user_id, presence: true
-  include ERB::Util
+  include ApplicationHelper
   before_save :ensure_html_safe
 
   include PgSearch
@@ -66,7 +66,7 @@ class Album < ActiveRecord::Base
   end
 
   def ensure_html_safe
-    self.title = h(self.title)
+    self.title = escape_html(self.title)
   end
 
 end

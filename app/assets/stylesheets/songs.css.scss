@@ -52,6 +52,7 @@
 
 .lyrics-div {
   float: left;
+  margin-bottom: 20px;
 }
 
 .description {
@@ -61,6 +62,11 @@
   background-color: #161616;
   border: 1px solid #333333;
   padding: 10px 20px 10px 20px;
+}
+
+.description > h2 {
+  text-align: center;
+  background-color: #161616;
 }
 
 .add-note {
@@ -82,6 +88,10 @@
   background-color: #161616 !important;
   border: 1px solid #333333;
   padding: 10px;
+}
+
+.note > p {
+  padding-top: 20px;
 }
 
 .add-note {
@@ -116,11 +126,11 @@
 }
 
 .comment-author {
-  padding: 0 0 0 10px;
+  padding: 0 0 0 20px;
 }
 
 .comment-body {
-  padding: 10px 0 0 10px;
+  padding: 20px 0 0 20px;
 }
 
 .song-comments-infobox, .note-comments-infobox {

@@ -206,7 +206,7 @@ Admins and deletion?
 TIL: calling destroy on an ActiveRecord relation doesn't do what you expect it
 to do. It will not destroy dependent models.
 
-Set up sign-in-as-guest.
+Add admins who can at least edit the descriptions?
 
 
 

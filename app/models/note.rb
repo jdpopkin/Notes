@@ -5,7 +5,7 @@ class Note < ActiveRecord::Base
   belongs_to :song
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :votes, as: :votable, dependent: :destroy
-  include ERB::Util
+  include ApplicationHelper
   before_save :ensure_html_safe
 
   def self.top_for_user(n, user)
@@ -58,6 +58,6 @@ class Note < ActiveRecord::Base
   end
 
   def ensure_html_safe
-    self.body = h(self.body)
+    self.body = escape_html(self.body)
   end
 end

@@ -6,7 +6,7 @@ class Artist < ActiveRecord::Base
   belongs_to :user
 
   validates :name, :user_id, presence: true
-  include ERB::Util
+  include ApplicationHelper
   before_save :ensure_html_safe
 
   include PgSearch
@@ -66,6 +66,6 @@ class Artist < ActiveRecord::Base
   end
 
   def ensure_html_safe
-    self.name = h(self.name)
+    self.name = escape_html(self.name)
   end
 end

@@ -24,9 +24,14 @@ button, input[type=submit] {
   -moz-border-radius: 10px;
 }
 
+label {
+  font-family: sans-serif;
+}
+
 a {
 //  color: lightblue;
   color: #ADD8E6;
+  font-family: sans-serif;
 }
 
 a:hover {
