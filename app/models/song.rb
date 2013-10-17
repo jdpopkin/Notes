@@ -11,9 +11,9 @@ class Song < ActiveRecord::Base
   belongs_to :artist
   belongs_to :user
 
-  has_many :notes
-  has_many :comments, as: :commentable
-  has_many :votes, as: :votable
+  has_many :notes, dependent: :destroy
+  has_many :comments, as: :commentable, dependent: :destroy
+  has_many :votes, as: :votable, dependent: :destroy
 
   include PgSearch
   multisearchable against: [:title, :lyrics]

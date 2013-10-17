@@ -3,7 +3,7 @@ class Comment < ActiveRecord::Base
 
   belongs_to :commentable, polymorphic: true
   belongs_to :user
-  has_many :votes, as: :votable
+  has_many :votes, as: :votable, dependent: :destroy
 
   include ERB::Util
   before_save :ensure_html_safe

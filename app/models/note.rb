@@ -3,8 +3,8 @@ class Note < ActiveRecord::Base
 
   belongs_to :user, class_name: "User", primary_key: :id, foreign_key: :author_id
   belongs_to :song
-  has_many :comments, as: :commentable
-  has_many :votes, as: :votable
+  has_many :comments, as: :commentable, dependent: :destroy
+  has_many :votes, as: :votable, dependent: :destroy
   include ERB::Util
   before_save :ensure_html_safe
 

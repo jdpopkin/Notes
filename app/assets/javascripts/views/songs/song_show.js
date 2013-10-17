@@ -57,7 +57,6 @@ Notes.Views.SongShow = Backbone.View.extend({
 
   // Legacy code to include whitespace in lyrics.
   addBreaks: function(renderedContent) {
-    console.log(renderedContent);
     var pStart = renderedContent.indexOf('<p id="lyrics">') + '<p id="lyrics">'.length;
     var re = new RegExp('<p id="lyrics">[^]*</p>')
     var oldLyrics = renderedContent.match(re)[0];
@@ -72,7 +71,7 @@ Notes.Views.SongShow = Backbone.View.extend({
     var that = this;
     var pStart = renderedContent.indexOf('<p id="lyrics">') + '<p id="lyrics">'.length;
     that.pStart = pStart;
-    console.log(that.notes);
+
     for (var i = 0; i < that.notes.length; i++) {
       var note = that.notes[i];
       var substringEnd = pStart + note.end_index;
@@ -199,10 +198,10 @@ Notes.Views.SongShow = Backbone.View.extend({
   handleSelect: function(event) {
     var that = this;
     var sel = window.getSelection();
-    console.log(sel); // KEEP THIS
+    // console.log(sel); // KEEP THIS
 
     // Exclude selections within textareas.
-    if (sel.anchorNode.constructor.name === "HTMLLabelElement") {
+    if (sel.anchorNode && sel.anchorNode.constructor.name === "HTMLLabelElement") {
       return;
     }
 
@@ -237,8 +236,6 @@ Notes.Views.SongShow = Backbone.View.extend({
 
     var lowEnd = sel.focusOffset < sel.anchorOffset ? sel.focusOffset : sel.anchorOffset;
     var highEnd = sel.focusOffset < sel.anchorOffset ? sel.anchorOffset : sel.focusOffset;
-    //console.log(lowEnd); KEEP THIS
-    //console.log(highEnd); KEEP THIS
 
     var htmlCopy = $("#lyrics").html();
 
@@ -301,16 +298,14 @@ Notes.Views.SongShow = Backbone.View.extend({
     var slicedP = p.slice(0, lowEnd);
     $div.append(slicedP);
 
-    // console.log($div.text());
-    //console.log($div.text().length);
     var htmlizedLength = $div.text().length;
-    var newlineCounter = 0;
-
-    for (var i = 0; i < slicedP.length; i++) {
-      if (slicedP[i] === "\n") {
-        newlineCounter++;
-      }
-    }
+    // var newlineCounter = 0;
+//
+//     for (var i = 0; i < slicedP.length; i++) {
+//       if (slicedP[i] === "\n") {
+//         newlineCounter++;
+//       }
+//     }
 
     // -1 because there is an extra newline at the start of the <p>
     // not actually present in song.lyrics
