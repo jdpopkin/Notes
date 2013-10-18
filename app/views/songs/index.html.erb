@@ -8,7 +8,10 @@
     <li>
       <%= link_to song.title, song_url(song) %> by
         <%= link_to song.artist.name, artist_url(song.artist) %>
-        (<%= "%+d" % song.cached_score %> today)
+
+        <% sign = song.cached_score.to_i < 0 ? "neg" : "pos" %>
+
+        (<span class="<%= sign %>"><%= "%+d" % song.cached_score %></span> today)
     </li>
   <% end %>
   </ul>

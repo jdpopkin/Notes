@@ -5,8 +5,12 @@
   <ul id="artists-list">
   <% @artists.each do |artist| %>
     <li>
-      <%= link_to artist.name, artist_url(artist) %> (<%= "%+d" %
-       artist.cached_score %> today)
+      <%= link_to artist.name, artist_url(artist) %>
+
+      <% sign = artist.cached_score.to_i < 0 ? "neg" : "pos" %>
+
+      (<span class="<%= sign %>"><%= "%+d" %
+       artist.cached_score %></span> today)
     </li>
   <% end %>
   </ul>
