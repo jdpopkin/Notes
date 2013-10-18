@@ -39,5 +39,5 @@ The following technologies were used to build Notes:
 * New Relic
 
 ##Feedback
-Notes is a work in progress - email me at jdpopkin@gmail.com to let me know
-what you think.
+Notes is a work in progress - please contact me to let me know
+what you think!

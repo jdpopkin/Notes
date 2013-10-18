@@ -217,6 +217,8 @@ Tags?
 Deal with html escaping in a somewhat more professional manner. Begin by
 grepping for html_safe - it's likely that you've misused it somewhere.
 
+Find and destroy the bug affecting mouseover.
+
 Fix seeds
 
 Talk about: can add songs from list. The form to do this is dynamic.
