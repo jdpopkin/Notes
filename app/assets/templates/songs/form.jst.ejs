@@ -32,9 +32,12 @@
 
       <% for (var i = 0; i < Notes.Albums.length; i++) { %>
         <% var album = Notes.Albums[i]; %>
-        <% if (Notes.Albums.length === 1) { %>
-          <option class="album-option" value="<%= album.id %>"><%= album.title %></option>
-        <% } %>
+        <option class="album-option" value="<%= album.id %>"
+          <% if (Notes.Albums.length === 1) { %>
+            "selected"
+          <% } %>
+          ><%= album.title %></option>
+
       <% } %>
     </select>
   </label>
