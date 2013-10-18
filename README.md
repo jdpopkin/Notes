@@ -37,3 +37,7 @@ The following technologies were used to build Notes:
 * Kaminari (a pagination gem)
 * pg_search (a Postgres-specific database search gem)
 * New Relic
+
+##Feedback
+Notes is a work in progress - email me at jdpopkin@gmail.com to let me know
+what you think.

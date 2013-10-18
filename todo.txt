@@ -212,6 +212,11 @@ New model. Tracks each activity. One is created whenever a new
 song/artist/album/comment/note is made. Has timestamp and polymorphic
 association with whatever it's associated with. Nah; paginate artists, albums.
 
+Tags?
+
+Deal with html escaping in a somewhat more professional manner. Begin by
+grepping for html_safe - it's likely that you've misused it somewhere.
+
 Fix seeds
 
 Talk about: can add songs from list. The form to do this is dynamic.
@@ -221,3 +226,6 @@ User pages: recent activities, top activities.
 Front page: recent content, featured content. Featured content: highest scores
 from today.
 
+Seeds: add notes etc manually for now. Add votes on songs using upvoters. Set
+some of them to be from the distant past so you can show differences between
+recent score and score.

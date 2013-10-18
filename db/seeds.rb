@@ -858,53 +858,1384 @@ Nas' raps should be locked in a cell, it ain't hard to tell"
 Song.create!(album_id: placeholder_album.id, artist_id: placeholder_artist.id,
       lyrics: lyrics_string, title: "It Ain't Hard to Tell", user_id: user_one.id)
 
+lyrics_string =
+"[Intro]
+Gangsta Music part 2. Dipset
+Killa, Heatmakerz, Juelz Santana
+C'mon. Lets Do It
+Can I get a jeah, jeah, jeah, jeah
+Everywhere jeah, jeah
+Up, down, left, right, jeah, jeah, jeah, jeah
+Shorty's movin again jeah, shorty's loose with the pen jeah
+Shorty do it to win jeah, jeah, jeah, jeah
+
+[Juelz Santana]
+They say I walk around like I got a S on my chest
+Tech on my left, gangstaz wit me ready to step. (Jeah)
+I like a chick wit big breasts on her chest
+Not flat lookin like somebody stepped on her chest. (Jeah)
+What, (jeah) Shit, (jeah) Fuck, (jeah) Bitch, (Jeah)
+You so crazy. (Jeah jeah jeah jeah!)
+My niggas spit the Glock (oh so slow whoa)
+Rude boi lick a shot (BO BO BO BO!)
+Neva seen up in a pot (oh so much coke)
+Cook it to a bigga rock (aye aye oh oh)
+And I be wit dem gangstaz (jeah), I creep wit the gangstaz (jeah)
+Crack a dutch or Philly and cheif cheif wit the gangstaz
+I stay with a lady (jeah), she stay with a lady (jeah)
+They makin me crazy. (Jeah jeah jeah jeah!)
+I spray em wit babies (jeah), in they face till they hate me (jeah)
+And I'm makin em crazy. (Jeah jeah jeah jeah!)
+And they like when I do it (jeah), they like when I move it (jeah)
+They like when I work it, they like when I hurt it
+I stay icy on purpose, like icy perservers
+More than likely I'm the nicest you hearda. Jeah!
+
+[Hook]
+I'm movin movin movin jeah! He's movin movin movin aye!
+We movin movin movin jeah! Stop movin aye! Shot bruise em jeah!
+Two more for Cam fa takin over the Roc. Jeah... Jeah! It's my year so
+Jeah! It's like the whole Bird Gang's in here, like Kurt Cobain's was here
+Jeah jeah jeah jeah!
+
+[Verse 2: Juelz Santana]
+Still listen to gangsta music (aye) how dem gangstaz do it (aye)
+Shorty came to do it (aye aye aye aye)
+I bang wit the five (aye) I see hate in ya eyes (aye)
+You waitin to die (aye aye aye aye)
+I pray for you guys, hate to keep waistin ya lives
+Love to keep bakin new pies, strapin the scrapes off the side
+You can love it (jeah aye) you can hate it (jeah aye)
+You can want it (jeah aye aye aye aye)
+I'm Babe Ruth in this game, beige coupe in the lane
+State Troopers they came, damn he's movin again (aye)
+I'm a better child, yous a pedophile (aye aye aye aye)
+I go dough let around, my ho slow head around
+They DTP's deep throat professionals
+My D.I.P.'s we so professional
+Got weed, coke, and ecstacy, lean, dope, and wet to sale
+We blow jars of the dank, like Bob Marley was wake
+Real shottas, fuck ya foreigners stay
+I'm movin movin movin (jeah)
+Y'all losin losin losin (aye)
+
+[Hook]
+
+[Verse 3: Cam'Ron]
+I'm on the southside of Chicago lookin for a real ho
+I dont see a touchdown, arms up field goal
+Got some ill gold, diamonds thats still low
+Lil dick you a dickhead, nah dildo
+I chill though, pipping in the Range
+All this icin I'm ashamed, look like lightnin' in the chain
+Who was first that moved wit they fam (who)
+Ask you, tattoos on they hand (who)
+Slang all the white (who) cruise wit the tan (who)
+Pink on they back (who) blue in they van (who)
+Yellow on his ear (who) steam on the rock (who)
+Puple in the air (who) green in his pocket
+I ain't dissin' you dog, I'm dismissin' you
+Get the R. Kelly tape and see how we piss on you
+Thats Kool-Aid, Moutain Dew, and Cris on you
+Ya family will be missin you, theres a kiss for you
+
+[Hook]"
+
 Song.create!(album_id: purple_haze.id, artist_id: camron.id, lyrics: lyrics_string,
 title: "More Gangsta Music", user_id: user_one.id)
+
+lyrics_string =
+"[Intro: Cam'ron]
+It's like I'm psychic and shit
+I called this shit about five years ago
+Dipset all day every day
+Santana, Jim Jones
+Freekey be home '07
+
+[Verse: Cam'ron]
+Remember I'm a man of respect
+Remember Santana was next
+Now it's not techs, it's checks
+And fancy collects
+I want his wrist, fist, whole hand, jammed with baguettes
+Pose for the camera man
+Me and Santana man
+Word to my grandma
+He one bad mamma jamma, damn
+So I don't write for the stardom
+I get, booted, zooted, write down my problems
+I've been through it headed right for the bottom
+D.C. naw, would've been a sniper in Harlem (so what)
+That's why I throw some dough
+To my co-d from Kostovo
+Help me get on overflow
+No one suppose to know
+But she lay me up like the prime minister
+Thousand grams of dope smellin' like Hein Vinegar
+That was a lot to linger
+But to the top I bring her
+But when it came to dope, I always copped in fingers
+Money missin, oh shit I almost chopped some fingers
+Slit some wrist, thats when they said oh shit he's not a singer
+Fuck the rap, fuck the movies, fuck Siskel and Ebert
+This pistol I'll squeeze it, missles if needed, Killa
+Remember I'm gonna spend my cake
+Remember Jim we getting out of 5H (projects)
+Now chefs will fry us steaks
+It's a higher [stake? / state?]
+Swiss accounts I'm goin show you how to wire cake
+And we from BBO
+Now you a CEO
+Direct a vee-ee-oh
+Your own album here we go
+Thats my man anytime I holla, holla with me
+We shared chicken sandwiches they was a $1.50
+Budget seven dollars, nickel bag and White Owl
+I hope the chicken sandwich last us through the night child
+We ain't care we didn't sleep we was night owls
+Insomniatics our lifestyles compatible
+Magical
+Pops gone, shit tragical
+Moms on mission
+My house is where the addicts chill
+I'm like a teacher, I need me a sabbatical
+It's not irrational
+I grew up radical
+And you all are shook
+I bought all my crooks
+Fuck you R&B niggas Zeek sing all the hooks
+Tito and Brick yes yes come again
+They came sun or rain when I had that stomach pain"
 
 Song.create!(album_id: purple_haze.id, artist_id: camron.id, lyrics: lyrics_string,
 title: "Get Down", user_id: user_one.id)
 
+lyrics_string =
+"[Verse 1]
+With the goons I spar
+Stay in tune with ma
+She like, \"damn
+This the realest since 'Kumbaya'\"
+Bomaye, Killa Cam, my lord
+Still the man with the pan
+Scrilla fan, oh boy and
+Bitches, they want to neuter me
+Niggas, they want to Judah me
+The hooligan in Houlihan's
+Maneuvering's nothin' new to me
+Doggy, I'm from the land of grind
+Pan pan: gram or dime?
+Not toes or MC
+When I say \"Hammertime\"
+Beef: I hammer mine
+When I get my hands on nines
+If I had on 'Bama line
+Corduroys, Cam will shine
+Canary burgundy:
+I call it \"Lemon Red\"
+Yellow diamonds in my ear
+Call em \"Lemonheads\"
+Lemonhead end up dead
+Ice like Winnipeg
+Gemstone, Flinstones
+You could say I'm friends with Fred
+You unhappy scrappy?
+I got Pataki at me
+Bitches say I'm \"tacky daddy\"
+Range look like Laffy Taffy
+
+[Hook]
+
+[Verse 2]
+I'm from where Nicky Barnes got rich as fuck
+Rich and A hit the kitchens then were pitchin' up
+Rob Base, Mase, Doug E Fresh switched it up
+I do both, who am I to fuck tradition up?
+So I parked in a tow-away zone
+Chrome...I don't care
+That car a throwaway, homes
+Welcome to Harlem
+Where you welcome to problems
+Off of furlough, fellow felons get pardons
+Them niggas newbie bang
+Stood out like Pootie Tang
+Soon as the stoolie sings
+That when the toolie sing!
+Bang! Bang! came from that movie ring
+Snap, crack jewelry bling
+Flapjack, ooh he bring
+Clack-clack, \"ooh he ring!\"
+Bad rap, cuties cling
+Ass cap, put em in the river
+I'm the sushi king
+And I'mma keep ya fresh
+Let the fish eat ya flesh
+Yes sir, please confess
+Just say he's the best
+
+[Hook]
+
+[Verse 3]
+How dope is this?
+Teach you how to rope a chick
+What you want: coke or piff?
+Got it all, smoke or sniff?
+And you know my drift
+Used to figures, dough and shit
+You a rooster nigga
+This a roaster, bitch
+And I roast ya bitch
+That's how it usually ends
+Tell her and her groupie friends
+Go get their coochie cleansed
+We the moody Gucci, Louis and Pucci men
+Escada, Prada
+The chopper it got the Uzi lens
+Bird's-eye view
+The birds I knew flip birds
+Bird gangs, it was birds I flew
+And word I blew off herb I grew
+I would serve on stoops
+Now swerve in coupes"
+
 Song.create!(album_id: purple_haze.id, artist_id: camron.id, lyrics: lyrics_string,
 title: "Killa Cam", user_id: user_one.id)
+
+lyrics_string =
+"[Verse 1]
+I be like: \"Move! get out the way\"
+Cause I move bricks, get out the yay
+And it's 2 clips, I get out to play for
+Few chips, I get out n' spray
+It's more then shrimps, it's whores and pimps
+The difference in our crimes, yours attempts
+Attempt burglary, attempt theft you just begun
+I'm Grand Theft Auto, racketeering, larceny, conspiracy, murder one
+Electric chair I don't deserve the fun
+But I get the dough, shit I might splurge on one
+Now I know a lotta styles, some see
+But listen, stop it child it's a done D
+I come to ya block, stop it's that one D
+Gators straight from Crocodile Dundee
+No rubber sole, hardwood bastard
+Fitted, legitted, hardwood classic
+Killa! Uh!
+
+[Verse 2]
+Uh, that shit you talk don't move me nada
+The dudes with the Q's be proper
+Uzi pop, you news and choppers
+It's truly liver, who knew we'd prosper
+The game's a bitch, ooh we got her
+Shoes, Louis, Prada, groupie blah blah
+Santana, Zeek, the kufi poppa
+We the movie Shottas
+But it's really rude bois and rastas
+With a Trailer Load of Girls, excuse me Shabba
+I wish my homie could watch me
+Live Happy Days like Joanie and Chachi
+I stay lonely and cocky
+Dice!
+Rollin' and rollin' 'em
+Cars, the repo are towin' 'em
+Ask black, we totally total 'em
+Even Blood, he totally totaled it
+Plus his life, he totally totaled it
+But any girl I get I totally open 'em
+Brain and they legs, coke and the dope in 'em
+
+[Hook]
+Killa!
+Talkin' tough? (Yo!), smokin' dust (Whoa!)
+Fuck with us? (No! No! No!)
+Get ya head bust
+Get ya head bust
+Fuck around dawg, get ya head bust
+He talkin' fly (Yo!), I wonder why (Whoa!)
+Fuck with us? (No! No! No!)
+Get ya head bust
+Get ya head bust
+Fuck around dawg, get ya head bust
+
+[Verse 3]
+I spend days on Kawasakis
+Nights with Lewinsky
+But I'm the like the Ice Man, Michael Kuklinski
+I style on New York, pile up my fork
+The Dips, consulted by the son of Malachi York, doggy
+Cause I push weight, plus I push tapes
+God damn I'm starvin' and I just ate
+I wouldn't say I'm Nino with The Carter
+I'm more like the plant in Little Shop Of Horrors
+But I don't say \"Feed me Seymour\"
+I say, \"Feed me Dame, feed me Lyor\" (billions!)
+Epic, they used to feed me detours
+Roc-A-Fella, they feed me C-4
+The way I blow up, the VS just soars
+You GS-3, I'm GS-4
+You in a Lexus, I'm Gulf Stream 4
+Up in the sky, on a gulf stream tour
+You want beef? We'll start a Gulf Stream war
+Lay ya ass down on God's green floor
+We playin' golf in the Gulf Of New Mexico
+The cost to be the boss, you gotta respect it, ho
+My gas game you gotta respect it tho
+I swear to god you think I'm workin' for Texaco
+And ya section know when any day Tecs could blow
+Hit 'em from neck to toe when I come deck ya ho
+Killa! Dipset Bitch!"
 
 Song.create!(album_id: purple_haze.id, artist_id: camron.id, lyrics: lyrics_string,
 title: "Leave Me Alone", user_id: user_one.id)
 
+lyrics_string =
+"[Intro]
+Killa! Baby!
+Kanye this that 1970s Heron flow huh?
+Yeah let's speed it up
+
+[Verse 1: Cam'ron]
+Ayo street mergers I legislated
+The nerve I never hated
+On murders pre-meditated
+Absurd! I hesitated
+Observe: cock and spray
+Hit you from a block away
+Drinking sake on a Suzuki we in Osaka Bay
+Playing soccer, stupid, stay in a sucker's place
+Pluck ya ace, take ya girl, fuck her face
+She dealing with Killa so you love her taste
+She swallowing Killa cause she love the taste
+I got brought up with crooking
+Kitchen orders that I'm cooking
+But got caught up with the jooks you woulda thought I was from Brooklyn
+It gets boring just looking
+Did like Bill Cosby, pouring in the pudding
+Now the dashboard is wooden from a hard-tangled grammar
+Interior, inferior, star-spangled banner
+Car game bananas
+My man Santana
+Guns everywhere, like the car came with hammers
+
+[Hook: Kanye West]
+They trying to say he (down, down)
+I hear niggas saying he (down, no no)
+But our flow is the truest
+The games in the nooses
+Our girls is the models
+They coochies the juiciest
+
+Yeah, they say he (down, down)
+Yeah, they say he (down, no no)
+Cause I’m back on my grind
+Money back on my mind
+Ye' and Killa Cam', the world is mine
+
+[Verse 2: Cam'ron]
+I treat bitches straight up, like Simon Says
+Open vagina: put ya legs behind ya head
+Cop me Air Ones, hon, lime and red
+You got pets? Me too: mine are dead
+Fox, minks, gators that's necessary
+Accessories, my closet's a "Pet Sematary"
+I get approached by animal activists
+I live in a zoo
+I run scandals with savages
+All my niggas get together to gather loot
+Bodyguard for what? Dog, I'd rather shoot
+I go to war, old Timbs, battered boots
+Hand grenade, goggles and a parachute
+Ya'll don't even know the name of my flip
+It was "Touch Me, Tease Me" when Case was the shit
+You don't know bout the cases I get:
+Court case, briefcase, suitcase, cases of Cris
+
+[Hook]
+
+[Verse 3: Cam'ron]
+Ayo you dealing with some sure shit
+My bitches pure thick
+Play razor tag, slice ya face, you're it!
+It's I who come by drive-thru
+Gator-toed Mauri, three quarters, sky blue
+Look at mami: eyes blue, 5'2''
+I approached her "Hi boo, how you?
+Pony skin Louis? Oh, you fly too
+You a stewardess? Good ma, I fly too"
+Now a nigga got baking to bake
+Harlem Shake? Nah, I'm in Harlem shaking awake
+Shaking to bake, shaking the Jakes
+Kill you, shoot the funeral up and Harlem Shake at your wake
+Just ya picture though, you still taped in a lake
+I'm laughing; you couldn't wait to escape
+For anyone who owed the dough, I had to load the fo
+I hoped a nigga heard when I said "I told you so"
+
+[Outro]
+Mine
+Killa you already know Harlem
+Whole Midwest, Detroit, Nap town, St. Louis
+Chicago of course
+Westside, holla at me
+Southside wild hundreds
+You know what it is Ohio
+Columbus, holla at ya boy
+You know what else I do:
+Dayton, Youngstown, Cleveland, Cincinnati"
+
 Song.create!(album_id: purple_haze.id, artist_id: camron.id, lyrics: lyrics_string,
 title: "Down and Out", user_id: user_one.id)
+
+lyrics_string =
+"[Verse 1]
+We tie dynamite to the rhino type
+Wino might find yo' sight
+Sell the information for a dime of white, that China-China
+I'm behind the diner, selling marijuana to a minor-minor
+Elder fella; looking for that shine? I'll shine ya
+My mind designa. You a dime? I'll dine ya
+Madonna momma, body bottled, you're fine. I'm finer
+Time to climb her, climb behind vagina
+Then I hymen-grind her 'til her mom remind her
+Diamonds blind her; vision's gone, kiss her palm
+Turn her arm, lift her arm, notice that her wrists is wrong
+\"Gotta get it right ma, we gon' get along\"
+Said \"how?\" \"don't trip,\" but, yo, the trick is wrong
+First visi-on, day job tick-a-tron
+Nighttime, Mr. Mom. Bootleg Cris and Don
+Brother Chris and Don, and their sister Carm
+They sell yey, you'll say \"yay, this shit's the bomb\"
+I'mma hit my man, tell 'em you my pick upon
+The rest, so yes, you'll be blessed to hit the intercom
+You know, kiss his mom. She gave him wisdom charm
+And their father come from a long list of dons
+And I get it cheaper, I cop bricks like sneakers
+And if the cops come, I just hit amnesia
+But I give you an earful, it's tearful
+Told my mother I hustle and she said \"be careful\"
+
+[Hook]
+Why I feel like I'm losing weight?
+Why I ain't got no money if I'm moving weight?
+My life's based upon what I'mma do this year
+Cop a boat, cop a Lear
+Now the army suit's cute with my chocolate Airs
+You ain't gotta stare, go cop a pair
+Still the scrutiny, nothing they can do to me
+I made sure my mother and girl is smothered in pearls
+When a nigga under the world
+
+[Verse 2]
+Everybody like, \"Cam got the recipe now!\"
+Not them 3 girls I got to be Destiny's Child
+Specially equities, reckon we smile
+In the fear, tech the tech and use the tech that we wile
+Detective deceptive, receptive of fouls
+Hectic, Heckler & Koch
+Helicopters on the set of my sales
+Nah, I ain't gonna be embedded in jail
+Talking to a cellmate in a bed in a jail, dog
+I broke bread with the whale, fled from some seals
+And the house, I was the head of the hills, shit
+You get a dumb ho, and get dumb-happy
+Go to the gun show, get gun-happy
+Stuck, killed, mugged, milled
+Tone, flint, sticks, bo, Chub's milk
+Pucci baba, but I got the hardest shells
+We the Midwest gun cartel nigga
+Ya, we'll just clap up your brains, snatch up your chains
+See dog? Rap is my aim
+But I'm a hustler, in my heart, trapped is the game
+Attached to my frame, tapped to my brain, the fact still remains:
+It wasn't rap, it was crack that got the racks on the Range
+Look dog, don't be asking for Dame, see
+Playboy, I don't own that man
+And anyway, homeboy, you a grown-ass man, shit
+And when I rap it ain't no punchline
+I be on the highway dirty, crunch time
+No timeouts homeboy, just one time
+If they find that stash box just one time
+Shit, they'll put the dogs in the truck
+Side of the road, holding you up, cold as fuck
+They want that button, lunge it and push it
+Soon as they lunge it and push it, I run in the bushes
+That's how I play mine, jump over the grapevine
+Take my chances one-on-one with the K9
+Stealing a clip for anyone squealing they lips
+Fuck y'all if y'all ain't feeling the Dips"
 
 Song.create!(album_id: purple_haze.id, artist_id: camron.id, lyrics: lyrics_string,
 title: "Harlem Streets", user_id: user_one.id)
 
+lyrics_string =
+"[Intro]
+Killa!!
+Dipset, Charlemagne
+Jim Jones, Santana, Freekey
+Let's go! What they want sing
+
+[Hook - Mona Lisa]
+
+[Verse 1]
+Damn chump passed, he a dumb ass
+Call J.R. (why?) get a fun pass
+Yeah she come fast, so she leave quicker
+Cause she cum faster, skeet skeet nigga
+We be with her, me, Jim, Zeek, hit her
+Then she with flea flicker, don gg get her
+P.E wit her, wee wee, eazy, ol me, ol g little me lick her
+So she need liquor, never seen sicker
+Nigga, if rap was head, she could be Twista(fast)
+Had her alley to alley, Hawaii and Maui, and Cali the Valley
+Up in white Lotus, dog you might notice
+That you type bogus, me I'm quite focused
+And hope is hopeless, disappear in the air, hocus pocus
+
+[Hook]
+
+[Verse 2]
+Goddamn he stuck like stucco
+Cut low, slut no, here he come uh oh
+Man see what the fighting do that's why I'm piping boo
+Ain't even liking you, I'm exciting true
+Just right I do, heels high, wheels fly, real fly Nikes are new(Air 1's)
+And a righteous view, from night to new, day, hey play
+Catch a flight for two (first class!) and you thought you a baller. A baller?
+Hawker, dog you a stalker! (you a stalker)
+Upset cause what she wear showin'(that's see through)
+Aww man you ain't in gear for knowin
+Ask questions in fear of hoein'
+What's that? Who you wit?, where you at?, where you goin'? (where you goin'?)
+Where you goin', I'm flowin', she blowin', sky high like a Boeing
+Got pies like it snowin' (slingin'!)
+
+[Hook]
+
+[Verse 3]
+Females better twirl on yours, better curl on yours
+Cause I swirl on shores (then what) come back to a pearl golf course (who you)
+I'm corrupt, cause girls all whores
+And the world is yours, honey sip sizzurp earl of course
+And you know I'm in the building mister
+With the Olsen twins, or the Hilton sisters
+And I haul 'em in to the Hilton mister
+I milked them, I killed them, you quilt them, you missed her
+You held her, you kissed her
+You felt all the blisters, melt on your whiskers
+
+[Hook] - 2X"
+
 Song.create!(album_id: purple_haze.id, artist_id: camron.id, lyrics: lyrics_string,
 title: "Girls", user_id: user_one.id)
+
+lyrics_string =
+"[Hook]
+If only you could let me in
+I know that love it could begin
+If only I could rap to you
+I know this love would capture you, yeah
+
+Don't you wanna ride?
+
+[Intro - Cam'ron]
+Killa! This the ghetto soap opera right here man
+You from Harlem you already know
+You on that hustler's mission; you trying to get that paper
+Wifey like it one minute next minute she don't, man
+You know they at home watching Lifetime or on the Internet
+
+[Verse 1 - Cam'ron]
+Yo my mommy Toy was my pride and joy
+She would drive the toys plus ride the boy
+To supply the boys I got it live from Croix
+Yes a nine in boy, wore a five in boys
+Over the chick shit I shoot five with Roy
+Now I load the 4-5 shoot five at Roy
+Ain't like my job or guys I employ
+Lifestyle I enjoy but I'm the livest doy (doy)
+A hustler and Cam famous, you damn anus
+I don't know but I can't change it
+Can't paint it; pop it, champagne it
+Stop it. Car: drop it. It look dull, damn, paint it
+She would throw a pout how I'm showing out
+How I'm outgoing but don't be going out
+It's things to know about when you got dough and clout
+Ways to move, know the route. \"Babygirl, close your mouth\"
+Cause I feed you well. Every sneaker, hell
+You eat Louis, shit Gucci, breathe Chanel
+Karl Lagerfeld acting like Gargamel
+For the car cop the cell in the bar stop at hell
+\"What's wrong with you?\" She said, \"what's wrong with you?\"
+Always got a song to do can't get along it's true
+So I skipped marriage, bought her six karats
+Rather die that nigga than to live average
+
+[Hook]
+
+[Verse 2 - Cam'ron]
+Looking back on school: art and crafts
+Fucked half the staff, beat up half the class
+I was like Dr. Dre, though, I have to laugh
+Nigga with a attitude, meet me after math
+Had a \"half and half\"
+Not a drink -- two chicks that flip acid fast
+The half a tab
+You could ask her ass, I would dash and laugh
+You after me, huh? I'm after cash
+I'm on I-80 though with my baby
+Whole ride hazy tell her don't drive crazy
+I got plans for you look in the sky baby
+Fuck Sara Lee, Mrs. Smith; you the pie lady
+Fly lady G2 fly baby gee you why baby
+Please boo what's your size crazy
+Don Juanin' when I'm in a foreign
+Almond drop top my charm is alarming
+I was alerting her just to reinsert in her
+That I will leave earth with her
+Huh, I can't interpret her
+She got mad I leaned over, I'm nursing her
+Said when I do dirt wit her
+The only time I flirt with her
+Not to be V.I but this is B.I (B.I)
+Me and G.I be watched by the P.I's
+See why we can't finish together
+I'd rather do business than pleasure
+And that's real (Killa)
+
+[Hook]"
 
 Song.create!(album_id: purple_haze.id, artist_id: camron.id, lyrics: lyrics_string,
 title: "Soap Opera", user_id: user_one.id)
 
+lyrics_string =
+"[Verse 1]
+Mommy all on me cause I'm touching her belly
+I'm on butter Pirellis
+Whip purple and yellow, hello
+That's butter and jelly
+I flip butter on cellies
+All right in front of the deli
+Holly, Lilly, to Kelly all spent ones on the telly
+(and what else) and I got hella gear
+My earring is nice, the price:
+Three town homes in Delaware
+Uh, tomato Porsche looking like tomato sauce
+Hip hop hooray I got to get that yayo off
+That's blocks to the ave, cops come blocking the ave
+I put the Glock in the stash, slabs and tops in the trash
+Still stop and I laugh; ma, get them rocks in your ass
+The rest? Twat in ya bag, dag, hop in a cab
+Play you, for what? You gonna play yourself
+Ain't nobody gon' pay you like you pay yourself
+And my way to the wealth was SK, AK, mayday, payday
+Dog, don't play with your health
+
+[Hook]
+Mami... she open, she open
+Jump off... hoping, I'm hoping
+Grab her... rope 'em and dope 'em
+Oral... choke 'em and choke 'em
+I flip bundle to bundle, trying to double my double
+At the same time.....[Music I bubble]
+But the cops say I'm [looking for trouble]
+
+[Verse 2]
+I get fresh from Yankee stadium to the garden
+I beg your pardon, stop it
+My closet: Macy's men's department
+Pants, shirts, scarf, phone if you check it
+Get the scoop on the cologne, belt, and shoe section
+Fur for fur, baby; baby, you'll go stir crazy
+Got that David Yurman burning, the bird gazey
+You'll get hurt, play me
+Burp, let the dirt chase me
+Every third lady that flirt, want my chirp lately
+I know some RN's that still strip
+When I and this real dick in the clinic
+Nurse suit and heels, shit
+Better than college, after that, students home
+At least after your bid, ain't no student loans
+To pay back, jack, ask, \"What do you condone?\"
+Hit towns with coke, a .45 blue as chrome
+They done juiced my dome, knock knock, \"are you at home?\"
+I'm Macaulay; girls call the crib and ask, \"are you alone?\"
+.....killa
+
+[Hook]
+
+[Verse 3]
+We race foreign cars, custom models
+Drop top mustard Tahoe
+We like the musketeers, trained by Cus D'amato
+Just the model, a dozen hollows is tough to swallow
+Watch Sanford and Son, I'm like the buzz in Rollo
+Fortunado, the Porsche Apollo, wars'll follow
+Got the Mac jack, still swing swords like Zorro
+We jacking and clapping, y'all just applaud like \"bravo!\"
+Now applaud the capo, Zeek and Santana
+I don't raise her wrists, I keep eighths of piff
+The game's a chick; I'm Kobe, I'mma rape the bitch
+Razor grips, laser spit
+Glock cocked; J or fifth?
+D on the block just like Jadakiss
+Haters shift, plead the fifth
+Spray the fifth, gator kicks
+Matrix, major chips
+I'm your favorite
+Killa
+
+[Hook]"
+
 Song.create!(album_id: purple_haze.id, artist_id: camron.id, lyrics: lyrics_string,
 title: "Bubble Music", user_id: user_one.id)
+
+lyrics_string =
+"[Verse 1: Cam'ron]
+Yo, uh, I rock baguettes with hoodies, it's like extra goodie
+I couldn't break dance ya'll, or electric boogie
+I was obsessed with Cookie, I wanna sex her cookie
+She said forget her nookie, wipe my nose, go get them boogies
+I gave Cookie nookies, with the girls, got known
+This my two brim hat, call me Sherlock Holmes
+Whole world got blown, so I tell hoes
+Fuck Lee's and shell toes, Dekangaroos and Velcro
+Timbaland, moccasins, dimes in them pennyloafers
+A-Train, one bus, sure I had plenty soldiers
+Uncle, plenty holsters, dolgers, soldiers, hostess
+Not golfin' like golf, he had plenty gophers
+Can't get paid in an earth this big?
+You worthless kid, Cam don't deserve to live
+Back then I played for Gauchos, went over the riverside
+Young life, turned left, we back over the riverside
+Blood played for Stone Gym
+That's when I told him and Jim
+We ain't balling for real, where's the stone gems?
+Where's the chrome rims?
+That's when you changing lanes
+Here we change your lane, we'll gain a sprain
+Change the game
+And not naming names
+But 'caine fames like Damon Wayans
+Connect for life is, the Tech kept us righteous
+Cause yes expect the crisis, when it's connects and prices
+I had to hustle harder, move up my muscle martyr
+Seen New Jack City, cop me a couple Carters
+And that's word to my father, send a bird to my father
+Dove love, R.I.P. on his early departure
+I'm just merely an author, but I'm purely a baller
+Every Friday, across the street, and I creep with Ms. Parker
+
+[Hook: Jaheim]
+Get the whips the kicks, and clothes
+So we can get with the models
+And hit the strip with the Dip, we're 'Set to blow
+Now you know
+All of the reasons why we chase the doe
+Get the whips the kicks, and clothes
+So we can get with the models
+And hit the strip with the Dip, we're 'Set to blow
+Now you know
+All of the reasons why we chase the doe
+
+[Verse 2: Cam'ron]
+Killa
+That nigga man, let me break it down real simple for ya'll
+Listen, yo, and I'm very prestigious
+You have various leases
+All my pieces, painted them, cherry and peaches
+Chics, Cherry and Peaches
+They had cherry deheaters
+If I want a toast, hustled up various reefer
+Ithaca, Ithaca, hydro, why yo?
+Haze on delivery, lives hoes, five fo
+But kept the fo-five, for wise guys with eyes low
+Pick me up from fo-five, CL-55, whoa!
+Playin' Grand Theft Auto, they like Diablo
+My crews' the triad, Zeek, Santana, Capo!
+But they some slimmies who
+Can rock a Jimmy Choo shoe
+Next day velour sweatsuit, construction Timmy boots
+Don't be no guinea boo, you rock that Fendi you
+You drinkin' Henney too
+Coupe color as Winnie Pooh
+And he skinny too, they had my favorite rum
+Not a six-fo-five-fo, but made in jump
+Shout, say say the funk, he keep the K in pump
+He ain't never scared, never scared, raise the trunk
+We'll just lay and dump, play the punk, spray the chump
+The way they running I guess they could relate to Gump"
 
 Song.create!(album_id: purple_haze.id, artist_id: camron.id, lyrics: lyrics_string,
 title: "More Reasons", user_id: user_one.id)
 
+lyrics_string =
+"[Verse 1: Cam'ron]
+How I get robbed in Cali, I be with Cali thugs
+Got mobbed in Cali, yeah, that Cali love
+Come on chatter mouth, have my bling black is out
+Stick me what that about, I was the only rapper out
+Beverly, Foxhill, Roscos, swap meet
+Slausson, Crenshaw, Compton, we not sweet
+Like I'm chump change, Jimmy with his dun game
+I'm fun aim, LAX gun range
+White load the felly fell, holla at the kid proper
+If somethin happen, skip rappin, they'll be big choppas
+Ghetto byrd word, cause I keep the big choppa
+No disrespect, niggas killed Big Poppa
+The Williams sister, Romeo from Steve Harvey
+Got the drop, get the drop, no please sorry
+Got weed on me, no need guard me
+I'm what you need probably, I teach robbery
+
+[Hook: Jim Jones]
+We ride in that east side
+Please roll up my weed high
+We ride in west side
+The city were them techs fly
+That dirty dirty south side
+Midwest uptop when we outside
+But we ride in that eastside
+So please roll up my weed high
+
+[Verse 2: Jim Jones]
+My momma always told me aim for the sky
+So I, came out bangin and aiming at guys
+It was, mainly slangin that caine by the pies
+And the, fiends was payin for dangerous high
+Blow, peep and ammonia, we mix it down
+There's no sleep on the corner, the pitching mound
+And police, when the saw us they frisked us down
+We hold heat, marijuana, they lick it down
+So tell Bloomberg it's a wrizzy
+I take it back to '88 and move birds though my city
+G.W. Bridge, New Jers with the pizzy's
+28 a key, the suburbs, they get busy
+And fuck the phones, get the word by mouth
+When the winter roll around, know the birds fly south (Miami)
+And fuck the cops, got hella folks up in prison
+Had no other option but to sell coke for a living
+
+[Hook]
+
+[Verse 3: Cam'ron]
+Dope man, Smoke man, O's float the coast damn
+No coke and postman, slow jams, cokeland
+Throat jams, throw grams, no maams
+Sell white throw tan, tell her (ill holla)
+Watch the kid from 140 bake
+They say shorty straight
+28 grams, Turn 4 48
+?? ?? bought the cakes
+?Lore? off of 4 to 8
+All I do ignore the jake tell her (ill holler)
+I still bubble o's, still double those
+Still double my double down in the double o
+From the CEO, love gets sent to them
+Akron, Springfield, Cleveland, Cincinnati
+That's Detroit, Minnesota, Greenpoint
+Naptown, Sactown, The Lou gots some mean joints
+We orangutan it, ?Durange? bang it
+I'm strangly ganged
+Like Pac I'm Gang Related (holla)
+
+[Hook]"
+
 Song.create!(album_id: purple_haze.id, artist_id: camron.id, lyrics: lyrics_string,
 title: "The Dope Man", user_id: user_one.id)
+
+lyrics_string =
+"[Verse 1: Cam'ron]
+Man I spit that pimp talk
+You hang out where the pimps collide
+It's a pimp in my ride, no need to pimp the ride
+This ain't the pimp camp: pimp limp, pimp stance
+Pimp-slap a slim tramp. Order steak, shrimp scamp
+Ok-k-kay, you g-g-gay
+I'll soufflé ya toupée and bottles be a bouquet
+Right where you stay
+(Or where you stayed)
+A 45 trey deuce spade sprayed, you stayed
+Unload the click-clack to ya fit cap
+Hold the shit back, say goodbye and go commit that
+For 9 years in Spain had the time share
+Back to Times Square...I got dimes here
+By the Port Authority, but I got more authority
+Your girl she ordered Mauri, checks she forge 'em for me
+Reporters report me how she report to the orgy
+But it's more to the story: her daughter applaud me
+
+[Hook: Nicole Wray]
+We in the zone, our soldiers like to stand by
+Never alone we 'bout to make the drums cry
+Dipset, dipset
+We hold our own, don't think you can move us or push us
+And step to the side, that's why they call us \"family ties\"
+Dipset, dipset
+
+[Verse 2: Cam'ron]
+From the back of the cop-ride
+To black-on-black, black when we cop rides
+I will not hide, \"hi ma, hot thighs\"
+Dick on her nose...now she's cock-eyed
+From whippin' the bacon rolls to outside whippin' the bacon Rolls
+Annihilatin' those, I'm rakin' but makin' dough
+80 holes in your shirt, there: your own Jamaican clothes
+I ain't talkin' the Poconos, I'm talkin' the Aspens, to slopes we go
+You get the \"okey doke\". Play me, baby I hope he know
+We break noses, call him baby Pinocchio
+(Fuckin' liar)
+I hold him with blue mittens, 2 pigeons, \"what the fuck are you pitchin'?\"
+1 house, 2 kitchens...who's bitchin'?
+I bring the diesel, won't see the Fu-Schnickens
+And I don't trust a ho
+That's mother to baby-mother
+Motherfucker, you look like a lady-lover
+I'll touch slap her, dap her, plus clap her
+Tell her drink, come get drunk, it's nut cracker
+And it's well known that Rell home
+Yup, hit E.T up on the cell phone
+As your family dies, and my family rise
+Call the network Dipset Family Ties
+
+[Hook: Nicole Wray]
+
+[Verse 3: Cam'ron]
+They see me in that lavender tank, you'd rather just faint
+I was Fort Laudi, you was Saint Latter-Day Saints
+Whips get lathered in paint
+Rap with the rappers, scrap with the actors, cap back: abracadabra
+And I'm apalled think that we at all comfortable
+Me in Mauris, these rappers all Theodore Huxtable
+Their mother's a lawyer, their father's a doctor
+Auction coke to the coppers, Glocks in the locker and
+Who you supposed to be?
+Get hung from the rosaries
+Call me \"C.O.D.\" - that's coke and them Os of D
+Some O.D.ed, B off them Os of D
+I ain't give a fuck as long as they ain't close to me
+Put ya drugs in the air, give a toast to me
+Pump that dip in ya veins, get dope like me
+Fuck Kerry and Bush, you should vote for me
+For real, nigga, on the real the last hope is me"
 
 Song.create!(album_id: purple_haze.id, artist_id: camron.id, lyrics: lyrics_string,
 title: "Family Ties", user_id: user_one.id)
 
+lyrics_string =
+"[Verse 1]
+I know you heard me in British Raj
+But I get you bracelets till ya wrist is throbbed
+Just kiss the knob and put your meat on my stick like a shish-kabob
+Out mingaling, heard that I blingy-bling
+But I run the circus like Ring-a-ling
+I'm the king of things.. And your man, he a homo like Ching-a-ling
+That's life, hit 'em with the pow-ping
+Pow, pow, .45 loud thing
+Look wild thing, I do wild things
+Make China stretch like Yao Ming
+Ching chong chinga-linga - ciao, meng
+I'm bilingual ma, I don't need a nickel, naw
+Oh you tickled ma? Cause your nipples huh
+Comming through your shirt, nearly ripped your bra
+
+[Hook - Freekey Zekey]
+I see the hate in your eyes, damn them boys is too fly
+The way we roll up, rims all swoll up, ice all froze up
+And while you're acting surprised, like we don't sell them pies
+They way we hold up, papi hole up, mami roll up
+
+[Verse 2]
+I know you in school and work, but you need to get schooled in work
+Put my tool to work; I'm feeling your shoes, your purse
+You get low on dough, refuel the first
+I don't need you high like I'm high
+But shit, I need you fly like I'm fly
+Fresh Louis Vuitton ankle
+Pastel Louis Vuitton rainbow
+Threw on the Kangol, threw on Durango's
+Not from the 'nati but threw on the Bengals
+Moved on an angle, like a bull and matador
+The two gonna tango
+Shake your body mami, move your body hottie
+Its true I'm kamikaze, I move in a Mazerati
+They all polly-polly, woo boy, dolly-dolly
+I don't talk unless you swolly mami
+
+[Hook]
+
+[Verse 3]
+Lady, dry your panties
+Damn, she wanna write her family
+Tell her Dad I'm a diaper dandy
+And I got all type of candy
+Whats that? Victoria Secret?
+Here's La Perla, come peep it
+This lingerie that you could honor
+A Wonder Woman, ouais, go on and play
+Like Cam' watch, like Cam' ring
+Like Cam' chain, like Cam' bling
+Heard Cam' sing if a damn fling
+Goddamn mam', not a damn thing"
+
 Song.create!(album_id: purple_haze.id, artist_id: camron.id, lyrics: lyrics_string,
 title: "Hey Lady", user_id: user_one.id)
+
+lyrics_string =
+"Killa! Jones! Freekey! Santana! Come on!
+Shake, shake, shake (uh!)
+Shake, shake, shake (Uh!)
+Shake, shake, shake (uh!)
+
+[Verse 1: Cam'ron]
+Yo, who wanna mess with me, or come mess with me
+Be a mess to clean, call me Mr. Clean
+The way I glitz and gleam, trigger team
+Click the Beam, hit the fiend (?) on me
+Lookin like I'm nicotine
+But it's all for the green like Listerine
+Had to diss the queen thinkin I'm gon' get her jeans
+I ain't Ginuwine, ma, my mission's mean
+All my nigga team fix the fix get the cream
+I sit in Bahamas, with Alyssa Milano
+Got the Crist' and the ghanga and its gettin un-karma
+Comma, now she cryin she missin her mama
+Just a steppin stone for me now I'm hittin Madonna
+And she twistin the fauna as we sit in the sauna
+Guess it's just my persona, got her kissin my condom
+
+[Hook]
+We're the Dips, so cut the shit
+Ma, twist your hips and lick your lips
+We're the Dip, so cut the shit
+Ma twist your hips and lick your lips
+
+[Bridge: Cam'ron]
+Ma you straight frontin', let's get the date jumpin
+See your booty panties, ma shake something
+Shake something, shake something
+Shake-shake, shake shake something
+
+[Verse 2: Cam'ron]
+And I got some girls, bout five or six
+And a five and six, about five or six
+I surprise the chick, that's when her eyes get lit
+Let her drive the whip, see if she ride a stick
+Who as live as this? My pool size is sick (sick)
+But swim in my pants and dive for dick
+They call me Moby, my pos-i-tive
+Tell them free Willy if your thigs are thick
+And your ass if fat and your head is right
+And your dough is good, we can smash tonight
+Right here in the car, ma, at the light
+If you ask for cash, oh I'm mad for life
+Kiss ass, you dyke, and I'm fast to fight
+If you get mad, (??) grab a bite (what?)
+Or I stab it light and we'll grab a bite
+Is it crab you like? Lobster appetite
+
+[Hook]
+
+[Bridge]
+
+[Verse 3: JR Writer]
+In front of the club, drops, coups and trucks
+I'mma front in the club with a hundreds of studs
+A gun and some bud through the metal detector
+The metal detect ya, settle and wet 'cha
+I don't mettle with extra, you fakes and clowns
+I walk in and get out of the club safe and sound
+Silencer, dog, how safe it sound?
+I got apes and hounds, he just pace around
+And I'll lace you down, but I'm lookin for
+A Manahttan ho or a Brooklyn whore
+A Bronx biatch that'll let me look and explore
+Up front but beat around the bush for sure
+'Til the toosh is sore, hit it doggy style
+Get it doggy style, you know your doggy's style
+I'mma mack or more and it's smash or more
+A VIP up between the bathroom stalls
+
+[Hook]
+
+[Bridge]"
 
 Song.create!(album_id: purple_haze.id, artist_id: camron.id, lyrics: lyrics_string,
 title: "Shake", user_id: user_one.id)
 
+lyrics_string =
+"[Verse 1]
+I get the boosters boosting, I get computers 'puting
+Y'all get shot at; call me, I do the shooting
+I do the recruiting, I tutor the students
+I nurture their brain, I'm moving the movement
+Whether Buddhist or Buddha, that's Judas or Judah
+I got Luger to Ruger, hit from Roota to Toota
+Chick from hooter to hooter, I put two in producers
+I'm the real ball story, the loser of \"Hoosiers\"
+I rock mostly dosey, I roll mostly dolie
+I'll leave you wholly-holey, you'll say holy moly
+Here come the coroner, get em, play Rollie Pollie
+I'll tell you true stories, how I coldly hold heat
+When it's repping time, I get on extra grind
+Fried to fricassee, Pepperseed to Pepperdine
+Jeff Hamilton, Genesis, leather time
+Bitches say I'm the man, I tell em never mind
+
+[Hook]
+They getting nice, they got some ice
+Let's get the dice and roll em (get em girls)
+They getting chips, they flipping bricks
+Get the rots and pits, tell em (get em girls)
+She acting feisty, getting sheisty
+Call the wifey, tell her to (get em girl)
+Just lay back, get your face slapped
+We at the race track, eight stacks (get em girls)
+
+[Verse 2]
+You acting funny nigga
+Come dumb, dummy nigga
+Killa keep twenty blickers (I'm getting money nigga)
+So you should move away, or join the dude 'n play
+Hey, so you can say (I'm getting money nigga)
+First pile up in the rear, I style up in my gear
+Stallion of the year: medallions in my ear
+Whips on my fists, houses on my wrists
+Your budget on my neck, your spouse on my dick
+Posters on the wall, posted on my balls
+Dick in her mouth, I tell her \"I'm gettin money niggaa\"
+Y'all faking the fizzle, I'm caking for shizzle
+Fuck a Sizzler steak; my estates, they sizzle
+Ate, boom-boom, my ace boon coon
+Shake, bake, skate, vroom vroom (We gettin money niggaa)
+7 to 8, zoom zoom, boom boom tune
+'Fore I get life, that boom boom room (I'm gettin money niggaa)
+Wrecks 'n Effects: zoom zoom in poon-poon
+Since the movie Cocoon, had my Uzi platoon (I'm gettin money niggaa)
+
+[Hook]
+
+[Verse 3]
+My team is the Goonies, we were seen with buffoonies
+Toonies, best dressed, stay up in Neiman's and Bloomies
+Want to hit it from the back, she agreed that I'm looney
+But proceeded to moon me (I'm gettin money niggaa)
+\"Baby\" b.s. and \"honey\" do, Cam V.S. 1 and 2
+I'll help you get your son out of P.S. 22
+Get him a Mauri flow, from the Mauri show
+Fuck around, y'all gonna be up on the Maury Show
+He in bootcamp, you on food stamps
+Welfare, no health care, a true tramp
+And I'm lokie-lokie, leave you pokey-pokey
+No Rice a Roni, that's the okey-dokey
+Me and Toby homie, make you do the hokey-pokey
+Pull the pound, up and down, turn yourself around shorty
+Here's some weed, burn yourself a pound whoadie
+Here's a map, go learn yourself the town, sporty
+I was down 40, now I'm up 50
+Buck 50, but quickly: who could fuck with me?"
+
 Song.create!(album_id: purple_haze.id, artist_id: camron.id, lyrics: lyrics_string,
 title: "Get Em Girls", user_id: user_one.id)
 
+lyrics_string =
+"[Intro]
+Let's do it!
+Santana, Jim Jones, Killa, Freekey
+How long we gon' have this shit on lock, man?
+Yes sir, you gave me the right track Kanye
+
+[Verse 1]
+Listen, I been coppin them P's and
+Maybe that's part of the reason
+I feel like a boxer: bobbin and weavin
+But I'm getting head
+She's bobbin her weave and (yes sir)
+I'm grabbin her neck to stop her from breathin
+I'mma wild out until I part with my breathin
+Until I'm sparked up and leakin
+Part of the cement
+I need something pure, like from the Garden of Eden (why?)
+Wouldn't mind making her part of my achivements (what happened)
+Cause when music discourage my pride (who was there?)
+Zeke the only one with courage to ride
+The ride's so dirty inside
+Seems like we were playin in mud
+Hazin' it up, grams, gauge and a snub
+Who ill? a check for two mill
+And a cheap case, defaced, blue steel, true skills
+I got stories that my soul can sing
+Flip water like Poland Spring
+And I'mma hold them things
+
+[Verse 2]
+Look - talk to 'em
+Look - my fella said you been coppin' a lot
+Latest caper? Propellers on top of the drop
+But fuck it, who ever thought I would rock at the Roc? (Killa!)
+Top a top on top of the top
+But yo - nothing definite
+I chop up the rocks
+And I stop up the drop
+Blocka Blocka the block
+Hello mate, yellow tape, helicopter your spot
+What you wanted is not what you got
+And I pop up them cops
+Cause dogg, it ain't about Cam (It ain't about me)
+I got a son homeboy, it's about Cam (For that?)
+It's about being 'bout It
+If you're not, you're ass backwards
+My mathematics cause cash matters (That's important)
+Little niggas need to sit up and breath
+If the town's too hot, get up and leave
+Niggas always got a trick up their sleeve (always)
+Nigga like me - I always got a brick up my sleeve
+And that's for-e-ver
+
+[Verse 3]
+Shit, I was two blocks from coppin dust
+I used to hop the bus
+Now look dogg, ain't nobody hot as us
+Girls, they gotta rush
+Shit, they gotta blush
+Wanna go in the mall just to shop with us
+To how they piss and bitch how they ran a mile
+Fuck Killa Cam, they in love with Cameron Giles
+Damn, I gotta smile
+Hundred grand, I demand it
+Cot damnit the boy the boy done done it child
+And that's forever man
+
+[Outro]
+You hear it, uh huh
+We here, I love y'all man
+It's nothing boy
+Dash, Hoffa, Young Guru
+What's really good?
+Holla at your boy
+I might have this shit on lock man
+Kanye, Harlem, Chicago, Columbus, Holla
+Chicago, you have your own Kanye West on the track
+Harlem, you know who the fuck I am - Killa!
+We just want you's to know Diplomats is here
+We ain't going nowhere
+Holla atchya boy-boy, let's ride out man"
+
 Song.create!(album_id: purple_haze.id, artist_id: camron.id, lyrics: lyrics_string,
 title: "Dip-Set Forever", user_id: user_one.id)
+
+lyrics_string =
+"Killa
+This that Harlem Music Right Here
+This that Diddy Bop, Get ready for the winner music
+That's what it is
+Killa, Dip Set
+
+[Cam'ron Verse]
+Uh, Uh
+You know me dawg, I just wanna keep the peace
+But saying my name, that's only gonna lead to beef
+Tell my niggas chill, but they wanna heat the streets (Be Easy)
+Or do it on record, Check-we spit heat to beats
+
+[Juelz Santana]
+Everybody Welcoming this, Welcoming that
+He wasn't welcome in the first place, how we welcome him back?
+
+[Un Kasa]
+Give me the Mac, let me welcome with that
+Tell \"Mr. Rogers\", I leave his brains on the trolley track
+Now prolly that
+
+[Cam'ron Verse]
+Listen, ya'll Stop It (Stop)
+Know you appalled, got it
+But this my call by the false prophet, all profit (all profit)
+Harlem Hustler (yep), I can't at all knock it (nope)
+But you hard, when you go in the Lord pockets
+What you offering, put it right in offerin
+They take it all, cash, credit, silver, down to porcelain
+Look at the Porsche he's in (look at it)
+Then Give them portioning (To Who?)
+No handicap, Annie Rag, orphan friends
+Friends, but the sizzurp I'm drinking on
+Birds I'm thinking on
+Get your Kirk Franklin on
+Word, so you get your Ben Franklin on
+Just when you think it's wrong
+One blink, he's gone (damn)
+
+[Hook]
+Father Forgive us
+We gon take him to church
+Father Forgive us
+And it's the truth it hurts
+Father Forgive us
+And that won't work
+No, No, No, No, No Way
+
+[Verse 2: Cam'ron]
+Yo, you try to handle us
+Get on the air and damage us
+Screaming out Harlem (huh) like you ain't just abandoned us (Where you been at?)
+Well let me fill you in, now it's a whole clan of us
+Blink so mad, he went and beat up Canibus
+Zeek got shot then Zeek locked up (then)
+E got killed (what else?) B popped up but
+B hopped up and still broke out his chest
+On probation, Doe on house arrest (what up Doe)
+Right out the flesh
+Sit in a house and rest
+He don't pout, get him gear, in the house he fresh (Fresssh)
+Not that you care, just getting clear and think
+One glare and wink
+Everyone wearing pink
+I'm the reason that your two rings are clear (Yeh, What Else?)
+I'm the reason that your ear rings is square (Yeh, hear?)
+Now we take trips to casinos, to lovely homes
+You check on Lotti's mom, Minos, Honeycombs (Homes)
+You trying to fake it with cardem, pardon
+You gonna leave them naked like Tarzan
+
+[Cam'ron Talking]
+Kudo Love know that too
+
+Holla at Kudo, ask Nelly about him
+
+[Hook]
+
+[Verse 3: Cam'ron]
+Yo, Yo
+I kill diamonds, get with pearls
+I ain't trying kid the world
+I ain't got beef, when I do, I say \"Get 'Em Girl\"
+Not a diss dawg (nope) we just heard the fronting (Heard It)
+Do Harlem a favor (What?) get a church or something (something)
+A rec center in the winter where the youth can play
+They don't even shoot the J
+Sell drugs, shoot and spray
+I'm knownbetter, still moving deuce a day
+Two, that's two keys, I still move the Yay (Yayo)
+Found a newer way
+My crew do and say
+Fist Fights to Shoot Outs, we won't move away
+
+[Hook behind Cam'ron talking]
+
+All my niggas that held it down the last half a decade
+My nigga Gruff, Bad 140th, 139th
+Black tone, White Tone, 142nd Rell Street
+And 141st, Tito, My Jamaicans, My Belegians
+33 33 Polo grounds, St.Nick colonial Jurist
+Lincoln, Tab, Forster, Johnson, Jeff Wagner
+Wilson, East River, The 9, 145th St.Nick, 145th Broadway
+Lukas, Taliban, 135th, 118th, Manhattan
+134th and 8th, Powerful what's really popping
+Sarge hold your head, Freekey Zekey hold your head
+The ol' B.B.O., 151st Amsterdam holla at your boy
+A.K. Jackie Rob, All my niggas in Harlem
+Get your hustle on
+Keep your muscles strong
+I know about the blocks you hustle on"
 
 Song.create!(album_id: purple_haze.id, artist_id: camron.id, lyrics: lyrics_string,
 title: "Take Em to Church", user_id: user_one.id)
@@ -919,8 +2250,23 @@ end
 
 upvoters.each do |upvoter|
   Vote.create(user_id: upvoter.id, value: 1, votable_id: sunt_note.id, votable_type: "Note")
-  Vote.create(user_id: upvoter.id, value: 1, votable_id: long_lorem.id, votable_type: "Song")
+
   Vote.create(user_id: upvoter.id, value: -1, votable_id: sunt_note_comment_two.id, votable_type: "Comment")
+end
+
+Album.first.songs.each_with_index do |song, i|
+  upvoters.each_with_index do |upvoter, j|
+    break if j >= i
+    Vote.create(user_id: upvoter.id, value: 1, votable_id: song.id, votable_type: "Song")
+  end
+end
+
+purple_haze.songs.each do |song|
+  upvoters.each do |voter|
+    v = Vote.new(user_id: upvoter.id, value: 1, votable_id: songs.id, votable_type: "Song")
+    v.created_at = 2.weeks.ago
+    v.save
+  end
 end
 
 
