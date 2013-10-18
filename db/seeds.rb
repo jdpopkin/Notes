@@ -1237,7 +1237,7 @@ Open vagina: put ya legs behind ya head
 Cop me Air Ones, hon, lime and red
 You got pets? Me too: mine are dead
 Fox, minks, gators that's necessary
-Accessories, my closet's a "Pet Sematary"
+Accessories, my closet's a \"Pet Sematary\"
 I get approached by animal activists
 I live in a zoo
 I run scandals with savages
@@ -1246,7 +1246,7 @@ Bodyguard for what? Dog, I'd rather shoot
 I go to war, old Timbs, battered boots
 Hand grenade, goggles and a parachute
 Ya'll don't even know the name of my flip
-It was "Touch Me, Tease Me" when Case was the shit
+It was \"Touch Me, Tease Me\" when Case was the shit
 You don't know bout the cases I get:
 Court case, briefcase, suitcase, cases of Cris
 
@@ -1259,9 +1259,9 @@ Play razor tag, slice ya face, you're it!
 It's I who come by drive-thru
 Gator-toed Mauri, three quarters, sky blue
 Look at mami: eyes blue, 5'2''
-I approached her "Hi boo, how you?
+I approached her \"Hi boo, how you?
 Pony skin Louis? Oh, you fly too
-You a stewardess? Good ma, I fly too"
+You a stewardess? Good ma, I fly too\"
 Now a nigga got baking to bake
 Harlem Shake? Nah, I'm in Harlem shaking awake
 Shaking to bake, shaking the Jakes
@@ -1269,7 +1269,7 @@ Kill you, shoot the funeral up and Harlem Shake at your wake
 Just ya picture though, you still taped in a lake
 I'm laughing; you couldn't wait to escape
 For anyone who owed the dough, I had to load the fo
-I hoped a nigga heard when I said "I told you so"
+I hoped a nigga heard when I said \"I told you so\"
 
 [Outro]
 Mine
@@ -2262,8 +2262,8 @@ Album.first.songs.each_with_index do |song, i|
 end
 
 purple_haze.songs.each do |song|
-  upvoters.each do |voter|
-    v = Vote.new(user_id: upvoter.id, value: 1, votable_id: songs.id, votable_type: "Song")
+  upvoters.each do |upvoter|
+    v = Vote.new(user_id: upvoter.id, value: 1, votable_id: song.id, votable_type: "Song")
     v.created_at = 2.weeks.ago
     v.save
   end

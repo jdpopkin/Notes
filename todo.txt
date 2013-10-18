@@ -229,3 +229,5 @@ from today.
 Seeds: add notes etc manually for now. Add votes on songs using upvoters. Set
 some of them to be from the distant past so you can show differences between
 recent score and score.
+
+After lunch: more seeding, I guess.
