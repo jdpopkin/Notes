@@ -212,11 +212,12 @@ New model. Tracks each activity. One is created whenever a new
 song/artist/album/comment/note is made. Has timestamp and polymorphic
 association with whatever it's associated with. Nah; paginate artists, albums.
 
-Fix handling of song creation when only one album exists for the artist.
-
 Fix seeds
 
-Change format of search results page
-
-
+Talk about: can add songs from list. The form to do this is dynamic.
+Voting: can't vote twice or vote on your own item.
+Lyrics form and display: keeps whitespace (but gets rid of carriage returns).
+User pages: recent activities, top activities.
+Front page: recent content, featured content. Featured content: highest scores
+from today.
 

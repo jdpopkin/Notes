@@ -10,6 +10,8 @@
 user_one = User.create!(email: "maboo@gmail.com", password: "password",
                             username: "Maboo")
 
+user_two = User.create(email: "sameoldshawn@yahoo.com", password: "password", username: "SameOldShawn")
+
 additional_user = User.create!(email: "paulr@gmail.com", password: "password", username: "prettysmacked")
 additional_user = User.create!(email: "epree@gmail.com", password: "password", username: "spacekingdom")
 additional_user = User.create!(email: "alanm@gmail.com", password: "password", username: "Sinonim")
@@ -20,8 +22,32 @@ additional_user = User.create!(email: "ponies@gmail.com", password: "password", 
 
 placeholder_artist = Artist.create!(name: "Nas", user_id: user_one.id)
 
+additional_id = User.where(username: "LiquidSwordz").first.id
+camron = Artist.create!(name: "Cam'ron", user_id: additional_id)
+cano = Artist.create!(name: "Cannibal Ox", user_id: user_one.id)
+gza = Artist.create!(name: "GZA", user_id: additional_id)
+mf = Artist.create!(name: "MF DOOM", user_id: user_one.id)
+
 placeholder_album = Album.create!(title: "Illmatic",
                   user_id: user_one.id, artist_id: placeholder_artist.id)
+
+purple_haze = Album.create!(title: "Purple Haze",
+                  user_id: user_one.id, artist_id: camron.id)
+
+gh = Album.create!(title: "Ghetto Heaven Volume 1", user_id: user_one.id,
+artist_id: camron.id)
+
+liquid_swords = Album.create!(title: "Liquid Swords", user_id: additional_id,
+artist_id: gza.id)
+
+cold_vein = Album.create!(title: "The Cold Vein", user_id: user_two.id,
+artist_id: cano.id)
+
+operation_doomsday = Album.create!(title: "Operation: Doomsday",
+user_id: user_two.id, artist_id: mf.id)
+
+mm_food = Album.create!(title: "Mm... Food?", user_id: user_two.id,
+artist_id: mf.id)
 
 lyrics_string =
 "Street's disciple, my raps are trifle
@@ -140,8 +166,6 @@ sunt_note = Note.create(author_id: user_one.id,
             body: "Nas' verse from Main Source’s \“Live at the BBQ\”.
             This verse was his first appearance on record",
             start_index: start_index, end_index: end_index, song_id: long_lorem.id)
-
-user_two = User.create(email: "sameoldshawn@yahoo.com", password: "password", username: "SameOldShawn")
 
 long_lorem_comment = Comment.create(user_id: user_two.id, body: "This is not a song.",
                       commentable_id: long_lorem.id, commentable_type: "Song")
@@ -829,8 +853,61 @@ MC's eavesdrop though they need not to sneak
 My poetry's deep I never fail
 Nas' raps should be locked in a cell, it ain't hard to tell"
 
+
+
 Song.create!(album_id: placeholder_album.id, artist_id: placeholder_artist.id,
       lyrics: lyrics_string, title: "It Ain't Hard to Tell", user_id: user_one.id)
+
+Song.create!(album_id: purple_haze.id, artist_id: camron.id, lyrics: lyrics_string,
+title: "More Gangsta Music", user_id: user_one.id)
+
+Song.create!(album_id: purple_haze.id, artist_id: camron.id, lyrics: lyrics_string,
+title: "Get Down", user_id: user_one.id)
+
+Song.create!(album_id: purple_haze.id, artist_id: camron.id, lyrics: lyrics_string,
+title: "Killa Cam", user_id: user_one.id)
+
+Song.create!(album_id: purple_haze.id, artist_id: camron.id, lyrics: lyrics_string,
+title: "Leave Me Alone", user_id: user_one.id)
+
+Song.create!(album_id: purple_haze.id, artist_id: camron.id, lyrics: lyrics_string,
+title: "Down and Out", user_id: user_one.id)
+
+Song.create!(album_id: purple_haze.id, artist_id: camron.id, lyrics: lyrics_string,
+title: "Harlem Streets", user_id: user_one.id)
+
+Song.create!(album_id: purple_haze.id, artist_id: camron.id, lyrics: lyrics_string,
+title: "Girls", user_id: user_one.id)
+
+Song.create!(album_id: purple_haze.id, artist_id: camron.id, lyrics: lyrics_string,
+title: "Soap Opera", user_id: user_one.id)
+
+Song.create!(album_id: purple_haze.id, artist_id: camron.id, lyrics: lyrics_string,
+title: "Bubble Music", user_id: user_one.id)
+
+Song.create!(album_id: purple_haze.id, artist_id: camron.id, lyrics: lyrics_string,
+title: "More Reasons", user_id: user_one.id)
+
+Song.create!(album_id: purple_haze.id, artist_id: camron.id, lyrics: lyrics_string,
+title: "The Dope Man", user_id: user_one.id)
+
+Song.create!(album_id: purple_haze.id, artist_id: camron.id, lyrics: lyrics_string,
+title: "Family Ties", user_id: user_one.id)
+
+Song.create!(album_id: purple_haze.id, artist_id: camron.id, lyrics: lyrics_string,
+title: "Hey Lady", user_id: user_one.id)
+
+Song.create!(album_id: purple_haze.id, artist_id: camron.id, lyrics: lyrics_string,
+title: "Shake", user_id: user_one.id)
+
+Song.create!(album_id: purple_haze.id, artist_id: camron.id, lyrics: lyrics_string,
+title: "Get Em Girls", user_id: user_one.id)
+
+Song.create!(album_id: purple_haze.id, artist_id: camron.id, lyrics: lyrics_string,
+title: "Dip-Set Forever", user_id: user_one.id)
+
+Song.create!(album_id: purple_haze.id, artist_id: camron.id, lyrics: lyrics_string,
+title: "Take Em to Church", user_id: user_one.id)
 
 upvoters = []
 15.times do |i|

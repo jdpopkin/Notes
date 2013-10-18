@@ -120,6 +120,13 @@ Notes.Views.SongShow = Backbone.View.extend({
 
         var newNum = parseInt($voteSpan.html()) + value;
         $voteSpan.html(Notes.toSigned(newNum));
+        if (newNum < 0) {
+          $voteSpan.removeClass("pos");
+          $voteSpan.addClass("neg");
+        } else {
+          $voteSpan.addClass("pos");
+          $voteSpan.removeClass("neg");
+        }
         //that.render();
       }
     });
