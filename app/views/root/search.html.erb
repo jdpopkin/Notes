@@ -1,15 +1,17 @@
 <h2>Search results for "<%= @query %>"</h2>
-<ul class="search-results">
-<% @results.each do |result| %>
-  <li>
-    <% case result.searchable_type %>
-    <% when "Song" %>
-      <%= link_to Song.find(result.searchable_id).title, song_url(result.searchable_id) %>
-    <% when "Album" %>
-      <%= link_to Album.find(result.searchable_id).title, album_url(result.searchable_id) %>
-    <% when "Artist" %>
-      <%= link_to Artist.find(result.searchable_id).name, artist_url(result.searchable_id) %>
-    <% end %>
-  </li>
-<% end %>
-</ul>
+<div class="search-div">
+  <ul class="search-results">
+  <% @results.each do |result| %>
+    <li>
+      <% case result.searchable_type %>
+      <% when "Song" %>
+        <%= link_to Song.find(result.searchable_id).title, song_url(result.searchable_id) %>
+      <% when "Album" %>
+        <%= link_to Album.find(result.searchable_id).title, album_url(result.searchable_id) %>
+      <% when "Artist" %>
+        <%= link_to Artist.find(result.searchable_id).name, artist_url(result.searchable_id) %>
+      <% end %>
+    </li>
+  <% end %>
+  </ul>
+</div>

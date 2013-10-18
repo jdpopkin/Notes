@@ -10,17 +10,18 @@
   width: 500px;
 }
 
-#song-list, #albums-list, #artists-list {
+#song-list, #albums-list, #artists-list, .search-results {
   list-style: none;
   padding: 0;
 }
 
-#song-list > li, #albums-list > li, #artists-list > li {
+#song-list > li, #albums-list > li, #artists-list > li, .search-results > li {
   padding: 10px 0 10px 0;
   border-bottom: 1px solid #333333;
 }
 
-#song-list > li:first-child, #albums-list > li:first-child, #artists-list:first-child {
+#song-list > li:first-child, #albums-list > li:first-child, #artists-list:first-child,
+.search-reults > li {
   border-top: 1px solid #333333;
 }
 
