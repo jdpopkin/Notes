@@ -212,12 +212,14 @@ New model. Tracks each activity. One is created whenever a new
 song/artist/album/comment/note is made. Has timestamp and polymorphic
 association with whatever it's associated with. Nah; paginate artists, albums.
 
+Add: today's top users!
+
 Tags?
 
 Deal with html escaping in a somewhat more professional manner. Begin by
 grepping for html_safe - it's likely that you've misused it somewhere.
 
-Find and destroy the bug affecting mouseover.
+Find and destroy the bug affecting mouseover of the logout button.
 
 Fix seeds
 

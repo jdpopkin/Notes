@@ -118,17 +118,17 @@ div.errors, div.login-errors, div.signup-errors {
 //  max-width: 400px;
 }
 
-.featured-content > ul {
+.featured-content > ul, .featured-users > ul {
   list-style: none;
   padding: 0;
 }
 
-.featured-content > ul > li {
+.featured-content > ul > li, .featured-users > ul > li {
   padding: 10px 0 10px 0;
   border-bottom: 1px solid #333333;
 }
 
-.featured-content > ul > li:first-child {
+.featured-content > ul > li:first-child, .featured-users > ul > li:first-child {
   border-top: 1px solid #333333;
 }
 
@@ -139,14 +139,14 @@ div.errors, div.login-errors, div.signup-errors {
 
 }
 
-.recent-content {
+.recent-content, .featured-users {
   float: left;
   width: 475px;
 //  padding: 0 40px 0 0;
   padding: 0;
 }
 
-.recent-content > ul, .recent-content-list {
+.recent-content > ul, .recent-content-list, .featured-users {
   list-style: none;
   float: left;
   margin: 0;
