@@ -10,6 +10,14 @@
 user_one = User.create!(email: "maboo@gmail.com", password: "password",
                             username: "Maboo")
 
+additional_user = User.create!(email: "paulr@gmail.com", password: "password", username: "prettysmacked")
+additional_user = User.create!(email: "epree@gmail.com", password: "password", username: "spacekingdom")
+additional_user = User.create!(email: "alanm@gmail.com", password: "password", username: "Sinonim")
+additional_user = User.create!(email: "elsmith@gmail.com", password: "password", username: "gleeGear")
+additional_user = User.create!(email: "abr88@gmail.com", password: "password", username: "LiquidSwordz")
+additional_user = User.create!(email: "bantam@gmail.com", password: "password", username: "saltdog")
+additional_user = User.create!(email: "ponies@gmail.com", password: "password", username: "Short")
+
 placeholder_artist = Artist.create!(name: "Nas", user_id: user_one.id)
 
 placeholder_album = Album.create!(title: "Illmatic",
