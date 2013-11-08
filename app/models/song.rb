@@ -86,7 +86,10 @@ class Song < ActiveRecord::Base
   def generate_description
     return if self.description
 
-    self.description = "#{self.title} is a song by #{self.artist.name}"
+    artist = self.artist
+    name = artist.name if artist
+
+    self.description = "#{self.title} is a song by #{name}"
 
     if self.album
       self.description += " appearing on the album #{self.album.title}"
